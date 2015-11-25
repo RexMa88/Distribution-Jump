@@ -7,6 +7,7 @@
 //
 
 #import "AppDelegate.h"
+#import "ViewController.h"
 
 @interface AppDelegate ()
 
@@ -18,15 +19,46 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
     
+    //initializeControllers
+    [self initializeControllers];
+    //initializeNotifications
+    [self initializeNotifications];
+    
     return YES;
 }
 
+#pragma mark - 初始化界面
+- (void)initializeControllers{
+    self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen]bounds]];
+    
+    ViewController * viewController = [[ViewController alloc] init];
+    
+    UINavigationController * navController = [[UINavigationController alloc] initWithRootViewController:viewController];
+    
+    self.window.rootViewController = navController;
+    self.currentNav = navController;
+}
+
+#pragma mark - 初始化分发跳转机制
 - (void)initializeNotifications{
     NotificationAddObserver(KNotificationPushAction, @selector(pushViewController:));
+    NotificationAddObserver(kNotificationPopAction, @selector(popViewController:));
+}
+
+#pragma mark - 通知处理逻辑
+
+/**
+ *  pushViewController Method
+ *
+ *  @param notification 传递push行为
+ *  @notification name
+ *  @notification object
+ */
+- (void)pushViewController:(NSNotification *)notification{
     
 }
 
-- (void)pushViewController:(NSNotification *)notification{
+- (void)popViewController:(NSNotification *)notification{
     
 }
 
