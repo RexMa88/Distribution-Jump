@@ -12,6 +12,8 @@
 // Include any system framework and library headers here that should be included in all compilation units.
 // You will also need to set the Prefix Header build setting of one or more of your targets to reference this file.
 #import "KNotificationAction.h"
+#import "Define.h"
+#import "BaseViewController.h"
 
 #define NotificationAddObserver(TITLE, SELECTOR) [[NSNotificationCenter defaultCenter] addObserver:self selector:SELECTOR name:TITLE object:nil]
 #define NotificationRemoveObserver(id) [[NSNotificationCenter defaultCenter] removeObserver:id]

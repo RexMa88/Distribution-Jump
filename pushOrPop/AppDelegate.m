@@ -55,11 +55,46 @@
  *  @notification object
  */
 - (void)pushViewController:(NSNotification *)notification{
-    
+    [self.currentNav pushViewController:[self getViewControllerFromNotification:notification]
+                               animated:[self getAnimateFromNotification:notification]];
 }
 
 - (void)popViewController:(NSNotification *)notification{
     
+}
+
+//是否有动画
+- (BOOL)getAnimateFromNotification:(NSNotification *)notification{
+    //是否有动画
+    id animatedObj = [[notification userInfo] objectForKey:kDictionaryKeyAnimated];
+    BOOL animated = YES;
+    if ([animatedObj isKindOfClass:[NSNumber class]]) {
+        [animatedObj boolValue];
+    }
+    
+    return animated;
+}
+
+//获取跳转的控制器界面
+- (UIViewController *)getViewControllerFromNotification:(NSNotification *)notification{
+    /**
+     *  获取notification中的class,SEL等
+     */
+    Class controllerClass = [[notification userInfo] objectForKey:kDictionaryKeyClass];
+    SEL selector = [self selector:[[notification userInfo] objectForKey:kDictionaryKeySelector]];
+    id object = [[notification userInfo] objectForKey:kDictionaryKeyObject];
+    
+    BaseViewController * viewController = [[controllerClass alloc] init];
+    
+    if (selector) {
+#pragma clang diagnostic ignored "-Warc-perfomSelectoe-leaks"
+        [viewController performSelector:selector withObject:object];
+    }
+    //记录上一级对应的ViewController
+    if ([notification object]) {
+        [viewController setSrcControllerClass:[[notification object] class]];
+    }
+    return viewController;
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application {
@@ -82,6 +117,19 @@
 
 - (void)applicationWillTerminate:(UIApplication *)application {
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
+}
+
+#pragma mark - Utils
+
+- (SEL)selector:(id)selectorObj{
+    SEL selector;
+    if ([selectorObj isKindOfClass:[NSString class]]) {
+        selector = NSSelectorFromString(selectorObj);
+    }else{
+        selector = [selectorObj pointerValue];
+    }
+    
+    return selector;
 }
 
 @end

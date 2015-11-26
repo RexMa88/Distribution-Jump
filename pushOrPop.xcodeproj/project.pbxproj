@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		00495C191C06E5F80015DB12 /* BaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 00495C181C06E5F80015DB12 /* BaseViewController.m */; settings = {ASSET_TAGS = (); }; };
 		00FB6F091C04596800EE49F3 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 00FB6F081C04596800EE49F3 /* main.m */; };
 		00FB6F0C1C04596800EE49F3 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 00FB6F0B1C04596800EE49F3 /* AppDelegate.m */; };
 		00FB6F0F1C04596800EE49F3 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 00FB6F0E1C04596800EE49F3 /* ViewController.m */; };
@@ -35,6 +36,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		00495C141C06E05E0015DB12 /* Define.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Define.h; sourceTree = "<group>"; };
+		00495C171C06E5F80015DB12 /* BaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseViewController.h; sourceTree = "<group>"; };
+		00495C181C06E5F80015DB12 /* BaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseViewController.m; sourceTree = "<group>"; };
 		00FB6F041C04596800EE49F3 /* pushOrPop.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = pushOrPop.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		00FB6F081C04596800EE49F3 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		00FB6F0A1C04596800EE49F3 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -80,6 +84,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		00495C151C06E5B60015DB12 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				00495C161C06E5CA0015DB12 /* Base */,
+			);
+			name = ViewController;
+			sourceTree = "<group>";
+		};
+		00495C161C06E5CA0015DB12 /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				00495C171C06E5F80015DB12 /* BaseViewController.h */,
+				00495C181C06E5F80015DB12 /* BaseViewController.m */,
+			);
+			name = Base;
+			sourceTree = "<group>";
+		};
 		00FB6EFB1C04596800EE49F3 = {
 			isa = PBXGroup;
 			children = (
@@ -103,6 +124,7 @@
 		00FB6F061C04596800EE49F3 /* pushOrPop */ = {
 			isa = PBXGroup;
 			children = (
+				00495C151C06E5B60015DB12 /* ViewController */,
 				00FB6F3A1C0459DC00EE49F3 /* common */,
 				00FB6F0A1C04596800EE49F3 /* AppDelegate.h */,
 				00FB6F0B1C04596800EE49F3 /* AppDelegate.m */,
@@ -148,6 +170,7 @@
 			children = (
 				00FB6F3B1C045B9200EE49F3 /* pushOrPop.pch */,
 				00FB6F3C1C045C7200EE49F3 /* KNotificationAction.h */,
+				00495C141C06E05E0015DB12 /* Define.h */,
 			);
 			name = common;
 			sourceTree = "<group>";
@@ -283,6 +306,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				00FB6F0F1C04596800EE49F3 /* ViewController.m in Sources */,
+				00495C191C06E5F80015DB12 /* BaseViewController.m in Sources */,
 				00FB6F0C1C04596800EE49F3 /* AppDelegate.m in Sources */,
 				00FB6F091C04596800EE49F3 /* main.m in Sources */,
 			);
@@ -512,6 +536,7 @@
 				00FB6F331C04596800EE49F3 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		00FB6F341C04596800EE49F3 /* Build configuration list for PBXNativeTarget "pushOrPopTests" */ = {
 			isa = XCConfigurationList;
@@ -520,6 +545,7 @@
 				00FB6F361C04596800EE49F3 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		00FB6F371C04596800EE49F3 /* Build configuration list for PBXNativeTarget "pushOrPopUITests" */ = {
 			isa = XCConfigurationList;
@@ -528,6 +554,7 @@
 				00FB6F391C04596800EE49F3 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
