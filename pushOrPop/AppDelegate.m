@@ -80,7 +80,15 @@
     /**
      *  获取notification中的class,SEL等
      */
-    Class controllerClass = [[notification userInfo] objectForKey:kDictionaryKeyClass];
+    id controllerObj = [[notification userInfo] objectForKey:kDictionaryKeyClass];
+    //判断controllerObj的性质
+    Class controllerClass;
+    if ([controllerObj isKindOfClass:[NSString class]]) {
+        controllerClass = NSClassFromString(controllerObj);
+    }else{
+        controllerClass = controllerObj;
+    }
+    
     SEL selector = [self selector:[[notification userInfo] objectForKey:kDictionaryKeySelector]];
     id object = [[notification userInfo] objectForKey:kDictionaryKeyObject];
     
