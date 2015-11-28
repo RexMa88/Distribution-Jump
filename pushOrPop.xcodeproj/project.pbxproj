@@ -7,8 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		00495C191C06E5F80015DB12 /* BaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 00495C181C06E5F80015DB12 /* BaseViewController.m */; settings = {ASSET_TAGS = (); }; };
-		00495C1E1C070DD90015DB12 /* SecondViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 00495C1D1C070DD90015DB12 /* SecondViewController.m */; settings = {ASSET_TAGS = (); }; };
+		00495C191C06E5F80015DB12 /* BaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 00495C181C06E5F80015DB12 /* BaseViewController.m */; };
+		00495C1E1C070DD90015DB12 /* SecondViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 00495C1D1C070DD90015DB12 /* SecondViewController.m */; };
 		00FB6F091C04596800EE49F3 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 00FB6F081C04596800EE49F3 /* main.m */; };
 		00FB6F0C1C04596800EE49F3 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 00FB6F0B1C04596800EE49F3 /* AppDelegate.m */; };
 		00FB6F0F1C04596800EE49F3 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 00FB6F0E1C04596800EE49F3 /* ViewController.m */; };
@@ -263,6 +263,7 @@
 				TargetAttributes = {
 					00FB6F031C04596800EE49F3 = {
 						CreatedOnToolsVersion = 7.0.1;
+						DevelopmentTeam = ZRU9NS7944;
 					};
 					00FB6F1C1C04596800EE49F3 = {
 						CreatedOnToolsVersion = 7.0.1;
@@ -471,7 +472,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				GCC_PREFIX_HEADER = /Users/dy/Desktop/pushOrPop/pushOrPop/pushOrPop.pch;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				GCC_INCREASE_PRECOMPILED_HEADER_SHARING = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "/Users/zhcnmk/Develop/Git/Distribution-Jump/pushOrPop/pushOrPop.pch";
 				INFOPLIST_FILE = pushOrPop/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = rexma.pushOrPop;
@@ -483,7 +487,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				GCC_PREFIX_HEADER = /Users/dy/Desktop/pushOrPop/pushOrPop/pushOrPop.pch;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				GCC_INCREASE_PRECOMPILED_HEADER_SHARING = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "/Users/zhcnmk/Develop/Git/Distribution-Jump/pushOrPop/pushOrPop.pch";
 				INFOPLIST_FILE = pushOrPop/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = rexma.pushOrPop;

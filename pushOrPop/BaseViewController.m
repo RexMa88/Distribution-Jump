@@ -8,6 +8,8 @@
 
 #import "BaseViewController.h"
 
+static const char associatedkey;
+
 @interface BaseViewController ()
 
 @end
@@ -17,6 +19,16 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+}
+
+#pragma mark - runtime objc_setAssociatedObject && objc_getAssociatedObject
+
+- (void)setAssociatedObject:(id)object{
+    objc_setAssociatedObject(self, &associatedkey, object, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+}
+
+- (id)associatedObject{
+    return objc_getAssociatedObject(self, &associatedkey);
 }
 
 - (void)didReceiveMemoryWarning {
