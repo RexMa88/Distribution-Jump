@@ -7,8 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		00495C191C06E5F80015DB12 /* BaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 00495C181C06E5F80015DB12 /* BaseViewController.m */; settings = {ASSET_TAGS = (); }; };
-		00495C1E1C070DD90015DB12 /* SecondViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 00495C1D1C070DD90015DB12 /* SecondViewController.m */; settings = {ASSET_TAGS = (); }; };
+		00495C191C06E5F80015DB12 /* BaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 00495C181C06E5F80015DB12 /* BaseViewController.m */; };
+		00495C1E1C070DD90015DB12 /* SecondViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 00495C1D1C070DD90015DB12 /* SecondViewController.m */; };
+		00929CC11C11347400511DF5 /* ThirdViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 00929CC01C11347400511DF5 /* ThirdViewController.m */; };
+		00929CC61C11377C00511DF5 /* pushButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 00929CC51C11377C00511DF5 /* pushButton.m */; };
 		00FB6F091C04596800EE49F3 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 00FB6F081C04596800EE49F3 /* main.m */; };
 		00FB6F0C1C04596800EE49F3 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 00FB6F0B1C04596800EE49F3 /* AppDelegate.m */; };
 		00FB6F0F1C04596800EE49F3 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 00FB6F0E1C04596800EE49F3 /* ViewController.m */; };
@@ -42,6 +44,10 @@
 		00495C181C06E5F80015DB12 /* BaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseViewController.m; sourceTree = "<group>"; };
 		00495C1C1C070DD90015DB12 /* SecondViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SecondViewController.h; sourceTree = "<group>"; };
 		00495C1D1C070DD90015DB12 /* SecondViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SecondViewController.m; sourceTree = "<group>"; };
+		00929CBF1C11347400511DF5 /* ThirdViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ThirdViewController.h; sourceTree = "<group>"; };
+		00929CC01C11347400511DF5 /* ThirdViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ThirdViewController.m; sourceTree = "<group>"; };
+		00929CC41C11377C00511DF5 /* pushButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = pushButton.h; sourceTree = "<group>"; };
+		00929CC51C11377C00511DF5 /* pushButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = pushButton.m; sourceTree = "<group>"; };
 		00FB6F041C04596800EE49F3 /* pushOrPop.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = pushOrPop.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		00FB6F081C04596800EE49F3 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		00FB6F0A1C04596800EE49F3 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -90,6 +96,7 @@
 		00495C151C06E5B60015DB12 /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
+				00929CBE1C11342A00511DF5 /* ThirdVC */,
 				00495C1B1C070DC40015DB12 /* SecondVC */,
 				00495C1A1C070D9C0015DB12 /* FirstVC */,
 				00495C161C06E5CA0015DB12 /* Base */,
@@ -124,6 +131,32 @@
 			name = SecondVC;
 			sourceTree = "<group>";
 		};
+		00929CBE1C11342A00511DF5 /* ThirdVC */ = {
+			isa = PBXGroup;
+			children = (
+				00929CBF1C11347400511DF5 /* ThirdViewController.h */,
+				00929CC01C11347400511DF5 /* ThirdViewController.m */,
+			);
+			name = ThirdVC;
+			sourceTree = "<group>";
+		};
+		00929CC21C11376000511DF5 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				00929CC31C11376600511DF5 /* CutomButton */,
+			);
+			name = Utils;
+			sourceTree = "<group>";
+		};
+		00929CC31C11376600511DF5 /* CutomButton */ = {
+			isa = PBXGroup;
+			children = (
+				00929CC41C11377C00511DF5 /* pushButton.h */,
+				00929CC51C11377C00511DF5 /* pushButton.m */,
+			);
+			name = CutomButton;
+			sourceTree = "<group>";
+		};
 		00FB6EFB1C04596800EE49F3 = {
 			isa = PBXGroup;
 			children = (
@@ -147,6 +180,7 @@
 		00FB6F061C04596800EE49F3 /* pushOrPop */ = {
 			isa = PBXGroup;
 			children = (
+				00929CC21C11376000511DF5 /* Utils */,
 				00495C151C06E5B60015DB12 /* ViewController */,
 				00FB6F3A1C0459DC00EE49F3 /* common */,
 				00FB6F0A1C04596800EE49F3 /* AppDelegate.h */,
@@ -328,9 +362,11 @@
 			files = (
 				00495C1E1C070DD90015DB12 /* SecondViewController.m in Sources */,
 				00FB6F0F1C04596800EE49F3 /* ViewController.m in Sources */,
+				00929CC11C11347400511DF5 /* ThirdViewController.m in Sources */,
 				00495C191C06E5F80015DB12 /* BaseViewController.m in Sources */,
 				00FB6F0C1C04596800EE49F3 /* AppDelegate.m in Sources */,
 				00FB6F091C04596800EE49F3 /* main.m in Sources */,
+				00929CC61C11377C00511DF5 /* pushButton.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

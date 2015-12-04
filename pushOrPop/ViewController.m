@@ -7,10 +7,16 @@
 //
 
 #import "ViewController.h"
+#import "pushButton.h"
+
+static NSString * const secondVCString = @"SecondViewController";//跳转的第二个界面字段
+
+static NSString * const thirdVCString  = @"ThirdViewController";//跳转的第三个界面字段
 
 @interface ViewController ()
 
-@property (nonatomic, strong) UIButton * pushBtn;//push按钮
+@property (nonatomic, strong) pushButton * pushSecondBtn;//push seconde按钮
+@property (nonatomic, strong) pushButton * pushthirdBtn;
 
 @end
 
@@ -24,17 +30,29 @@
 }
 
 - (void)customUI{
-    self.pushBtn = [[UIButton alloc] initWithFrame:CGRectMake(0, 100, kWidth, 30)];
-    [self.pushBtn setTitle:@"push" forState:UIControlStateNormal];
-    [self.pushBtn setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
-    self.pushBtn.backgroundColor = [UIColor blueColor];
-    [self.pushBtn addTarget:self action:@selector(pushAction:) forControlEvents:UIControlEventTouchUpInside];
-    [self.view addSubview:self.pushBtn];
+    //second push button
+    self.pushSecondBtn = [[pushButton alloc] initWithFrame:CGRectMake(0, 100, kWidth, 30)];
+    [self.pushSecondBtn setTitle:@"pushSecond" forState:UIControlStateNormal];
+    [self.pushSecondBtn setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
+    self.pushSecondBtn.backgroundColor = [UIColor blueColor];
+    self.pushSecondBtn.pushVCStr = secondVCString;
+    [self.pushSecondBtn addTarget:self action:@selector(pushAction:) forControlEvents:UIControlEventTouchUpInside];
+    [self.view addSubview:self.pushSecondBtn];
+    //third push button
+    self.pushthirdBtn = [pushButton buttonWithType:UIButtonTypeCustom];
+    self.pushthirdBtn.frame = CGRectMake(0, 150, kWidth, 30);
+    [self.pushthirdBtn setTitle:@"pushThird" forState:UIControlStateNormal];
+    [self.pushthirdBtn setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
+    self.pushthirdBtn.backgroundColor = [UIColor yellowColor];
+    self.pushthirdBtn.pushVCStr = thirdVCString;
+    [self.pushthirdBtn addTarget:self action:@selector(pushAction:) forControlEvents:UIControlEventTouchUpInside];
+    [self.view addSubview:self.pushthirdBtn];
 }
 
-- (void)pushAction:(id)sender{
+- (void)pushAction:(pushButton *)button{
     //跳转传输的数据
-    NSDictionary * dict = @{kDictionaryKeyClass: @"SecondViewController"};
+    NSString * pushVCStr = button.pushVCStr;
+    NSDictionary * dict = @{kDictionaryKeyClass: pushVCStr};
     NotificationPostNotify(KNotificationPushAction, self, dict);
 }
 
