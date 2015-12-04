@@ -15,8 +15,14 @@ static NSString * const thirdVCString  = @"ThirdViewController";//跳转的第�
 
 @interface ViewController ()
 
+<<<<<<< HEAD
 @property (nonatomic, strong) pushButton * pushSecondBtn;//push seconde按钮
 @property (nonatomic, strong) pushButton * pushthirdBtn;
+=======
+@property (nonatomic, strong) UIButton * pushBtn;//push Button
+
+@property (nonatomic, weak) id associatedObject;//关联变量
+>>>>>>> 60f68f190de6bf49116a0df2ebc446952be5978b
 
 @end
 
@@ -26,8 +32,11 @@ static NSString * const thirdVCString  = @"ThirdViewController";//跳转的第�
     [super viewDidLoad];
 //     Do any additional setup after loading the view, typically from a nib.
     self.view.backgroundColor = [UIColor whiteColor];
+    
     [self customUI];
 }
+
+#pragma mark - custom Method
 
 - (void)customUI{
     //second push button
@@ -54,6 +63,20 @@ static NSString * const thirdVCString  = @"ThirdViewController";//跳转的第�
     NSString * pushVCStr = button.pushVCStr;
     NSDictionary * dict = @{kDictionaryKeyClass: pushVCStr};
     NotificationPostNotify(KNotificationPushAction, self, dict);
+}
+
+#pragma mark - runtime objc_getAssociatedObject && objc_setAssociatedObject
+
+- (void)setAssociatedObject:(id)object{
+    [super setAssociatedObject:object];
+}
+
+- (id)associatedObject{
+    self.associatedObject = [super associatedObject];
+    if (self.associatedObject) {
+        
+    }
+    return self.associatedObject;
 }
 
 - (void)didReceiveMemoryWarning {
