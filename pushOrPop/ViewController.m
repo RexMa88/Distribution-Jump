@@ -15,14 +15,11 @@ static NSString * const thirdVCString  = @"ThirdViewController";//跳转的第�
 
 @interface ViewController ()
 
-<<<<<<< HEAD
+
 @property (nonatomic, strong) pushButton * pushSecondBtn;//push seconde按钮
 @property (nonatomic, strong) pushButton * pushthirdBtn;
-=======
-@property (nonatomic, strong) UIButton * pushBtn;//push Button
 
 @property (nonatomic, weak) id associatedObject;//关联变量
->>>>>>> 60f68f190de6bf49116a0df2ebc446952be5978b
 
 @end
 

@@ -2,7 +2,7 @@
 //  BaseViewController.h
 //  pushOrPop
 //
-//  Created by Rex Ma on 15/11/26.
+//  Created by RexMa on 15/11/26.
 //  Copyright © 2015年 RexMa. All rights reserved.
 //
 
