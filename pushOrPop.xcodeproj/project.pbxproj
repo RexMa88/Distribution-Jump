@@ -19,6 +19,7 @@
 		00FB6F171C04596800EE49F3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 00FB6F151C04596800EE49F3 /* LaunchScreen.storyboard */; };
 		00FB6F221C04596800EE49F3 /* pushOrPopTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 00FB6F211C04596800EE49F3 /* pushOrPopTests.m */; };
 		00FB6F2D1C04596800EE49F3 /* pushOrPopUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 00FB6F2C1C04596800EE49F3 /* pushOrPopUITests.m */; };
+		A38E25CB1C128D6300A3DCEC /* BaseTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A38E25CA1C128D6300A3DCEC /* BaseTableViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -66,6 +67,9 @@
 		00FB6F2E1C04596800EE49F3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		00FB6F3B1C045B9200EE49F3 /* pushOrPop.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = pushOrPop.pch; sourceTree = "<group>"; };
 		00FB6F3C1C045C7200EE49F3 /* KNotificationAction.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KNotificationAction.h; sourceTree = "<group>"; };
+		A38E25C91C128D6300A3DCEC /* BaseTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseTableViewController.h; sourceTree = "<group>"; };
+		A38E25CA1C128D6300A3DCEC /* BaseTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseTableViewController.m; sourceTree = "<group>"; };
+		A38E25CC1C129B7200A3DCEC /* classInfo.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = classInfo.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -109,6 +113,8 @@
 			children = (
 				00495C171C06E5F80015DB12 /* BaseViewController.h */,
 				00495C181C06E5F80015DB12 /* BaseViewController.m */,
+				A38E25C91C128D6300A3DCEC /* BaseTableViewController.h */,
+				A38E25CA1C128D6300A3DCEC /* BaseTableViewController.m */,
 			);
 			name = Base;
 			sourceTree = "<group>";
@@ -226,6 +232,7 @@
 				00FB6F3B1C045B9200EE49F3 /* pushOrPop.pch */,
 				00FB6F3C1C045C7200EE49F3 /* KNotificationAction.h */,
 				00495C141C06E05E0015DB12 /* Define.h */,
+				A38E25CC1C129B7200A3DCEC /* classInfo.h */,
 			);
 			name = common;
 			sourceTree = "<group>";
@@ -292,6 +299,7 @@
 		00FB6EFC1C04596800EE49F3 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				CLASSPREFIX = RM;
 				LastUpgradeCheck = 0700;
 				ORGANIZATIONNAME = RexMa;
 				TargetAttributes = {
@@ -367,6 +375,7 @@
 				00495C191C06E5F80015DB12 /* BaseViewController.m in Sources */,
 				00FB6F0C1C04596800EE49F3 /* AppDelegate.m in Sources */,
 				00FB6F091C04596800EE49F3 /* main.m in Sources */,
+				A38E25CB1C128D6300A3DCEC /* BaseTableViewController.m in Sources */,
 				00929CC61C11377C00511DF5 /* pushButton.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -511,7 +520,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				GCC_INCREASE_PRECOMPILED_HEADER_SHARING = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = /Users/dy/Desktop/pushOrPop/pushOrPop/pushOrPop.pch;
+				GCC_PREFIX_HEADER = "/Users/zhcnmk/Develop/Git/Distribution-Jump/pushOrPop/pushOrPop.pch";
 				INFOPLIST_FILE = pushOrPop/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = rexma.pushOrPop;
@@ -526,7 +535,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				GCC_INCREASE_PRECOMPILED_HEADER_SHARING = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = /Users/dy/Desktop/pushOrPop/pushOrPop/pushOrPop.pch;
+				GCC_PREFIX_HEADER = "/Users/zhcnmk/Develop/Git/Distribution-Jump/pushOrPop/pushOrPop.pch";
 				INFOPLIST_FILE = pushOrPop/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = rexma.pushOrPop;

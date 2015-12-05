@@ -19,5 +19,9 @@
 //显示高度与宽度
 #define kWidth                              [[UIScreen mainScreen] bounds].size.width
 #define kHeight                             [[UIScreen mainScreen] bounds].size.height
+#define kScreenBounds                       [UIScreen mainScreen].bounds
+//The Key of dataDict
+#define kDataArrayKey                       @"dataArrayKey"
+#define kTableViewDataKey                   @"tableViewDataKey"
 
 #endif /* Define_h */

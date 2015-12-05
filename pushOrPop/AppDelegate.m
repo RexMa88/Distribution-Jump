@@ -7,6 +7,7 @@
 //
 
 #import "AppDelegate.h"
+#import "BaseViewController.h"
 #import "ViewController.h"
 
 @interface AppDelegate ()
@@ -89,10 +90,21 @@
         controllerClass = controllerObj;
     }
     
+    BaseViewController * viewController = [[controllerClass alloc] init];
+    
     SEL selector = [self selector:[[notification userInfo] objectForKey:kDictionaryKeySelector]];
     id object = [[notification userInfo] objectForKey:kDictionaryKeyObject];
     
-    BaseViewController * viewController = [[controllerClass alloc] init];
+    /**
+     *  According to the type of object class
+     */
+    if ([object isKindOfClass:[NSDictionary class]]) {
+        viewController.dataDict = (NSDictionary *)object;
+    }else if ([object isKindOfClass:[NSArray class]]){
+        viewController.dataArray = (NSArray *)object;
+    }else if ([object isKindOfClass:[NSString class]]){
+        viewController.associateKey = (NSString *)object;
+    }
     
     if (selector) {
 #pragma clang diagnostic ignored "-Warc-perfomSelectoe-leaks"
