@@ -27,10 +27,10 @@
 @property (nonatomic, strong) id associatedObject;
 
 //Convert NSString to char
-- (void)setAssociateKey:(NSString *)associateKey;
+//- (void)setAssociateKey:(NSString *)associateKey;
 //通过objc_setAssociatedObject动态关联
-- (void)setAssociatedObject:(id)object;
+- (void)setAssociatedObject:(id)object withAssociateKey:(NSString *)associateKey;
 //通过objc_getAssociatedObject获取关联值
-- (id)associatedObject;
+- (id)getAssociatedObjectWithAssociateKey:(NSString *)associateKey;
 
 @end

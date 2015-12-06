@@ -13,5 +13,9 @@
 @property (nonatomic, strong) UITableView * tableView;
 //TableViewType
 @property (nonatomic, assign) UITableViewStyle tableViewStyle;
+//The number of section,and if the object of dataArray is array,it will return the count of the dataArray
+@property (nonatomic, assign) NSInteger numberOfSection;
+//The reuseIdentifier of UITableView
+@property (nonatomic, strong) NSString * reuseIdentifier;
 
 @end

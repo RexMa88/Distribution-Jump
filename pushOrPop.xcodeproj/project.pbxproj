@@ -20,6 +20,9 @@
 		00FB6F221C04596800EE49F3 /* pushOrPopTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 00FB6F211C04596800EE49F3 /* pushOrPopTests.m */; };
 		00FB6F2D1C04596800EE49F3 /* pushOrPopUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 00FB6F2C1C04596800EE49F3 /* pushOrPopUITests.m */; };
 		A38E25CB1C128D6300A3DCEC /* BaseTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A38E25CA1C128D6300A3DCEC /* BaseTableViewController.m */; };
+		A38E25D21C12A8B900A3DCEC /* RMBaseCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A38E25D11C12A8B900A3DCEC /* RMBaseCell.m */; };
+		A38E25D51C12ABB800A3DCEC /* RMTableViewDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = A38E25D41C12ABB800A3DCEC /* RMTableViewDataSource.m */; };
+		A3FE6A061C140CF4004DF568 /* RMTableViewDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = A3FE6A051C140CF4004DF568 /* RMTableViewDelegate.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -70,6 +73,13 @@
 		A38E25C91C128D6300A3DCEC /* BaseTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseTableViewController.h; sourceTree = "<group>"; };
 		A38E25CA1C128D6300A3DCEC /* BaseTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseTableViewController.m; sourceTree = "<group>"; };
 		A38E25CC1C129B7200A3DCEC /* classInfo.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = classInfo.h; sourceTree = "<group>"; };
+		A38E25D01C12A8B900A3DCEC /* RMBaseCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RMBaseCell.h; sourceTree = "<group>"; };
+		A38E25D11C12A8B900A3DCEC /* RMBaseCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RMBaseCell.m; sourceTree = "<group>"; };
+		A38E25D31C12ABB800A3DCEC /* RMTableViewDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RMTableViewDataSource.h; sourceTree = "<group>"; };
+		A38E25D41C12ABB800A3DCEC /* RMTableViewDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RMTableViewDataSource.m; sourceTree = "<group>"; };
+		A3FE6A041C140CF4004DF568 /* RMTableViewDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RMTableViewDelegate.h; sourceTree = "<group>"; };
+		A3FE6A051C140CF4004DF568 /* RMTableViewDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RMTableViewDelegate.m; sourceTree = "<group>"; };
+		A3FE6A071C140DEA004DF568 /* TableViewCellClassName.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TableViewCellClassName.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,7 +107,7 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		00495C151C06E5B60015DB12 /* ViewController */ = {
+		00495C151C06E5B60015DB12 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
 				00929CBE1C11342A00511DF5 /* ThirdVC */,
@@ -105,7 +115,7 @@
 				00495C1A1C070D9C0015DB12 /* FirstVC */,
 				00495C161C06E5CA0015DB12 /* Base */,
 			);
-			name = ViewController;
+			name = Controller;
 			sourceTree = "<group>";
 		};
 		00495C161C06E5CA0015DB12 /* Base */ = {
@@ -186,8 +196,9 @@
 		00FB6F061C04596800EE49F3 /* pushOrPop */ = {
 			isa = PBXGroup;
 			children = (
+				A38E25CD1C12A82A00A3DCEC /* View */,
 				00929CC21C11376000511DF5 /* Utils */,
-				00495C151C06E5B60015DB12 /* ViewController */,
+				00495C151C06E5B60015DB12 /* Controller */,
 				00FB6F3A1C0459DC00EE49F3 /* common */,
 				00FB6F0A1C04596800EE49F3 /* AppDelegate.h */,
 				00FB6F0B1C04596800EE49F3 /* AppDelegate.m */,
@@ -233,8 +244,30 @@
 				00FB6F3C1C045C7200EE49F3 /* KNotificationAction.h */,
 				00495C141C06E05E0015DB12 /* Define.h */,
 				A38E25CC1C129B7200A3DCEC /* classInfo.h */,
+				A3FE6A071C140DEA004DF568 /* TableViewCellClassName.h */,
 			);
 			name = common;
+			sourceTree = "<group>";
+		};
+		A38E25CD1C12A82A00A3DCEC /* View */ = {
+			isa = PBXGroup;
+			children = (
+				A38E25CE1C12A83500A3DCEC /* Base */,
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+		A38E25CE1C12A83500A3DCEC /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				A38E25D01C12A8B900A3DCEC /* RMBaseCell.h */,
+				A38E25D11C12A8B900A3DCEC /* RMBaseCell.m */,
+				A38E25D31C12ABB800A3DCEC /* RMTableViewDataSource.h */,
+				A38E25D41C12ABB800A3DCEC /* RMTableViewDataSource.m */,
+				A3FE6A041C140CF4004DF568 /* RMTableViewDelegate.h */,
+				A3FE6A051C140CF4004DF568 /* RMTableViewDelegate.m */,
+			);
+			name = Base;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -372,10 +405,13 @@
 				00495C1E1C070DD90015DB12 /* SecondViewController.m in Sources */,
 				00FB6F0F1C04596800EE49F3 /* ViewController.m in Sources */,
 				00929CC11C11347400511DF5 /* ThirdViewController.m in Sources */,
+				A38E25D51C12ABB800A3DCEC /* RMTableViewDataSource.m in Sources */,
 				00495C191C06E5F80015DB12 /* BaseViewController.m in Sources */,
 				00FB6F0C1C04596800EE49F3 /* AppDelegate.m in Sources */,
+				A3FE6A061C140CF4004DF568 /* RMTableViewDelegate.m in Sources */,
 				00FB6F091C04596800EE49F3 /* main.m in Sources */,
 				A38E25CB1C128D6300A3DCEC /* BaseTableViewController.m in Sources */,
+				A38E25D21C12A8B900A3DCEC /* RMBaseCell.m in Sources */,
 				00929CC61C11377C00511DF5 /* pushButton.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

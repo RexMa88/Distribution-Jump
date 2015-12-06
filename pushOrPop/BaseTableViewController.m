@@ -7,6 +7,8 @@
 //
 
 #import "BaseTableViewController.h"
+#import "RMBaseCell.h"
+#import "RMTableViewDataSource.h"
 
 @interface BaseTableViewController ()
 
@@ -18,17 +20,32 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     [self customUI];
+    
 }
 
 - (void)customUI{
     self.tableView = [[UITableView alloc] initWithFrame:kScreenBounds style:self.tableViewStyle];
+    [self setTableviewDataSource];
+    self.tableView.delegate = self;
+    //Actually，The dataSource should be definition
 }
 
-#pragma mark - UITableViewDataSource
+- (void)setTableviewDataSource{
+    RMTableViewDataSource * dataSource = [[RMTableViewDataSource alloc] init];
+    //The setting of dataSource
+    dataSource.dataArray        = self.dataArray;
+    dataSource.reuseIdentifier  = [self.dataDict objectForKey:kTableViewReuseIdentifier];
+    dataSource.cellClassStr     = NSStringFromClass([self.dataDict objectForKey:kTableViewCellStr]);
+    self.tableView.dataSource   = dataSource;
+}
 
-//- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
-//
-//}
+- (void)setTableViewDelegate{
+    
+}
+
+- (void)registerTableViewClassCell{
+    
+}
 
 #pragma mark - getter && setter
 

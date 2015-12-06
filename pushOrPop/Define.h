@@ -23,5 +23,8 @@
 //The Key of dataDict
 #define kDataArrayKey                       @"dataArrayKey"
 #define kTableViewDataKey                   @"tableViewDataKey"
+//The key of TableViewCell ReuseIdentifier
+#define kTableViewReuseIdentifier           @"TableViewReuseIdentifier"
+#define kTableViewCellStr                   @"TableViewCell"
 
 #endif /* Define_h */

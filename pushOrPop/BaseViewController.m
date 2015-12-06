@@ -31,14 +31,14 @@
 
 #pragma mark - runtime objc_setAssociatedObject && objc_getAssociatedObject
 
-- (void)setAssociatedObject:(id)object{
-    const char * associatedkey = [self.associateKey UTF8String];
+- (void)setAssociatedObject:(id)object withAssociateKey:(NSString *)associateKey{
+    const char * associatedkey = [associateKey UTF8String];
     objc_setAssociatedObject(self, associatedkey, object, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
 }
 
-- (id)associatedObject{
-    const char * associateKey = [self.associateKey UTF8String];
-    return objc_getAssociatedObject(self, associateKey);
+- (id)getAssociatedObjectWithAssociateKey:(NSString *)associateKey{
+    const char * associatedKey = [associateKey UTF8String];
+    return objc_getAssociatedObject(self, associatedKey);
 }
 
 - (void)didReceiveMemoryWarning {
