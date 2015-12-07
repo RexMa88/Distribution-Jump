@@ -6,6 +6,12 @@
 //  Copyright © 2015年 RexMa. All rights reserved.
 //
 
+/**
+ *  The custom united tableViewDataSource,for reducing coupling,and I will create a custom united.TableViewDelegate.I hope someone look the demo,and help me complete it.
+ *
+ *
+ */
+
 #import <Foundation/Foundation.h>
 
 @interface RMTableViewDataSource : NSObject<UITableViewDataSource>

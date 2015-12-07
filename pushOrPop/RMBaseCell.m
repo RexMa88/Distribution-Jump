@@ -20,7 +20,12 @@
 }
 
 #pragma mark - associateObject
-
+/**
+ *  Dynamic binding data
+ *
+ *  @param object       Binding data(NSDictionay, you can define your key in Define.h)
+ *  @param associateKey The key of associatedKey
+ */
 - (void)setAssociateObject:(id)object withAssociateKey:(NSString *)associateKey{
     const char * associatedKey = [associateKey UTF8String];
     objc_setAssociatedObject(self, associatedKey, object, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
