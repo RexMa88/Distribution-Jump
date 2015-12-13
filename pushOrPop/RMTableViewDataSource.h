@@ -21,7 +21,7 @@
 //TableView reuseIndentifier
 @property (nonatomic, strong) NSString * reuseIdentifier;
 //The Class of UITableViewCell
-@property (nonatomic, strong) NSString * cellClassStr;
+@property (nonatomic, strong) id cellClass;
 //cellClass setter
-- (void)setCellClassStr:(NSString *)cellClassStr;
+- (void)setCellClass:(id)cellClass;
 @end

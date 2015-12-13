@@ -9,8 +9,13 @@
 #import "BaseTableViewController.h"
 #import "RMBaseCell.h"
 #import "RMTableViewDataSource.h"
+#import "RMTableViewDelegate.h"
 
 @interface BaseTableViewController ()
+
+@property (nonatomic, strong) RMTableViewDataSource * dataSource;//UITableViewDataSource
+
+@property (nonatomic, strong) RMTableViewDelegate * delegate;
 
 @end
 
@@ -26,17 +31,21 @@
 - (void)customUI{
     self.tableView = [[UITableView alloc] initWithFrame:kScreenBounds style:self.tableViewStyle];
     [self setTableviewDataSource];
-    self.tableView.delegate = self;
+    [self setTableViewDelegate];
     //Actually，The dataSource should be definition
 }
 
+- (void)setTableViewDelegate{
+    self.delegate = [[RMTableViewDelegate alloc] init];
+    self.delegate.
+}
+
 - (void)setTableviewDataSource{
-    RMTableViewDataSource * dataSource = [[RMTableViewDataSource alloc] init];
+    self.dataSource = [[RMTableViewDataSource alloc] init];
     //The setting of dataSource
-    dataSource.dataArray        = self.dataArray;
-    dataSource.reuseIdentifier  = [self.dataDict objectForKey:kTableViewReuseIdentifier];
-    dataSource.cellClassStr     = NSStringFromClass([self.dataDict objectForKey:kTableViewCellStr]);
-    self.tableView.dataSource   = dataSource;
+    self.dataSource.dataArray        = self.dataArray;
+    self.dataSource.reuseIdentifier  = [self.dataDict objectForKey:kTableViewReuseIdentifier];
+    self.tableView.dataSource   = self.dataSource;
 }
 
 - (void)setTableViewDelegate{

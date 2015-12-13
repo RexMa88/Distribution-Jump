@@ -10,11 +10,7 @@
 #import "RMBaseCell.h"
 #import <objc/runtime.h>
 
-
-
 @interface RMTableViewDataSource()
-
-@property (nonatomic, weak) id cellClass;
 
 @end
 
@@ -33,8 +29,10 @@
     return self.dataArray.count;
 }
 
-//- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
-//    
-//}
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
+    RMBaseCell * cell = [tableView dequeueReusableCellWithIdentifier:self.reuseIdentifier forIndexPath:indexPath];
+    cell.textLabel.text = self.dataArray[indexPath.row];
+    return cell;
+}
 
 @end

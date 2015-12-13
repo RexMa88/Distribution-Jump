@@ -10,4 +10,14 @@
 
 @implementation RMTableViewDelegate
 
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    
+}
+
+#pragma mark - setter & getter
+
+- (void)setViewControllerClass:(Class)viewControllerClass{
+    _viewControllerClass = viewControllerClass;
+}
+
 @end
