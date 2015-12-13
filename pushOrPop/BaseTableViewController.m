@@ -37,7 +37,7 @@
 
 - (void)setTableViewDelegate{
     self.delegate = [[RMTableViewDelegate alloc] init];
-    self.delegate.
+    self.delegate.dataArray = self.dataArray;
 }
 
 - (void)setTableviewDataSource{
@@ -46,10 +46,6 @@
     self.dataSource.dataArray        = self.dataArray;
     self.dataSource.reuseIdentifier  = [self.dataDict objectForKey:kTableViewReuseIdentifier];
     self.tableView.dataSource   = self.dataSource;
-}
-
-- (void)setTableViewDelegate{
-    
 }
 
 - (void)registerTableViewClassCell{
