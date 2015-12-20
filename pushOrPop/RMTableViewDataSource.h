@@ -14,14 +14,16 @@
 
 #import <Foundation/Foundation.h>
 
+typedef void (^configureBlock)(id cell, id item);
+
 @interface RMTableViewDataSource : NSObject<UITableViewDataSource>
 
+@property (nonatomic, copy) configureBlock configureCellBlock;
 //dataSource
-@property (nonatomic, strong) NSArray * dataArray;
+@property (nonatomic, strong) NSArray *dataArray;
 //TableView reuseIndentifier
-@property (nonatomic, strong) NSString * reuseIdentifier;
+@property (nonatomic, strong) NSString *reuseIdentifier;
 //The Class of UITableViewCell
 @property (nonatomic, strong) id cellClass;
-//cellClass setter
-- (void)setCellClass:(id)cellClass;
+
 @end

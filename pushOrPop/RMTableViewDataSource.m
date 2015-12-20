@@ -12,6 +12,7 @@
 
 @interface RMTableViewDataSource()
 
+
 @end
 
 @implementation RMTableViewDataSource
@@ -25,14 +26,27 @@
     return self;
 }
 
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
     return self.dataArray.count;
+}
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
+    return [self.dataArray[section] count];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     RMBaseCell * cell = [tableView dequeueReusableCellWithIdentifier:self.reuseIdentifier forIndexPath:indexPath];
-    cell.textLabel.text = self.dataArray[indexPath.row];
+    [self configureCell:cell atIndexPath:indexPath];
     return cell;
+}
+
+#pragma mark - custom Method
+
+- (void)configureCell:(id)cell atIndexPath:(NSIndexPath *)indexPath{
+    id model = self.dataArray[indexPath.section][indexPath.row];
+    if (self.configureCellBlock) {
+        self.configureCellBlock = (cell, model);
+    }
 }
 
 @end

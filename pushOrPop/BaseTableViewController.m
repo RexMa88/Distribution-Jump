@@ -45,6 +45,9 @@
     //The setting of dataSource
     self.dataSource.dataArray        = self.dataArray;
     self.dataSource.reuseIdentifier  = [self.dataDict objectForKey:kTableViewReuseIdentifier];
+    self.dataSource.configureCellBlock = ^(RMBaseCell *cell, id item){
+        cell.textLabel.text = item;
+    };
     self.tableView.dataSource   = self.dataSource;
 }
 
