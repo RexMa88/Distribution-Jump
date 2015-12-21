@@ -16,7 +16,7 @@
         return [obj boolValue];
     }else{
         if (obj) {
-            Clog(@"The error key is %@",key);
+            
         }
         return NO;
     }
@@ -28,7 +28,7 @@
         return [obj intValue];
     }else{
         if (obj) {
-            Clog(@"The error key is %@",Key);
+            
         }
         return 0;
     }
@@ -40,7 +40,7 @@
         return [obj floatValue];
     }else {
         if (obj) {
-            Clog(@"the key %@ of dic is error", aKey);
+//            Clog(@"the key %@ of dic is error", aKey);
         }
         return 0;
     }
@@ -52,7 +52,7 @@
         return [obj longValue];
     }else {
         if (obj) {
-            Clog(@"the key %@ of dic is error", aKey);
+//            Clog(@"the key %@ of dic is error", aKey);
         }
         return 0;
     }
@@ -64,7 +64,7 @@
         return [obj doubleValue];
     }else {
         if (obj) {
-            Clog(@"the key %@ of dic is error", aKey);
+//            Clog(@"the key %@ of dic is error", aKey);
         }
         return 0;
     }
@@ -76,7 +76,7 @@
         return obj;
     }else {
         if (obj) {
-            Clog(@"the key %@ of dic is error", aKey);
+//            Clog(@"the key %@ of dic is error", aKey);
         }
         return nil;
     }
@@ -88,7 +88,7 @@
         return obj;
     }else {
         if (obj) {
-            Clog(@"the key %@ of dic is error", aKey);
+//            Clog(@"the key %@ of dic is error", aKey);
         }
         return nil;
     }
@@ -100,7 +100,7 @@
         return obj;
     }else {
         if (obj) {
-            Clog(@"the key %@ of dic is error", aKey);
+//            Clog(@"the key %@ of dic is error", aKey);
         }
         return nil;
     }
@@ -129,7 +129,7 @@
         return date;
     }else {
         if (date) {
-            Clog(@"the key %@ of dic is error", aKey);
+//            Clog(@"the key %@ of dic is error", aKey);
         }
         return nil;
     }

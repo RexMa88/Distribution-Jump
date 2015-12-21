@@ -45,7 +45,8 @@
 - (void)configureCell:(id)cell atIndexPath:(NSIndexPath *)indexPath{
     id model = self.dataArray[indexPath.section][indexPath.row];
     if (self.configureCellBlock) {
-        self.configureCellBlock = (cell, model);
+        RMBaseCell *baseCell = (RMBaseCell *)cell;
+        self.configureCellBlock = (baseCell, model);
     }
 }
 

@@ -20,7 +20,7 @@ typedef void (^configureBlock)(id cell, id item);
 
 @property (nonatomic, copy) configureBlock configureCellBlock;
 //dataSource
-@property (nonatomic, strong) NSArray *dataArray;
+@property (nonatomic, strong) NSArray<NSArray *> *dataArray;
 //TableView reuseIndentifier
 @property (nonatomic, strong) NSString *reuseIdentifier;
 //The Class of UITableViewCell
