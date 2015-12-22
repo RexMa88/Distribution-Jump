@@ -14,7 +14,8 @@
 @property (nonatomic, copy) NSString * associateKey;
 //动态加载的associateObject
 @property (nonatomic, strong) id associateObject;
-
+//配置Cell方法
+- (void)buildCell;
 //动态加载
 - (void)setAssociateObject:(id)object withAssociateKey:(NSString *)associateKey;
 //获取动态加载

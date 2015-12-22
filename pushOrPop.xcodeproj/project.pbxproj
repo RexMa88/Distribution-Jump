@@ -20,6 +20,10 @@
 		00FB6F221C04596800EE49F3 /* pushOrPopTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 00FB6F211C04596800EE49F3 /* pushOrPopTests.m */; };
 		00FB6F2D1C04596800EE49F3 /* pushOrPopUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 00FB6F2C1C04596800EE49F3 /* pushOrPopUITests.m */; };
 		A3592BDF1C26E77D00EC94AC /* NSDictionary+Utils.m in Sources */ = {isa = PBXBuildFile; fileRef = A3592BDE1C26E77D00EC94AC /* NSDictionary+Utils.m */; };
+		A3592BE91C28FBA600EC94AC /* UIView+Utils.m in Sources */ = {isa = PBXBuildFile; fileRef = A3592BE81C28FBA600EC94AC /* UIView+Utils.m */; };
+		A3592BEB1C290B5500EC94AC /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A3592BEA1C290B5500EC94AC /* Foundation.framework */; };
+		A3592BED1C290B5B00EC94AC /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A3592BEC1C290B5B00EC94AC /* UIKit.framework */; };
+		A3592BEF1C290B6300EC94AC /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A3592BEE1C290B6300EC94AC /* CoreGraphics.framework */; };
 		A38E25CB1C128D6300A3DCEC /* BaseTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A38E25CA1C128D6300A3DCEC /* BaseTableViewController.m */; };
 		A38E25D21C12A8B900A3DCEC /* RMBaseCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A38E25D11C12A8B900A3DCEC /* RMBaseCell.m */; };
 		A38E25D51C12ABB800A3DCEC /* RMTableViewDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = A38E25D41C12ABB800A3DCEC /* RMTableViewDataSource.m */; };
@@ -73,7 +77,12 @@
 		00FB6F3C1C045C7200EE49F3 /* KNotificationAction.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KNotificationAction.h; sourceTree = "<group>"; };
 		A3592BDD1C26E77C00EC94AC /* NSDictionary+Utils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDictionary+Utils.h"; sourceTree = "<group>"; };
 		A3592BDE1C26E77D00EC94AC /* NSDictionary+Utils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDictionary+Utils.m"; sourceTree = "<group>"; };
-		A3592BE21C26E8B500EC94AC /* IModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IModel.h; sourceTree = "<group>"; };
+		A3592BE71C28FBA600EC94AC /* UIView+Utils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Utils.h"; sourceTree = "<group>"; };
+		A3592BE81C28FBA600EC94AC /* UIView+Utils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Utils.m"; sourceTree = "<group>"; };
+		A3592BEA1C290B5500EC94AC /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		A3592BEC1C290B5B00EC94AC /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		A3592BEE1C290B6300EC94AC /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		A3592BF21C290DBB00EC94AC /* IModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = IModel.h; sourceTree = "<group>"; };
 		A38E25C91C128D6300A3DCEC /* BaseTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseTableViewController.h; sourceTree = "<group>"; };
 		A38E25CA1C128D6300A3DCEC /* BaseTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseTableViewController.m; sourceTree = "<group>"; };
 		A38E25CC1C129B7200A3DCEC /* classInfo.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = classInfo.h; sourceTree = "<group>"; };
@@ -91,6 +100,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A3592BEF1C290B6300EC94AC /* CoreGraphics.framework in Frameworks */,
+				A3592BED1C290B5B00EC94AC /* UIKit.framework in Frameworks */,
+				A3592BEB1C290B5500EC94AC /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -165,6 +177,8 @@
 			children = (
 				A3592BDD1C26E77C00EC94AC /* NSDictionary+Utils.h */,
 				A3592BDE1C26E77D00EC94AC /* NSDictionary+Utils.m */,
+				A3592BE71C28FBA600EC94AC /* UIView+Utils.h */,
+				A3592BE81C28FBA600EC94AC /* UIView+Utils.m */,
 				00929CC31C11376600511DF5 /* CutomButton */,
 			);
 			name = Utils;
@@ -202,6 +216,7 @@
 		00FB6F061C04596800EE49F3 /* pushOrPop */ = {
 			isa = PBXGroup;
 			children = (
+				A3592BF01C290B6600EC94AC /* Framework */,
 				A3592BE01C26E78E00EC94AC /* Model */,
 				A38E25CD1C12A82A00A3DCEC /* View */,
 				00929CC21C11376000511DF5 /* Utils */,
@@ -259,9 +274,19 @@
 		A3592BE01C26E78E00EC94AC /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				A3592BE21C26E8B500EC94AC /* IModel.h */,
+				A3592BF21C290DBB00EC94AC /* IModel.h */,
 			);
 			name = Model;
+			sourceTree = "<group>";
+		};
+		A3592BF01C290B6600EC94AC /* Framework */ = {
+			isa = PBXGroup;
+			children = (
+				A3592BEE1C290B6300EC94AC /* CoreGraphics.framework */,
+				A3592BEC1C290B5B00EC94AC /* UIKit.framework */,
+				A3592BEA1C290B5500EC94AC /* Foundation.framework */,
+			);
+			name = Framework;
 			sourceTree = "<group>";
 		};
 		A38E25CD1C12A82A00A3DCEC /* View */ = {
@@ -417,6 +442,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A3592BE91C28FBA600EC94AC /* UIView+Utils.m in Sources */,
 				00495C1E1C070DD90015DB12 /* SecondViewController.m in Sources */,
 				00FB6F0F1C04596800EE49F3 /* ViewController.m in Sources */,
 				00929CC11C11347400511DF5 /* ThirdViewController.m in Sources */,
@@ -577,6 +603,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = rexma.pushOrPop;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
 			};
 			name = Debug;
 		};
@@ -592,6 +619,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = rexma.pushOrPop;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
 			};
 			name = Release;
 		};

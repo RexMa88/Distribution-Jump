@@ -15,8 +15,18 @@
     self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
     if (self){
         //setting your TableViewCell
+        [self setWidth:kWidth];
+        [self.contentView setWidth:self.width];
+        [self setBackgroundColor:[UIColor clearColor]];
+        [self setSelectionStyle:UITableViewCellSelectionStyleNone];
     }
     return self;
+}
+
+#pragma mark - buildCell
+
+- (void)buildCell{
+    
 }
 
 #pragma mark - associateObject
