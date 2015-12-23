@@ -19,6 +19,8 @@
 #import "TableViewCellClassName.h"//The name of custom TableViewCell
 #import "BaseViewController.h"
 
+#define shareAppdelegate        [UIApplication sharedApplication].delegate
+
 #define NotificationAddObserver(TITLE, SELECTOR) [[NSNotificationCenter defaultCenter] addObserver:self selector:SELECTOR name:TITLE object:nil]
 #define NotificationRemoveObserver(id) [[NSNotificationCenter defaultCenter] removeObserver:id]
 #define NotificationPostNotify(TITLE,OBJ,PARAM) [[NSNotificationCenter defaultCenter] postNotificationName:TITLE object:OBJ userInfo:PARAM]
