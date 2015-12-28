@@ -25,7 +25,11 @@
     }
     return [self init];
 }
-
+/**
+ *  通过runtime获取属性列表
+ *
+ *  @return (NSArray)属性列表
+ */
 -(NSArray *)propertyList
 {
     unsigned int propertyCount;
