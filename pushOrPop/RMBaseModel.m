@@ -10,7 +10,14 @@
 
 @implementation RMBaseModel
 
-
+- (NSString * )description{
+    NSMutableString *value = [[NSMutableString alloc] init];
+    
+    [self.propertyList enumerateObjectsUsingBlock:^(id  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+        [value appendFormat:@"%@:%@,\n",obj,[self valueForKey:obj]];
+    }];
+    return [NSString stringWithFormat:@"%s:%p:\n%@",class_getName([self class]),self,value];
+}
 
 @end
 
@@ -47,5 +54,11 @@
     return array;
 }
 
+- (void)changeValuesWithDic:(NSDictionary *)dict{
+    [self.propertyList enumerateObjectsUsingBlock:^(id  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+        if (dict[obj] == nil) [self setValue:@"" forKey:obj];
+        else [self setValue:[dict objectForKeyNotNull:obj] forKey:obj];
+    }];
+}
 
 @end
