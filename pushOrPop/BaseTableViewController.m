@@ -8,14 +8,8 @@
 
 #import "BaseTableViewController.h"
 #import "RMBaseCell.h"
-#import "RMTableViewDataSource.h"
-#import "RMTableViewDelegate.h"
 
 @interface BaseTableViewController ()
-
-@property (nonatomic, strong) RMTableViewDataSource * dataSource;//UITableViewDataSource
-
-@property (nonatomic, strong) RMTableViewDelegate * delegate;
 
 @end
 
@@ -24,31 +18,29 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    [self customUI];
-    
+//    [self customUI];
 }
 
-- (void)customUI{
+- (void)initializeTableView{
     self.tableView = [[UITableView alloc] initWithFrame:kScreenBounds style:self.tableViewStyle];
-    [self setTableviewDataSource];
-    [self setTableViewDelegate];
     //Actually，The dataSource should be definition
+    [self.view addSubview:self.tableView];
 }
 
-- (void)setTableViewDelegate{
-    self.delegate = [[RMTableViewDelegate alloc] init];
-    self.delegate.dataArray = self.dataArray;
+- (void)setDelegate:(RMTableViewDelegate *)delegate{
+//    self.delegate = [[RMTableViewDelegate alloc] init];
+//    self.delegate.dataArray = self.dataArray;
 }
 
-- (void)setTableviewDataSource{
-    self.dataSource = [[RMTableViewDataSource alloc] init];
+- (void)setDataSource:(RMTableViewDataSource *)dataSource{
+//    self.dataSource = [[RMTableViewDataSource alloc] init];
     //The setting of dataSource
-    self.dataSource.dataArray        = self.dataArray;
-    self.dataSource.reuseIdentifier  = [self.dataDict objectForKey:kTableViewReuseIdentifier];
-    self.dataSource.configureCellBlock = ^(RMBaseCell *cell, id item){
-        cell.textLabel.text = item;
-    };
-    self.tableView.dataSource   = self.dataSource;
+//    self.dataSource.dataArray        = self.dataArray;
+//    self.dataSource.reuseIdentifier  = [self.dataDict objectForKey:kTableViewReuseIdentifier];
+//    self.dataSource.configureCellBlock = ^(RMBaseCell *cell, id item){
+//        cell.textLabel.text = item;
+//    };
+//    self.tableView.dataSource   = self.dataSource;
 }
 
 - (void)registerTableViewClassCell{

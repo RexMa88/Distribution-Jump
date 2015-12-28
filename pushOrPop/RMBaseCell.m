@@ -9,6 +9,7 @@
 #import "RMBaseCell.h"
 #import <objc/runtime.h>
 
+NSString *const cellIdentifier = @"cell";
 @implementation RMBaseCell
 
 - (instancetype)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier{

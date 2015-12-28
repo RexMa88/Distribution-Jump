@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
+extern NSString * const cellIdentifier;
 @interface RMBaseCell : UITableViewCell
 
 //动态加载的Key

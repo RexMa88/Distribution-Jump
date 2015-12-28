@@ -189,10 +189,6 @@
 			children = (
 				A3CDAE1B1C302EB90037F51C /* Cocoa+Utils */,
 				A3CB87131C2B62C700576755 /* RMView+Utils */,
-				A3592BDD1C26E77C00EC94AC /* NSDictionary+Utils.h */,
-				A3592BDE1C26E77D00EC94AC /* NSDictionary+Utils.m */,
-				A3592BE71C28FBA600EC94AC /* UIView+Utils.h */,
-				A3592BE81C28FBA600EC94AC /* UIView+Utils.m */,
 				00929CC31C11376600511DF5 /* CutomButton */,
 			);
 			name = Utils;
@@ -356,6 +352,10 @@
 		A3CDAE1B1C302EB90037F51C /* Cocoa+Utils */ = {
 			isa = PBXGroup;
 			children = (
+				A3592BDD1C26E77C00EC94AC /* NSDictionary+Utils.h */,
+				A3592BDE1C26E77D00EC94AC /* NSDictionary+Utils.m */,
+				A3592BE71C28FBA600EC94AC /* UIView+Utils.h */,
+				A3592BE81C28FBA600EC94AC /* UIView+Utils.m */,
 				A3CDAE1C1C302EEF0037F51C /* NSDictionary+NullReplace.h */,
 				A3CDAE1D1C302EEF0037F51C /* NSDictionary+NullReplace.m */,
 			);

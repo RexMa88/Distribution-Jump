@@ -7,6 +7,7 @@
 //
 
 #import "SecondViewController.h"
+#import "RMBaseCell.h"
 
 @interface SecondViewController ()
 
@@ -18,6 +19,20 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     self.view.backgroundColor = [UIColor redColor];
+}
+
+- (void)initializeTableView{
+    [super initializeTableView];
+}
+
+- (void)setDataSource:(RMTableViewDataSource *)dataSource{
+    self.dataSource = [[RMTableViewDataSource alloc] init];
+    self.dataSource.dataArray = self.dataArray;
+    self.dataSource.reuseIdentifier = @"cellIdentifier";
+    self.dataSource.configureCellBlock = ^(RMBaseCell *cell, id item){
+        
+    };
+    self.tableView.dataSource = self.dataSource;
 }
 
 - (void)didReceiveMemoryWarning {
