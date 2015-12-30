@@ -2,12 +2,12 @@
 //  IModel.h
 //  pushOrPop
 //
-//  Created by Rex Ma on 15/12/22.
+//  Created by Rex Ma on 15/12/29.
 //  Copyright © 2015年 RexMa. All rights reserved.
 //
 
 #import <Foundation/Foundation.h>
-#import "NSDictionary+Utils"
+#import "NSDictionary+Utils.h"
 
 @protocol IModel <NSObject>
 
