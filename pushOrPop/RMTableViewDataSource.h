@@ -14,16 +14,18 @@
 
 #import <Foundation/Foundation.h>
 
+NS_ASSUME_NONNULL_BEGIN
+
 typedef void (^configureBlock)(id cell, id item);
 
 @interface RMTableViewDataSource : NSObject<UITableViewDataSource>
 
 @property (nonatomic, copy) configureBlock configureCellBlock;
-//dataSource
-@property (nonatomic, strong) NSArray<NSArray *> *dataArray;
-//TableView reuseIndentifier
-@property (nonatomic, strong) NSString *reuseIdentifier;
-//The Class of UITableViewCell
-@property (nonatomic, strong) id cellClass;
+
+- (instancetype)initWithDataArray:(NSArray *)dataArray;
+
+- (instancetype)initWithDataArray:(NSArray *)dataArray cell:(id)cell NS_DESIGNATED_INITIALIZER;
 
 @end
+
+NS_ASSUME_NONNULL_END

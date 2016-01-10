@@ -22,6 +22,7 @@
 		A32D26141C32C14D0019D4EF /* RMAsyncQueue.m in Sources */ = {isa = PBXBuildFile; fileRef = A32D26131C32C14D0019D4EF /* RMAsyncQueue.m */; };
 		A345460B1C3CCFA2004281FE /* RMDateShareManager.m in Sources */ = {isa = PBXBuildFile; fileRef = A345460A1C3CCFA2004281FE /* RMDateShareManager.m */; };
 		A345460E1C3CE06E004281FE /* CALayer+Utils.m in Sources */ = {isa = PBXBuildFile; fileRef = A345460D1C3CE06E004281FE /* CALayer+Utils.m */; };
+		A345469D1C420B5B004281FE /* UIViewController+MethodSwizzle.m in Sources */ = {isa = PBXBuildFile; fileRef = A345469C1C420B5B004281FE /* UIViewController+MethodSwizzle.m */; };
 		A3592BDF1C26E77D00EC94AC /* NSDictionary+Utils.m in Sources */ = {isa = PBXBuildFile; fileRef = A3592BDE1C26E77D00EC94AC /* NSDictionary+Utils.m */; };
 		A3592BE91C28FBA600EC94AC /* UIView+Utils.m in Sources */ = {isa = PBXBuildFile; fileRef = A3592BE81C28FBA600EC94AC /* UIView+Utils.m */; };
 		A3592BEB1C290B5500EC94AC /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A3592BEA1C290B5500EC94AC /* Foundation.framework */; };
@@ -89,6 +90,8 @@
 		A345460A1C3CCFA2004281FE /* RMDateShareManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RMDateShareManager.m; sourceTree = "<group>"; };
 		A345460C1C3CE06E004281FE /* CALayer+Utils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CALayer+Utils.h"; sourceTree = "<group>"; };
 		A345460D1C3CE06E004281FE /* CALayer+Utils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "CALayer+Utils.m"; sourceTree = "<group>"; };
+		A345469B1C420B5B004281FE /* UIViewController+MethodSwizzle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+MethodSwizzle.h"; sourceTree = "<group>"; };
+		A345469C1C420B5B004281FE /* UIViewController+MethodSwizzle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+MethodSwizzle.m"; sourceTree = "<group>"; };
 		A3592BDD1C26E77C00EC94AC /* NSDictionary+Utils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDictionary+Utils.h"; sourceTree = "<group>"; };
 		A3592BDE1C26E77D00EC94AC /* NSDictionary+Utils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDictionary+Utils.m"; sourceTree = "<group>"; };
 		A3592BE71C28FBA600EC94AC /* UIView+Utils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Utils.h"; sourceTree = "<group>"; };
@@ -383,6 +386,8 @@
 		A3CDAE1B1C302EB90037F51C /* Cocoa+Utils */ = {
 			isa = PBXGroup;
 			children = (
+				A345469B1C420B5B004281FE /* UIViewController+MethodSwizzle.h */,
+				A345469C1C420B5B004281FE /* UIViewController+MethodSwizzle.m */,
 				A3592BDD1C26E77C00EC94AC /* NSDictionary+Utils.h */,
 				A3592BDE1C26E77D00EC94AC /* NSDictionary+Utils.m */,
 				A3592BE71C28FBA600EC94AC /* UIView+Utils.h */,
@@ -527,6 +532,7 @@
 			files = (
 				A3592BE91C28FBA600EC94AC /* UIView+Utils.m in Sources */,
 				00495C1E1C070DD90015DB12 /* SecondViewController.m in Sources */,
+				A345469D1C420B5B004281FE /* UIViewController+MethodSwizzle.m in Sources */,
 				00FB6F0F1C04596800EE49F3 /* ViewController.m in Sources */,
 				A345460E1C3CE06E004281FE /* CALayer+Utils.m in Sources */,
 				A3CDAE1A1C302D990037F51C /* RMBaseModel.m in Sources */,

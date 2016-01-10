@@ -12,41 +12,70 @@
 
 @interface RMTableViewDataSource()
 
+@property (readwrite, nonatomic, copy) NSMutableArray<NSArray *> *dataArray;
+
+@property (readwrite, nonatomic, strong, nonnull) Class cell;
 
 @end
 
 @implementation RMTableViewDataSource
 
-#pragma mark - UITableViewDataSource
+#pragma mark - The Method of initialization of dataSource
 
-- (id)init{
-    if (self = [super init]) {
+- (instancetype)init{
+    self = [self initWithDataArray:@[]];
+    if (self) {
         
     }
     return self;
 }
 
+- (instancetype)initWithDataArray:(NSArray *)dataArray{
+    self = [self initWithDataArray:dataArray cell:[UITableViewCell class]];
+    if (self) {
+        
+    }
+    return self;
+}
+
+- (instancetype)initWithDataArray:(NSArray *)dataArray cell:(id)cell{
+    self = [super init];
+    if (self) {
+        self.dataArray = [dataArray mutableCopy];
+        self.cell = cell;
+    }
+    return self;
+}
+
+#pragma mark - UITableViewDataSource
+
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
-    return self.dataArray.count;
+//    return self.dataArray.count;
+    return 1;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
-    return [self.dataArray[section] count];
+    return [self.dataArray count];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
-    RMBaseCell * cell = [tableView dequeueReusableCellWithIdentifier:self.reuseIdentifier forIndexPath:indexPath];
-    [self configureCell:cell atIndexPath:indexPath];
-    return cell;
+//    RMBaseCell * cell = [tableView dequeueReusableCellWithIdentifier:NSStringFromClass([RMBaseCell class]) forIndexPath:indexPath];
+//    [self configureCell:cell atIndexPath:indexPath];
+//    return cell;
+    NSString *cellString = NSStringFromClass(self.cell);
+    if ([cellString isEqualToString:@"UITableViewCell"]) {
+        UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellString forIndexPath:indexPath];
+        [self configureCell:cell atIndexPath:indexPath];
+        return cell;
+    }else return nil;
 }
 
 #pragma mark - custom Method
 
 - (void)configureCell:(id)cell atIndexPath:(NSIndexPath *)indexPath{
-    id model = self.dataArray[indexPath.section][indexPath.row];
+    id model = self.dataArray[indexPath.row];
     if (self.configureCellBlock) {
-        RMBaseCell *baseCell = (RMBaseCell *)cell;
-        self.configureCellBlock = (baseCell, model);
+        self.configureCellBlock(cell, model);
     }
 }
 

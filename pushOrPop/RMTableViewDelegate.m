@@ -10,6 +10,14 @@
 
 @implementation RMTableViewDelegate
 
+- (instancetype)initWithDataArray:(NSArray *)dataArray{
+    self = [super init];
+    if (self) {
+        
+    }
+    return self;
+}
+
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     
 }

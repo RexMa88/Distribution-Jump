@@ -21,34 +21,59 @@
 //    [self customUI];
 }
 
-- (void)initializeTableView{
-    self.tableView = [[UITableView alloc] initWithFrame:kScreenBounds style:self.tableViewStyle];
-    //Actually，The dataSource should be definition
-    [self.view addSubview:self.tableView];
+#pragma mark - The Initialization Method of TableView
+
+- (UITableView *)tableViewWithUITableViewStyle:(UITableViewStyle)tableViewStyle{
+    self.tableView = [self tableViewWithFrame:kScreenBounds TableViewStyle:tableViewStyle];
+    return self.tableView;
 }
 
-- (void)setDelegate:(RMTableViewDelegate *)delegate{
-//    self.delegate = [[RMTableViewDelegate alloc] init];
-//    self.delegate.dataArray = self.dataArray;
+- (UITableView *)tableViewWithFrame:(CGRect)frame
+                     TableViewStyle:(UITableViewStyle)tableViewStyle{
+    self.tableView = [self tableViewWithFrame:frame TableViewStyle:tableViewStyle cell:[UITableViewCell class]];
+    return self.tableView;
 }
 
-- (void)setDataSource:(RMTableViewDataSource *)dataSource{
-//    self.dataSource = [[RMTableViewDataSource alloc] init];
-    //The setting of dataSource
-//    self.dataSource.dataArray        = self.dataArray;
-//    self.dataSource.reuseIdentifier  = [self.dataDict objectForKey:kTableViewReuseIdentifier];
-//    self.dataSource.configureCellBlock = ^(RMBaseCell *cell, id item){
-//        cell.textLabel.text = item;
-//    };
-//    self.tableView.dataSource   = self.dataSource;
+- (UITableView *)tableViewWithFrame:(CGRect)frame
+                     TableViewStyle:(UITableViewStyle)tableViewStyle
+                               cell:(id)cell{
+    NSArray *cellArray = @[[cell class]];
+    self.tableView = [self tableViewWithFrame:frame TableViewStyle:tableViewStyle cellArray:cellArray];
+    return self.tableView;
 }
 
-- (void)registerTableViewClassCell{
-    
+- (UITableView *)tableViewWithFrame:(CGRect)frame
+                     TableViewStyle:(UITableViewStyle)tableViewStyle
+                          cellArray:(NSArray *)cellArray{
+    //如果是一种cell
+    self.tableView = [[UITableView alloc] initWithFrame:frame style:tableViewStyle];
+    if (cellArray.count == 1) {
+        Class cellClass = cellArray.firstObject;
+        [self.tableView registerClass:cellClass forCellReuseIdentifier:NSStringFromClass(cellClass)];
+    }else{
+        [cellArray enumerateObjectsUsingBlock:^(Class  _Nonnull cellClass, NSUInteger idx, BOOL * _Nonnull stop) {
+            [self.tableView registerClass:cellClass forCellReuseIdentifier:NSStringFromClass(cellClass)];
+        }];
+    }
+    return self.tableView;
 }
 
-#pragma mark - getter && setter
 
+//- (void)setDelegate:(RMTableViewDelegate *)delegate{
+////    self.delegate = [[RMTableViewDelegate alloc] init];
+////    self.delegate.dataArray = self.dataArray;
+//}
+//
+//- (void)setDataSource:(RMTableViewDataSource *)dataSource{
+////    self.dataSource = [[RMTableViewDataSource alloc] init];
+//    //The setting of dataSource
+////    self.dataSource.dataArray        = self.dataArray;
+////    self.dataSource.reuseIdentifier  = [self.dataDict objectForKey:kTableViewReuseIdentifier];
+////    self.dataSource.configureCellBlock = ^(RMBaseCell *cell, id item){
+////        cell.textLabel.text = item;
+////    };
+////    self.tableView.dataSource   = self.dataSource;
+//}
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

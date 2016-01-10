@@ -10,27 +10,29 @@
 #import "RMTableViewDataSource.h"
 #import "RMTableViewDelegate.h"
 
+/**
+ *  1.默认TableViewCellIdentifier是NSStringFromClass([cell class])
+ *  2.默认dataSource的dataArray的结构是二重数组，即：@[@[...], @[...], ...];
+ *  3.默认所有自定义Cell继承RMBaseCell，如果初始化时，没有说明Cell的类型，则使用UITableViewCell作为重用的cell.
+ *  4.数组默认使用超类(BaseViewController)中的dataArray
+ */
+
+NS_ASSUME_NONNULL_BEGIN
+
 @interface BaseTableViewController : BaseViewController
 //TableView
 @property (nonatomic, strong) UITableView * tableView;
-//TableViewType
-@property (nonatomic, assign) UITableViewStyle tableViewStyle;
-//The number of section,and if the object of dataArray is array,it will return the count of the dataArray
-
-@property (nonatomic, strong) RMTableViewDataSource * dataSource;//UITableViewDataSource
-
-@property (nonatomic, strong) RMTableViewDelegate * delegate;
-/**
- *  The method of custom DataSource && Delegate
- *
- *  @param dataSource custom TableView dataSource
- *  @param delegate   custom TableView delegate
- */
-- (void)setDataSource:(RMTableViewDataSource *)dataSource;
-- (void)setDelegate:(RMTableViewDelegate *)delegate;
 /**
  *  The method of initialize UITableView
  */
-- (void)initializeTableView;
+- (UITableView *)tableViewWithUITableViewStyle:(UITableViewStyle)tableViewStyle;
+//The default Cell is UITableViewCell
+- (UITableView *)tableViewWithFrame:(CGRect)frame TableViewStyle:(UITableViewStyle)tableViewStyle;
+//The default Cell is CustomTableViewCell
+- (UITableView *)tableViewWithFrame:(CGRect)frame TableViewStyle:(UITableViewStyle)tableViewStyle cell:(id)cell;
+//The default Cell is not only one
+- (UITableView *)tableViewWithFrame:(CGRect)frame TableViewStyle:(UITableViewStyle)tableViewStyle cellArray:(NSArray *)cellArray;
 
 @end
+
+NS_ASSUME_NONNULL_END

@@ -20,7 +20,7 @@
  */
 @property (nonatomic, strong) NSDictionary * dataDict;
 
-@property (nonatomic, strong) NSArray * dataArray;
+@property (nonatomic, copy) NSArray * dataArray;
 //动态关联key associate_key
 @property (nonatomic, copy) NSString * associateKey;
 //动态关联值

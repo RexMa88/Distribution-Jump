@@ -10,10 +10,10 @@
 
 @interface RMTableViewDelegate : NSObject<UITableViewDelegate>
 
-@property (nonatomic, strong) NSArray * dataArray;//dataArray
-
 @property (nonatomic, assign) BOOL isPush;
 
 @property (nonatomic, strong) Class viewControllerClass;
+
+- (instancetype)initWithDataArray:(NSArray *)dataArray NS_DESIGNATED_INITIALIZER;
 
 @end

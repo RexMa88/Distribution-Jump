@@ -21,19 +21,6 @@
     self.view.backgroundColor = [UIColor redColor];
 }
 
-- (void)initializeTableView{
-    [super initializeTableView];
-}
-
-- (void)setDataSource:(RMTableViewDataSource *)dataSource{
-    self.dataSource = [[RMTableViewDataSource alloc] init];
-    self.dataSource.dataArray = self.dataArray;
-    self.dataSource.reuseIdentifier = @"cellIdentifier";
-    self.dataSource.configureCellBlock = ^(RMBaseCell *cell, id item){
-        
-    };
-    self.tableView.dataSource = self.dataSource;
-}
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
