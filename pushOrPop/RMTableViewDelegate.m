@@ -7,6 +7,7 @@
 //
 
 #import "RMTableViewDelegate.h"
+#import "SecondViewController.h"
 
 @implementation RMTableViewDelegate
 
@@ -19,7 +20,11 @@
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
-    
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
+    if (self.actBlock) {
+        NSDictionary *obj = @{kDictionaryKeyClass: [SecondViewController class]};
+        self.actBlock(KNotificationPushAction, obj);
+    }
 }
 
 #pragma mark - setter & getter

@@ -8,7 +8,11 @@
 
 #import <Foundation/Foundation.h>
 
+typedef void(^actionBlock)(NSString *action, NSDictionary *obj);
+
 @interface RMTableViewDelegate : NSObject<UITableViewDelegate>
+
+@property (nonatomic, copy) actionBlock actBlock;
 
 @property (nonatomic, assign) BOOL isPush;
 

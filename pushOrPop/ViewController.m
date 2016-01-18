@@ -47,9 +47,14 @@ static NSString * const thirdVCString  = @"ThirdViewController";//跳转的第�
 //    self.dataArray = [array mutableCopy];
     self.dataSource = [[RMTableViewDataSource alloc] initWithDataArray:array cell:[UITableViewCell class]];
     self.dataSource.configureCellBlock = ^(UITableViewCell *cell, NSNumber *num){
-        cell.textLabel.text = [NSString stringWithFormat:@"%ld",[num integerValue]];
+        cell.textLabel.text = [NSString stringWithFormat:@"%ld",(long)[num integerValue]];
     };
     self.delegate = [[RMTableViewDelegate alloc] initWithDataArray:array];
+    __weak typeof(self)weakSelf = self;
+    self.delegate.actBlock = ^(NSString *action, NSDictionary *obj){
+        __strong typeof(weakSelf) strongSelf = weakSelf;
+        NotificationPostNotify(action, strongSelf, obj);
+    };
 }
      
 #pragma mark - custom Method
