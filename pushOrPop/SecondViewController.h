@@ -7,8 +7,13 @@
 //
 
 #import "BaseViewController.h"
-#import "BaseTableViewController.h"
 
-@interface SecondViewController : BaseTableViewController
+NS_ASSUME_NONNULL_BEGIN
+
+@interface SecondViewController : BaseViewController
+
+@property (nonatomic, copy) NSString *name;
 
 @end
+
+NS_ASSUME_NONNULL_END

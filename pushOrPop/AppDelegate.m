@@ -41,9 +41,14 @@
 }
 
 #pragma mark - 初始化分发跳转机制
+
+/**
+ *  初始化通知
+ */
 - (void)initializeNotifications{
     NotificationAddObserver(KNotificationPushAction, @selector(pushViewController:));
     NotificationAddObserver(kNotificationPopAction, @selector(popViewController:));
+    NotificationAddObserver(kNotificationPopToRootAction, @selector(popToRootViewControllerAnimated:));
 }
 
 #pragma mark - 通知处理逻辑
@@ -60,8 +65,25 @@
                                animated:[self getAnimateFromNotification:notification]];
 }
 
+/**
+ *  popViewController Method
+ *
+ *  @param notification 传递Pop行为
+ *  默认animated是YES
+ */
+
 - (void)popViewController:(NSNotification *)notification{
-    
+    //是否有动画
+    id animatedObj = [[notification userInfo] objectForKey:kDictionaryKeyAnimated];
+    BOOL animated = YES;
+    if ([animatedObj isKindOfClass:[NSNumber class]]) {
+        animated = [animatedObj boolValue];
+    }
+    [self.currentNav popViewControllerAnimated:animated];
+}
+
+- (void)popToRootViewController:(NSNotification *)notification{
+    [self.currentNav popToRootViewControllerAnimated:YES];
 }
 
 //是否有动画

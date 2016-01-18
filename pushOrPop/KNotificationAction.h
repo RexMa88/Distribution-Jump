@@ -9,7 +9,8 @@
 #ifndef KNotification_h
 #define KNotification_h
 
-#define KNotificationPushAction @"KNotificationPushAction"
-#define kNotificationPopAction @"kNotificationPopAction"
+#define KNotificationPushAction             @"KNotificationPushAction"
+#define kNotificationPopAction              @"kNotificationPopAction"
+#define kNotificationPopToRootAction        @"kNotificationPopToRootAction"
 
 #endif /* KNotification_h */
