@@ -45,10 +45,4 @@
     }
 }
 
-#pragma mark - setter & getter
-
-- (void)setViewControllerClass:(Class)viewControllerClass{
-    _viewControllerClass = viewControllerClass;
-}
-
 @end
