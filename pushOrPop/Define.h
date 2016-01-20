@@ -10,12 +10,14 @@
 #define Define_h
 
 //跳转界面参数
-#define kDictionaryKeyAnimated              @"animated"
-#define kDictionaryKeyClass                 @"class"
-#define kDictionaryKeySelector              @"selector"
-#define kDictionaryKeyObject                @"object"
-#define kDictionaryKeyAnotherSelector       @"anoterSelector"
-#define kDictionaryKeyAnotherObject         @"anotherObject"
+#define kDictionaryKeyAnimated                      @"animated"
+#define kDictionaryKeyClass                         @"class"
+#define kDictionaryKeySelector                      @"selector"
+#define kDictionaryKeyObject                        @"object"
+#define kDictionaryKeySelectorBackground            @"backgroundRun"
+#define kDictionaryKeyAnotherSelector               @"anoterSelector"
+#define kDictionaryKeyAnotherObject                 @"anotherObject"
+#define kDictionaryKeyAnotherSelectorBackground     @"anotherbackgroundRun"
 //显示高度与宽度
 #define kWidth                              [[UIScreen mainScreen] bounds].size.width
 #define kHeight                             [[UIScreen mainScreen] bounds].size.height

@@ -31,7 +31,7 @@ NS_ASSUME_NONNULL_BEGIN
 //The default Cell is CustomTableViewCell
 - (UITableView *)tableViewWithFrame:(CGRect)frame TableViewStyle:(UITableViewStyle)tableViewStyle cell:(id)cell;
 //The default Cell is not only one
-- (UITableView *)tableViewWithFrame:(CGRect)frame TableViewStyle:(UITableViewStyle)tableViewStyle cellArray:(NSArray *)cellArray;
+- (UITableView *)tableViewWithFrame:(CGRect)frame TableViewStyle:(UITableViewStyle)tableViewStyle cellArray:(nullable NSArray *)cellArray;
 
 @end
 

@@ -13,13 +13,12 @@
 /**
  *  当没有值或者类型错误时
  */
-
-- (NSString *)safeStringObjectForKey:(id)key;
+- (NSString *)safeStringForKey:(id)key;
 - (BOOL)boolForKey:(id)key;
 - (int)intForKey:(id)Key;
 - (float)floatForKey:(id)key;
 - (long)longForKey:(id)key;
-- (double)doubleForkey:(id)key;
+- (double)doubleForKey:(id)key;
 - (NSDictionary *)dictionaryForKey:(id)key;
 - (NSArray *)arrayForKey:(id)key;
 - (NSString *)stringForKey:(id)aKey;

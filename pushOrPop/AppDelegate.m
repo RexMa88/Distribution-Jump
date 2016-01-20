@@ -114,9 +114,10 @@
     
     BaseViewController * viewController = [[controllerClass alloc] init];
     
+    //设置对象1
     SEL selector = [self selector:[[notification userInfo] objectForKey:kDictionaryKeySelector]];
     id object = [[notification userInfo] objectForKey:kDictionaryKeyObject];
-    
+    BOOL backgroundRunning = [[notification userInfo] objectForKey:kDictionaryKeySelectorBackground];
     /**
      *  According to the type of object class
      */
@@ -124,14 +125,27 @@
         viewController.dataDict = (NSDictionary *)object;
     }else if ([object isKindOfClass:[NSArray class]]){
         viewController.dataArray = (NSArray *)object;
-    }else if ([object isKindOfClass:[NSString class]]){
-        viewController.associateKey = (NSString *)object;
     }
     
-    if (selector) {
-#pragma clang diagnostic ignored "-Warc-perfomSelectoe-leaks"
+    if (selector && backgroundRunning) {
+#pragma clang diagnostic ignored "-Warc-performSelector-leaks"
         [viewController performSelector:selector withObject:object];
     }
+    
+    //设置对象2
+    SEL anotherSelector = [self selector:[[notification userInfo] objectForKey:kDictionaryKeyAnotherSelector]];
+    id anotherObject = [[notification userInfo] objectForKey:kDictionaryKeyAnotherObject];
+    
+    if ([object isKindOfClass:[NSDictionary class]]) {
+        viewController.dataDict = (NSDictionary *)object;
+    }else if ([object isKindOfClass:[NSArray class]]){
+        viewController.dataArray = (NSArray *)object;
+    }
+#pragma clang diagnostic ignored "-Warc-perfomSelector-leaks"
+    if (anotherSelector) {
+        [viewController performSelector:anotherSelector withObject:anotherObject];
+    }
+    
     //记录上一级对应的ViewController
     if ([notification object]) {
         [viewController setSrcControllerClass:[[notification object] class]];

@@ -97,14 +97,6 @@ static NSString * const thirdVCString  = @"ThirdViewController";//跳转的第�
     [super setAssociatedObject:object];
 }
 
-- (id)associatedObject{
-    self.associatedObject = [super associatedObject];
-    if (self.associatedObject) {
-        
-    }
-    return self.associatedObject;
-}
-
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.

@@ -14,7 +14,7 @@
 }
 
 - (instancetype)init{
-    self = [self initWithDataArray:nil];
+    self = [self initWithDataArray:@[]];
     
     if (self) {
         
@@ -26,7 +26,7 @@
 - (instancetype)initWithDataArray:(NSArray *)dataArray{
     self = [super init];
     if (self) {
-        dataArr = dataArray != 0 ? dataArray : nil;
+        dataArr = dataArray != 0 ? dataArray : @[];
     }
     return self;
 }

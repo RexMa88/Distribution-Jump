@@ -36,6 +36,8 @@
 		A3CB87161C2B630E00576755 /* RMCellHeaderView+Utils.m in Sources */ = {isa = PBXBuildFile; fileRef = A3CB87151C2B630E00576755 /* RMCellHeaderView+Utils.m */; };
 		A3CDAE1A1C302D990037F51C /* RMBaseModel.m in Sources */ = {isa = PBXBuildFile; fileRef = A3CDAE191C302D990037F51C /* RMBaseModel.m */; };
 		A3CDAE1E1C302EEF0037F51C /* NSDictionary+NullReplace.m in Sources */ = {isa = PBXBuildFile; fileRef = A3CDAE1D1C302EEF0037F51C /* NSDictionary+NullReplace.m */; };
+		A3F316BE1C4F8DA300D11C10 /* libsqlite3.0.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = A3F316BD1C4F8DA300D11C10 /* libsqlite3.0.tbd */; };
+		A3F316C11C4F8FE200D11C10 /* UIImageView+Utils.m in Sources */ = {isa = PBXBuildFile; fileRef = A3F316C01C4F8FE200D11C10 /* UIImageView+Utils.m */; };
 		A3FE6A061C140CF4004DF568 /* RMTableViewDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = A3FE6A051C140CF4004DF568 /* RMTableViewDelegate.m */; };
 /* End PBXBuildFile section */
 
@@ -117,6 +119,9 @@
 		A3CDAE191C302D990037F51C /* RMBaseModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RMBaseModel.m; sourceTree = "<group>"; };
 		A3CDAE1C1C302EEF0037F51C /* NSDictionary+NullReplace.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDictionary+NullReplace.h"; sourceTree = "<group>"; };
 		A3CDAE1D1C302EEF0037F51C /* NSDictionary+NullReplace.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDictionary+NullReplace.m"; sourceTree = "<group>"; };
+		A3F316BD1C4F8DA300D11C10 /* libsqlite3.0.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.0.tbd; path = usr/lib/libsqlite3.0.tbd; sourceTree = SDKROOT; };
+		A3F316BF1C4F8FE200D11C10 /* UIImageView+Utils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImageView+Utils.h"; sourceTree = "<group>"; };
+		A3F316C01C4F8FE200D11C10 /* UIImageView+Utils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImageView+Utils.m"; sourceTree = "<group>"; };
 		A3FE6A041C140CF4004DF568 /* RMTableViewDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RMTableViewDelegate.h; sourceTree = "<group>"; };
 		A3FE6A051C140CF4004DF568 /* RMTableViewDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RMTableViewDelegate.m; sourceTree = "<group>"; };
 		A3FE6A071C140DEA004DF568 /* TableViewCellClassName.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TableViewCellClassName.h; sourceTree = "<group>"; };
@@ -127,6 +132,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A3F316BE1C4F8DA300D11C10 /* libsqlite3.0.tbd in Frameworks */,
 				A3592BEF1C290B6300EC94AC /* CoreGraphics.framework in Frameworks */,
 				A3592BED1C290B5B00EC94AC /* UIKit.framework in Frameworks */,
 				A3592BEB1C290B5500EC94AC /* Foundation.framework in Frameworks */,
@@ -337,6 +343,7 @@
 		A3592BF01C290B6600EC94AC /* Framework */ = {
 			isa = PBXGroup;
 			children = (
+				A3F316BD1C4F8DA300D11C10 /* libsqlite3.0.tbd */,
 				A3592BEE1C290B6300EC94AC /* CoreGraphics.framework */,
 				A3592BEC1C290B5B00EC94AC /* UIKit.framework */,
 				A3592BEA1C290B5500EC94AC /* Foundation.framework */,
@@ -403,6 +410,8 @@
 				A345469C1C420B5B004281FE /* UIViewController+MethodSwizzle.m */,
 				A3592BDD1C26E77C00EC94AC /* NSDictionary+Utils.h */,
 				A3592BDE1C26E77D00EC94AC /* NSDictionary+Utils.m */,
+				A3F316BF1C4F8FE200D11C10 /* UIImageView+Utils.h */,
+				A3F316C01C4F8FE200D11C10 /* UIImageView+Utils.m */,
 				A3592BE71C28FBA600EC94AC /* UIView+Utils.h */,
 				A3592BE81C28FBA600EC94AC /* UIView+Utils.m */,
 				A3CDAE1C1C302EEF0037F51C /* NSDictionary+NullReplace.h */,
@@ -547,6 +556,7 @@
 				00495C1E1C070DD90015DB12 /* SecondViewController.m in Sources */,
 				A345469D1C420B5B004281FE /* UIViewController+MethodSwizzle.m in Sources */,
 				00FB6F0F1C04596800EE49F3 /* ViewController.m in Sources */,
+				A3F316C11C4F8FE200D11C10 /* UIImageView+Utils.m in Sources */,
 				A345460E1C3CE06E004281FE /* CALayer+Utils.m in Sources */,
 				A3CDAE1A1C302D990037F51C /* RMBaseModel.m in Sources */,
 				00929CC11C11347400511DF5 /* ThirdViewController.m in Sources */,
