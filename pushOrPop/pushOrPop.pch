@@ -26,4 +26,19 @@
 #define NotificationRemoveObserver(id) [[NSNotificationCenter defaultCenter] removeObserver:id]
 #define NotificationPostNotify(TITLE,OBJ,PARAM) [[NSNotificationCenter defaultCenter] postNotificationName:TITLE object:OBJ userInfo:PARAM]
 
+//safe Main Thread async & sync 模仿SDWebImage中的安全主线程（异步、同步）
+#define dispatch_main_sync_safe(block)\
+        if ([NSThread isMainThread]) {\
+            block();\
+        }else{\
+            dispatch_sync(dispatch_get_main_queue(), block());\
+        }
+
+#define dispatch_main_async_safe(block)\
+    if ([NSThread isMainThread]) {\
+        block();\
+    }else{\
+        dispatch_async(dispatch_get_main_queue(), block());\
+    }
+
 #endif /* pushOrPop_pch */
