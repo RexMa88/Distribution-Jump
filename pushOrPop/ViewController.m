@@ -38,6 +38,8 @@ static NSString * const thirdVCString  = @"ThirdViewController";//跳转的第�
     [self customUI];
 }
 
+#pragma mark
+
 #pragma mark - Calculate Data by using RunLoop(Height,Data,Date....)
 /**
  *  利用RunLoop的CFRunLoopActivity在RunLoop即将休眠的时候进行数据处理，现在只是进行了一个简单的处理添加，还未进行深度封装.
@@ -50,13 +52,20 @@ static NSString * const thirdVCString  = @"ThirdViewController";//跳转的第�
                                                                        kCFRunLoopBeforeWaiting,
                                                                        true,
                                                                        0, ^(CFRunLoopObserverRef observer, CFRunLoopActivity activity) {
-                                                                           NSLog(@"Please calculate data...");
-//                                                                           for (int i = 0; i < 100; i++) {
-//                                                                               dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
-//                                                                                   NSLog(@"The Thread is %@",[NSThread currentThread]);
-//                                                                                   NSLog(@"Hi,Let's Calculate");
-//                                                                               });
+                                                                           
+//                                                                           if (condition) {
+//                                                                               CFRunLoopRemoveObserver(runLoop, observer, kCFRunLoopDefaultMode);
+//                                                                               CFRelease(observer);
+//                                                                               return ;
 //                                                                           }
+                                                                           
+                                                                           NSLog(@"Please calculate data...");
+                                                                           for (int i = 0; i < 100; i++) {
+                                                                               dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+                                                                                   NSLog(@"The Thread is %@",[NSThread currentThread]);
+                                                                                   NSLog(@"Hi,Let's Calculate");
+                                                                               });
+                                                                           }
                                                                        });
     CFRunLoopAddObserver(runLoop, observer, runLoopMode);
 }
