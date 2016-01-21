@@ -38,6 +38,14 @@
 		A3CDAE1E1C302EEF0037F51C /* NSDictionary+NullReplace.m in Sources */ = {isa = PBXBuildFile; fileRef = A3CDAE1D1C302EEF0037F51C /* NSDictionary+NullReplace.m */; };
 		A3F316BE1C4F8DA300D11C10 /* libsqlite3.0.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = A3F316BD1C4F8DA300D11C10 /* libsqlite3.0.tbd */; };
 		A3F316C11C4F8FE200D11C10 /* UIImageView+Utils.m in Sources */ = {isa = PBXBuildFile; fileRef = A3F316C01C4F8FE200D11C10 /* UIImageView+Utils.m */; };
+		A3F316CC1C50B8B100D11C10 /* AMap.bundle in Resources */ = {isa = PBXBuildFile; fileRef = A3F316C91C50B8B000D11C10 /* AMap.bundle */; };
+		A3F316CD1C50B8B100D11C10 /* AMapLocationKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A3F316CA1C50B8B000D11C10 /* AMapLocationKit.framework */; };
+		A3F316CE1C50B8B100D11C10 /* MAMapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A3F316CB1C50B8B100D11C10 /* MAMapKit.framework */; };
+		A3F316D01C50B8FF00D11C10 /* CoreTelephony.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A3F316CF1C50B8FE00D11C10 /* CoreTelephony.framework */; };
+		A3F316D21C50B90C00D11C10 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A3F316D11C50B90C00D11C10 /* SystemConfiguration.framework */; };
+		A3F316D41C50B91500D11C10 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A3F316D31C50B91500D11C10 /* Security.framework */; };
+		A3F316D61C50B91E00D11C10 /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = A3F316D51C50B91E00D11C10 /* libz.tbd */; };
+		A3F316D81C50B92700D11C10 /* libstdc++.6.0.9.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = A3F316D71C50B92700D11C10 /* libstdc++.6.0.9.tbd */; };
 		A3FE6A061C140CF4004DF568 /* RMTableViewDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = A3FE6A051C140CF4004DF568 /* RMTableViewDelegate.m */; };
 /* End PBXBuildFile section */
 
@@ -122,6 +130,14 @@
 		A3F316BD1C4F8DA300D11C10 /* libsqlite3.0.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.0.tbd; path = usr/lib/libsqlite3.0.tbd; sourceTree = SDKROOT; };
 		A3F316BF1C4F8FE200D11C10 /* UIImageView+Utils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImageView+Utils.h"; sourceTree = "<group>"; };
 		A3F316C01C4F8FE200D11C10 /* UIImageView+Utils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImageView+Utils.m"; sourceTree = "<group>"; };
+		A3F316C91C50B8B000D11C10 /* AMap.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = AMap.bundle; path = Framework/AMap.bundle; sourceTree = "<group>"; };
+		A3F316CA1C50B8B000D11C10 /* AMapLocationKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AMapLocationKit.framework; path = Framework/AMapLocationKit.framework; sourceTree = "<group>"; };
+		A3F316CB1C50B8B100D11C10 /* MAMapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MAMapKit.framework; path = Framework/MAMapKit.framework; sourceTree = "<group>"; };
+		A3F316CF1C50B8FE00D11C10 /* CoreTelephony.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreTelephony.framework; path = System/Library/Frameworks/CoreTelephony.framework; sourceTree = SDKROOT; };
+		A3F316D11C50B90C00D11C10 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		A3F316D31C50B91500D11C10 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
+		A3F316D51C50B91E00D11C10 /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
+		A3F316D71C50B92700D11C10 /* libstdc++.6.0.9.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libstdc++.6.0.9.tbd"; path = "usr/lib/libstdc++.6.0.9.tbd"; sourceTree = SDKROOT; };
 		A3FE6A041C140CF4004DF568 /* RMTableViewDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RMTableViewDelegate.h; sourceTree = "<group>"; };
 		A3FE6A051C140CF4004DF568 /* RMTableViewDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RMTableViewDelegate.m; sourceTree = "<group>"; };
 		A3FE6A071C140DEA004DF568 /* TableViewCellClassName.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TableViewCellClassName.h; sourceTree = "<group>"; };
@@ -132,7 +148,14 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A3F316D81C50B92700D11C10 /* libstdc++.6.0.9.tbd in Frameworks */,
+				A3F316D61C50B91E00D11C10 /* libz.tbd in Frameworks */,
+				A3F316D41C50B91500D11C10 /* Security.framework in Frameworks */,
+				A3F316D21C50B90C00D11C10 /* SystemConfiguration.framework in Frameworks */,
+				A3F316D01C50B8FF00D11C10 /* CoreTelephony.framework in Frameworks */,
+				A3F316CE1C50B8B100D11C10 /* MAMapKit.framework in Frameworks */,
 				A3F316BE1C4F8DA300D11C10 /* libsqlite3.0.tbd in Frameworks */,
+				A3F316CD1C50B8B100D11C10 /* AMapLocationKit.framework in Frameworks */,
 				A3592BEF1C290B6300EC94AC /* CoreGraphics.framework in Frameworks */,
 				A3592BED1C290B5B00EC94AC /* UIKit.framework in Frameworks */,
 				A3592BEB1C290B5500EC94AC /* Foundation.framework in Frameworks */,
@@ -344,6 +367,14 @@
 		A3592BF01C290B6600EC94AC /* Framework */ = {
 			isa = PBXGroup;
 			children = (
+				A3F316D71C50B92700D11C10 /* libstdc++.6.0.9.tbd */,
+				A3F316D51C50B91E00D11C10 /* libz.tbd */,
+				A3F316D31C50B91500D11C10 /* Security.framework */,
+				A3F316D11C50B90C00D11C10 /* SystemConfiguration.framework */,
+				A3F316CF1C50B8FE00D11C10 /* CoreTelephony.framework */,
+				A3F316C91C50B8B000D11C10 /* AMap.bundle */,
+				A3F316CA1C50B8B000D11C10 /* AMapLocationKit.framework */,
+				A3F316CB1C50B8B100D11C10 /* MAMapKit.framework */,
 				A3F316BD1C4F8DA300D11C10 /* libsqlite3.0.tbd */,
 				A3592BEE1C290B6300EC94AC /* CoreGraphics.framework */,
 				A3592BEC1C290B5B00EC94AC /* UIKit.framework */,
@@ -535,6 +566,7 @@
 			files = (
 				00FB6F171C04596800EE49F3 /* LaunchScreen.storyboard in Resources */,
 				00FB6F141C04596800EE49F3 /* Assets.xcassets in Resources */,
+				A3F316CC1C50B8B100D11C10 /* AMap.bundle in Resources */,
 				00FB6F121C04596800EE49F3 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -724,6 +756,11 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/pushOrPop",
+					"$(PROJECT_DIR)/pushOrPop/Framework",
+				);
 				GCC_INCREASE_PRECOMPILED_HEADER_SHARING = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/pushOrPop/pushOrPop.pch";
@@ -740,6 +777,11 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/pushOrPop",
+					"$(PROJECT_DIR)/pushOrPop/Framework",
+				);
 				GCC_INCREASE_PRECOMPILED_HEADER_SHARING = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/pushOrPop/pushOrPop.pch";

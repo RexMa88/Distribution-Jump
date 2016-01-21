@@ -33,8 +33,32 @@ static NSString * const thirdVCString  = @"ThirdViewController";//跳转的第�
     [super viewDidLoad];
 //     Do any additional setup after loading the view, typically from a nib.
     self.view.backgroundColor = [UIColor whiteColor];
+    [self runLoopCalculateData];
     [self customDataSourceAndDelegate];
     [self customUI];
+}
+
+#pragma mark - Calculate Data by using RunLoop(Height,Data,Date....)
+/**
+ *  利用RunLoop的CFRunLoopActivity在RunLoop即将休眠的时候进行数据处理，现在只是进行了一个简单的处理添加，还未进行深度封装.
+ *  在RunLoop的DefaultMode下进行异步并发处理，如果加上分发源进行处理，处理速度将十分可观。
+ */
+- (void)runLoopCalculateData{
+    CFRunLoopRef runLoop = CFRunLoopGetCurrent();
+    CFStringRef runLoopMode = kCFRunLoopDefaultMode;
+    CFRunLoopObserverRef observer = CFRunLoopObserverCreateWithHandler(kCFAllocatorDefault,
+                                                                       kCFRunLoopBeforeWaiting,
+                                                                       true,
+                                                                       0, ^(CFRunLoopObserverRef observer, CFRunLoopActivity activity) {
+                                                                           NSLog(@"Please calculate data...");
+//                                                                           for (int i = 0; i < 100; i++) {
+//                                                                               dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+//                                                                                   NSLog(@"The Thread is %@",[NSThread currentThread]);
+//                                                                                   NSLog(@"Hi,Let's Calculate");
+//                                                                               });
+//                                                                           }
+                                                                       });
+    CFRunLoopAddObserver(runLoop, observer, runLoopMode);
 }
 
 #pragma mark - DataSource && Delegate
