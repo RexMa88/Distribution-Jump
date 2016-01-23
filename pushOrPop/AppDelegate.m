@@ -10,6 +10,9 @@
 #import "BaseViewController.h"
 #import "ViewController.h"
 
+#import <MAMapKit/MAMapKit.h>
+#import <AMapLocationKit/AMapLocationKit.h>
+
 @interface AppDelegate ()
 
 @end
@@ -20,12 +23,23 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
     
+    //initializeAMap
+    [self configureAPIKey];
     //initializeControllers
     [self initializeControllers];
     //initializeNotifications
     [self initializeNotifications];
     
     return YES;
+}
+
+#pragma mark - AMap
+
+- (void)configureAPIKey{
+    if ([AMapAPIKey length]) {
+        [MAMapServices sharedServices].apiKey = AMapAPIKey;
+        [AMapLocationServices sharedServices].apiKey = AMapAPIKey;
+    }
 }
 
 #pragma mark - 初始化界面

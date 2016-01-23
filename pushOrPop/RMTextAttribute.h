@@ -6,6 +6,9 @@
 //  Copyright © 2016年 RexMa. All rights reserved.
 //
 
+/**
+ *  利用iOS 7之后的TextKit搭建的文字库，正在努力ing....
+ */
 #import <Foundation/Foundation.h>
 
 @interface RMTextAttribute : NSObject

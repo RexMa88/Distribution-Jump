@@ -47,6 +47,7 @@
 		A3F316D61C50B91E00D11C10 /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = A3F316D51C50B91E00D11C10 /* libz.tbd */; };
 		A3F316D81C50B92700D11C10 /* libstdc++.6.0.9.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = A3F316D71C50B92700D11C10 /* libstdc++.6.0.9.tbd */; };
 		A3F316DC1C50CA9700D11C10 /* RMTextAttribute.m in Sources */ = {isa = PBXBuildFile; fileRef = A3F316DB1C50CA9700D11C10 /* RMTextAttribute.m */; };
+		A3F316E31C535B8F00D11C10 /* RMLocationShareManager.m in Sources */ = {isa = PBXBuildFile; fileRef = A3F316E21C535B8F00D11C10 /* RMLocationShareManager.m */; };
 		A3FE6A061C140CF4004DF568 /* RMTableViewDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = A3FE6A051C140CF4004DF568 /* RMTableViewDelegate.m */; };
 /* End PBXBuildFile section */
 
@@ -141,6 +142,8 @@
 		A3F316D71C50B92700D11C10 /* libstdc++.6.0.9.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libstdc++.6.0.9.tbd"; path = "usr/lib/libstdc++.6.0.9.tbd"; sourceTree = SDKROOT; };
 		A3F316DA1C50CA9700D11C10 /* RMTextAttribute.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RMTextAttribute.h; sourceTree = "<group>"; };
 		A3F316DB1C50CA9700D11C10 /* RMTextAttribute.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RMTextAttribute.m; sourceTree = "<group>"; };
+		A3F316E11C535B8F00D11C10 /* RMLocationShareManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RMLocationShareManager.h; sourceTree = "<group>"; };
+		A3F316E21C535B8F00D11C10 /* RMLocationShareManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RMLocationShareManager.m; sourceTree = "<group>"; };
 		A3FE6A041C140CF4004DF568 /* RMTableViewDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RMTableViewDelegate.h; sourceTree = "<group>"; };
 		A3FE6A051C140CF4004DF568 /* RMTableViewDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RMTableViewDelegate.m; sourceTree = "<group>"; };
 		A3FE6A071C140DEA004DF568 /* TableViewCellClassName.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TableViewCellClassName.h; sourceTree = "<group>"; };
@@ -343,6 +346,7 @@
 		A34546051C3CCB1C004281FE /* Singleton */ = {
 			isa = PBXGroup;
 			children = (
+				A3F316DD1C5358F000D11C10 /* LocationSingleton */,
 				A34546091C3CCFA2004281FE /* RMDateShareManager.h */,
 				A345460A1C3CCFA2004281FE /* RMDateShareManager.m */,
 			);
@@ -472,6 +476,15 @@
 			name = RMTextKit;
 			sourceTree = "<group>";
 		};
+		A3F316DD1C5358F000D11C10 /* LocationSingleton */ = {
+			isa = PBXGroup;
+			children = (
+				A3F316E11C535B8F00D11C10 /* RMLocationShareManager.h */,
+				A3F316E21C535B8F00D11C10 /* RMLocationShareManager.m */,
+			);
+			name = LocationSingleton;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -541,6 +554,11 @@
 					00FB6F031C04596800EE49F3 = {
 						CreatedOnToolsVersion = 7.0.1;
 						DevelopmentTeam = ZRU9NS7944;
+						SystemCapabilities = {
+							com.apple.BackgroundModes = {
+								enabled = 1;
+							};
+						};
 					};
 					00FB6F1C1C04596800EE49F3 = {
 						CreatedOnToolsVersion = 7.0.1;
@@ -624,6 +642,7 @@
 				A3CB87121C2B60E400576755 /* RMCellHeaderView.m in Sources */,
 				A38E25D21C12A8B900A3DCEC /* RMBaseCell.m in Sources */,
 				A3CDAE1E1C302EEF0037F51C /* NSDictionary+NullReplace.m in Sources */,
+				A3F316E31C535B8F00D11C10 /* RMLocationShareManager.m in Sources */,
 				A3592BDF1C26E77D00EC94AC /* NSDictionary+Utils.m in Sources */,
 				A3F316DC1C50CA9700D11C10 /* RMTextAttribute.m in Sources */,
 				00929CC61C11377C00511DF5 /* pushButton.m in Sources */,

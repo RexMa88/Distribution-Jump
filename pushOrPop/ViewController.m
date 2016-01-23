@@ -8,12 +8,13 @@
 
 #import "ViewController.h"
 #import "pushButton.h"
+#import "RMLocationShareManager.h"
 
 static NSString * const secondVCString = @"SecondViewController";//跳转的第二个界面字段
 
 static NSString * const thirdVCString  = @"ThirdViewController";//跳转的第三个界面字段
 
-@interface ViewController ()
+@interface ViewController ()<AMapLocationManagerDelegate>
 
 //The customDataSource of TableView
 @property (nonatomic, strong) RMTableViewDataSource * dataSource;
@@ -29,16 +30,33 @@ static NSString * const thirdVCString  = @"ThirdViewController";//跳转的第�
 
 @implementation ViewController
 
+//+ (void)load{
+//    //启动定位模块
+//    __block id observer = [[NSNotificationCenter defaultCenter] addObserverForName:UIApplicationDidFinishLaunchingNotification
+//                                                      object:nil
+//                                                       queue:nil
+//                                                  usingBlock:^(NSNotification * _Nonnull note) {
+//                                                      [RMLocationShareManager shareManager];
+//                                                      //Don't forget removeObserver
+//                                                      [[NSNotificationCenter defaultCenter] removeObserver:observer];
+//                                                  }];
+//}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
 //     Do any additional setup after loading the view, typically from a nib.
     self.view.backgroundColor = [UIColor whiteColor];
+    [self configureLocation];
     [self runLoopCalculateData];
     [self customDataSourceAndDelegate];
     [self customUI];
 }
 
-#pragma mark
+#pragma mark - Location
+
+- (void)configureLocation{
+    [[RMLocationShareManager shareManager] setDelegate:self];
+}
 
 #pragma mark - Calculate Data by using RunLoop(Height,Data,Date....)
 /**
@@ -59,13 +77,13 @@ static NSString * const thirdVCString  = @"ThirdViewController";//跳转的第�
 //                                                                               return ;
 //                                                                           }
                                                                            
-                                                                           NSLog(@"Please calculate data...");
-                                                                           for (int i = 0; i < 100; i++) {
-                                                                               dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
-                                                                                   NSLog(@"The Thread is %@",[NSThread currentThread]);
-                                                                                   NSLog(@"Hi,Let's Calculate");
-                                                                               });
-                                                                           }
+//                                                                           NSLog(@"Please calculate data...");
+//                                                                           for (int i = 0; i < 100; i++) {
+//                                                                               dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+//                                                                                   NSLog(@"The Thread is %@",[NSThread currentThread]);
+//                                                                                   NSLog(@"Hi,Let's Calculate");
+//                                                                               });
+//                                                                           }
                                                                        });
     CFRunLoopAddObserver(runLoop, observer, runLoopMode);
 }
@@ -88,6 +106,12 @@ static NSString * const thirdVCString  = @"ThirdViewController";//跳转的第�
         __strong typeof(weakSelf) strongSelf = weakSelf;
         NotificationPostNotify(action, strongSelf, obj);
     };
+}
+
+#pragma mark - AMapLocationManagerDelegate
+
+- (void)amapLocationManager:(AMapLocationManager *)manager didUpdateLocation:(CLLocation *)location{
+    NSLog(@"The Location is %f, %f", location.coordinate.latitude, location.coordinate.longitude);
 }
      
 #pragma mark - custom Method
