@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9531" systemVersion="15C50" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="RMPOITableViewCell" rowHeight="98" id="KGk-i7-Jjw" customClass="RMPOITableViewCell">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="98"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="97"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6pU-cz-r5d">
+                        <rect key="frame" x="8" y="8" width="304" height="27"/>
+                        <color key="backgroundColor" red="0.93333333330000001" green="0.33725490200000002" blue="0.3294117647" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="27" id="qdV-xh-u59"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="18"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Address" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pP7-03-Exn">
+                        <rect key="frame" x="8" y="43" width="304" height="20"/>
+                        <color key="backgroundColor" red="0.98913222551345825" green="0.78481578826904297" blue="0.013113127090036869" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="20" id="ik0-Ni-Ll9"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Telephone" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MC6-GM-T0W">
+                        <rect key="frame" x="8" y="69" width="191" height="20"/>
+                        <color key="backgroundColor" red="0.16744565963745117" green="0.74933940172195435" blue="0.94209188222885132" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="MC6-GM-T0W" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="8" id="1TB-K5-gHp"/>
+                    <constraint firstAttribute="bottom" secondItem="MC6-GM-T0W" secondAttribute="bottom" constant="8" id="4CA-5P-yLr"/>
+                    <constraint firstItem="6pU-cz-r5d" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="8" id="4n9-HF-6Ci"/>
+                    <constraint firstItem="pP7-03-Exn" firstAttribute="top" secondItem="6pU-cz-r5d" secondAttribute="bottom" constant="8" id="6ZV-yg-aJg"/>
+                    <constraint firstAttribute="trailing" secondItem="6pU-cz-r5d" secondAttribute="trailing" constant="8" id="FR5-ph-2Fg"/>
+                    <constraint firstItem="6pU-cz-r5d" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="8" id="R3m-gh-C7K"/>
+                    <constraint firstAttribute="trailing" secondItem="pP7-03-Exn" secondAttribute="trailing" constant="8" id="UK8-BB-d7g"/>
+                    <constraint firstItem="MC6-GM-T0W" firstAttribute="top" secondItem="pP7-03-Exn" secondAttribute="bottom" constant="6" id="cbA-DL-5Tr"/>
+                    <constraint firstItem="pP7-03-Exn" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="8" id="hKP-Ac-Ygp"/>
+                    <constraint firstAttribute="trailing" secondItem="MC6-GM-T0W" secondAttribute="trailing" constant="121" id="xGQ-Wu-7ju"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="addressLabel" destination="pP7-03-Exn" id="RRh-A5-LXP"/>
+                <outlet property="nameLabel" destination="6pU-cz-r5d" id="SKH-0R-ynF"/>
+                <outlet property="telLbael" destination="MC6-GM-T0W" id="kSc-HR-yRl"/>
+            </connections>
+            <point key="canvasLocation" x="410" y="341"/>
+        </tableViewCell>
+    </objects>
+</document>
