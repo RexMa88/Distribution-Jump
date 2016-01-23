@@ -8,23 +8,25 @@
 
 #import "ViewController.h"
 #import "pushButton.h"
+
 #import "RMLocationShareManager.h"
+#import <AMapSearchKit/AMapSearchKit.h>
+#import "RMPOISearchRequest.h"
 
 static NSString * const secondVCString = @"SecondViewController";//跳转的第二个界面字段
 
 static NSString * const thirdVCString  = @"ThirdViewController";//跳转的第三个界面字段
 
-@interface ViewController ()<AMapLocationManagerDelegate>
+@interface ViewController ()<AMapLocationManagerDelegate, AMapSearchDelegate>
 
 //The customDataSource of TableView
 @property (nonatomic, strong) RMTableViewDataSource * dataSource;
 
 @property (nonatomic, strong) RMTableViewDelegate * delegate;
 
-//@property (nonatomic, strong) pushButton * pushSecondBtn;//push seconde按钮
-//@property (nonatomic, strong) pushButton * pushthirdBtn;
-
 @property (nonatomic, weak) id associatedObject;//关联变量
+
+@property (nonatomic, strong) AMapSearchAPI *search;//搜索API
 
 @end
 
@@ -48,13 +50,16 @@ static NSString * const thirdVCString  = @"ThirdViewController";//跳转的第�
     self.view.backgroundColor = [UIColor whiteColor];
     [self configureLocation];
     [self runLoopCalculateData];
-    [self customDataSourceAndDelegate];
-    [self customUI];
+//    [self customUI];
 }
 
 #pragma mark - Location
 
 - (void)configureLocation{
+    //The AMapSearchAPI of Configuration
+    self.search = [[AMapSearchAPI alloc] init];
+    self.search.delegate = self;
+    //定位单例
     [[RMLocationShareManager shareManager] setDelegate:self];
 }
 
@@ -88,53 +93,42 @@ static NSString * const thirdVCString  = @"ThirdViewController";//跳转的第�
     CFRunLoopAddObserver(runLoop, observer, runLoopMode);
 }
 
-#pragma mark - DataSource && Delegate
-
-- (void)customDataSourceAndDelegate{
-    NSMutableArray *array = [NSMutableArray array];
-    for (int i = 0; i < 100; i++) {
-        [array addObject:[NSNumber numberWithInt:i]];
-    }
-//    self.dataArray = [array mutableCopy];
-    self.dataSource = [[RMTableViewDataSource alloc] initWithDataArray:array cell:[UITableViewCell class]];
-    self.dataSource.configureCellBlock = ^(UITableViewCell *cell, NSNumber *num){
-        cell.textLabel.text = [NSString stringWithFormat:@"%ld",(long)[num integerValue]];
-    };
-    self.delegate = [[RMTableViewDelegate alloc] initWithDataArray:array];
-    __weak typeof(self)weakSelf = self;
-    self.delegate.actBlock = ^(NSString *action, NSDictionary *obj){
-        __strong typeof(weakSelf) strongSelf = weakSelf;
-        NotificationPostNotify(action, strongSelf, obj);
-    };
-}
-
 #pragma mark - AMapLocationManagerDelegate
 
 - (void)amapLocationManager:(AMapLocationManager *)manager didUpdateLocation:(CLLocation *)location{
-    NSLog(@"The Location is %f, %f", location.coordinate.latitude, location.coordinate.longitude);
+//    NSLog(@"The Location is %f, %f", location.coordinate.latitude, location.coordinate.longitude);
+    //使用单例模式，虽然会全局占用内存，但比每次调用该代理重复创建要高效
+    [[RMLocationShareManager shareManager] stopUpdatingLocation];
+    [self.search AMapPOIAroundSearch:[[RMPOISearchRequest shareManager] initWithLocation:location
+                                               keywords:@"咖啡"
+                                                  types:@"餐饮服务"]];
+}
+
+#pragma mark - AMapSearchDelegate
+
+- (void)onPOISearchDone:(AMapPOISearchBaseRequest *)request response:(AMapPOISearchResponse *)response{
+    if (response.pois.count) {
+        //The configuration of RMTableViewDataSource
+        self.dataSource = [[RMTableViewDataSource alloc] initWithDataArray:response.pois cell:[UITableViewCell class]];
+        self.dataSource.configureCellBlock = ^(UITableViewCell *cell, AMapPOI *poi){
+            cell.textLabel.text = [NSString stringWithFormat:@"%@",poi.name];
+        };
+        //The configuration of RMTableViewDelegate
+        self.delegate = [[RMTableViewDelegate alloc] initWithDataArray:response.pois];
+        __weak typeof(self)weakSelf = self;
+        self.delegate.actBlock = ^(NSString *action, NSDictionary *obj){
+            __strong typeof(weakSelf) strongSelf = weakSelf;
+            NotificationPostNotify(action, strongSelf, obj);
+        };
+        
+        [self customUI];
+    }
 }
      
 #pragma mark - custom Method
 
 - (void)customUI{
-    //second push button
-//    self.pushSecondBtn = [[pushButton alloc] initWithFrame:CGRectMake(0, 100, kWidth, 30)];
-//    [self.pushSecondBtn setTitle:@"pushSecond" forState:UIControlStateNormal];
-//    [self.pushSecondBtn setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
-//    self.pushSecondBtn.backgroundColor = [UIColor blueColor];
-//    self.pushSecondBtn.pushVCStr = secondVCString;
-//    [self.pushSecondBtn addTarget:self action:@selector(pushAction:) forControlEvents:UIControlEventTouchUpInside];
-//    [self.view addSubview:self.pushSecondBtn];
-//    //third push button
-//    self.pushthirdBtn = [pushButton buttonWithType:UIButtonTypeCustom];
-//    self.pushthirdBtn.frame = CGRectMake(0, 150, kWidth, 30);
-//    [self.pushthirdBtn setTitle:@"pushThird" forState:UIControlStateNormal];
-//    [self.pushthirdBtn setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
-//    self.pushthirdBtn.backgroundColor = [UIColor yellowColor];
-//    self.pushthirdBtn.pushVCStr = thirdVCString;
-//    [self.pushthirdBtn addTarget:self action:@selector(pushAction:) forControlEvents:UIControlEventTouchUpInside];
-//    [self.view addSubview:self.pushthirdBtn];
-    self.tableView = [self tableViewWithFrame:kScreenBounds TableViewStyle:UITableViewStyleGrouped cellArray:@[NSClassFromString(@"UITableViewCell")]];
+    self.tableView = [self tableViewWithFrame:CGRectMake(0, kNavigationAndStatusBarHeight, kWidth, kHeight - kNavigationAndStatusBarHeight) TableViewStyle:UITableViewStyleGrouped cellArray:@[NSClassFromString(@"UITableViewCell")]];
     self.tableView.delegate = self.delegate;
     self.tableView.dataSource = self.dataSource;
     [self.view addSubview:self.tableView];

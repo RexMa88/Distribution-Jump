@@ -23,6 +23,8 @@
 #define kWidth                              [[UIScreen mainScreen] bounds].size.width
 #define kHeight                             [[UIScreen mainScreen] bounds].size.height
 #define kScreenBounds                       [UIScreen mainScreen].bounds
+#define kNavigationBarHeight                44.0f
+#define kNavigationAndStatusBarHeight       64.0f
 //The Key of dataDict
 #define kDataArrayKey                       @"dataArrayKey"
 #define kTableViewDataKey                   @"tableViewDataKey"

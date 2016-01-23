@@ -9,9 +9,10 @@
 #import "AppDelegate.h"
 #import "BaseViewController.h"
 #import "ViewController.h"
-
+//AMapKit
 #import <MAMapKit/MAMapKit.h>
 #import <AMapLocationKit/AMapLocationKit.h>
+#import <AMapSearchKit/AMapSearchKit.h>
 
 @interface AppDelegate ()
 
@@ -39,6 +40,8 @@
     if ([AMapAPIKey length]) {
         [MAMapServices sharedServices].apiKey = AMapAPIKey;
         [AMapLocationServices sharedServices].apiKey = AMapAPIKey;
+        [AMapSearchServices sharedServices].apiKey = AMapAPIKey;
+        
     }
 }
 
@@ -141,7 +144,7 @@
         viewController.dataArray = (NSArray *)object;
     }
     
-    if (selector && backgroundRunning) {
+    if (selector) {
 #pragma clang diagnostic ignored "-Warc-performSelector-leaks"
         [viewController performSelector:selector withObject:object];
     }

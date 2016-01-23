@@ -48,6 +48,11 @@
 		A3F316D81C50B92700D11C10 /* libstdc++.6.0.9.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = A3F316D71C50B92700D11C10 /* libstdc++.6.0.9.tbd */; };
 		A3F316DC1C50CA9700D11C10 /* RMTextAttribute.m in Sources */ = {isa = PBXBuildFile; fileRef = A3F316DB1C50CA9700D11C10 /* RMTextAttribute.m */; };
 		A3F316E31C535B8F00D11C10 /* RMLocationShareManager.m in Sources */ = {isa = PBXBuildFile; fileRef = A3F316E21C535B8F00D11C10 /* RMLocationShareManager.m */; };
+		A3F316E51C53646100D11C10 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A3F316E41C53646100D11C10 /* QuartzCore.framework */; };
+		A3F316E71C53647D00D11C10 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A3F316E61C53647D00D11C10 /* CoreLocation.framework */; };
+		A3F316E91C53651800D11C10 /* libc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = A3F316E81C53651800D11C10 /* libc++.tbd */; };
+		A3F316EB1C5365FA00D11C10 /* AMapSearchKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A3F316EA1C5365FA00D11C10 /* AMapSearchKit.framework */; };
+		A3F316F11C536B0000D11C10 /* RMPOISearchRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = A3F316F01C536B0000D11C10 /* RMPOISearchRequest.m */; };
 		A3FE6A061C140CF4004DF568 /* RMTableViewDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = A3FE6A051C140CF4004DF568 /* RMTableViewDelegate.m */; };
 /* End PBXBuildFile section */
 
@@ -144,6 +149,12 @@
 		A3F316DB1C50CA9700D11C10 /* RMTextAttribute.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RMTextAttribute.m; sourceTree = "<group>"; };
 		A3F316E11C535B8F00D11C10 /* RMLocationShareManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RMLocationShareManager.h; sourceTree = "<group>"; };
 		A3F316E21C535B8F00D11C10 /* RMLocationShareManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RMLocationShareManager.m; sourceTree = "<group>"; };
+		A3F316E41C53646100D11C10 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		A3F316E61C53647D00D11C10 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		A3F316E81C53651800D11C10 /* libc++.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libc++.tbd"; path = "usr/lib/libc++.tbd"; sourceTree = SDKROOT; };
+		A3F316EA1C5365FA00D11C10 /* AMapSearchKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = AMapSearchKit.framework; sourceTree = "<group>"; };
+		A3F316EF1C536B0000D11C10 /* RMPOISearchRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RMPOISearchRequest.h; sourceTree = "<group>"; };
+		A3F316F01C536B0000D11C10 /* RMPOISearchRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RMPOISearchRequest.m; sourceTree = "<group>"; };
 		A3FE6A041C140CF4004DF568 /* RMTableViewDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RMTableViewDelegate.h; sourceTree = "<group>"; };
 		A3FE6A051C140CF4004DF568 /* RMTableViewDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RMTableViewDelegate.m; sourceTree = "<group>"; };
 		A3FE6A071C140DEA004DF568 /* TableViewCellClassName.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TableViewCellClassName.h; sourceTree = "<group>"; };
@@ -154,14 +165,18 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A3F316D81C50B92700D11C10 /* libstdc++.6.0.9.tbd in Frameworks */,
-				A3F316D61C50B91E00D11C10 /* libz.tbd in Frameworks */,
 				A3F316D41C50B91500D11C10 /* Security.framework in Frameworks */,
+				A3F316E91C53651800D11C10 /* libc++.tbd in Frameworks */,
+				A3F316D61C50B91E00D11C10 /* libz.tbd in Frameworks */,
+				A3F316E71C53647D00D11C10 /* CoreLocation.framework in Frameworks */,
+				A3F316E51C53646100D11C10 /* QuartzCore.framework in Frameworks */,
+				A3F316D81C50B92700D11C10 /* libstdc++.6.0.9.tbd in Frameworks */,
 				A3F316D21C50B90C00D11C10 /* SystemConfiguration.framework in Frameworks */,
 				A3F316D01C50B8FF00D11C10 /* CoreTelephony.framework in Frameworks */,
 				A3F316CE1C50B8B100D11C10 /* MAMapKit.framework in Frameworks */,
 				A3F316BE1C4F8DA300D11C10 /* libsqlite3.0.tbd in Frameworks */,
 				A3F316CD1C50B8B100D11C10 /* AMapLocationKit.framework in Frameworks */,
+				A3F316EB1C5365FA00D11C10 /* AMapSearchKit.framework in Frameworks */,
 				A3592BEF1C290B6300EC94AC /* CoreGraphics.framework in Frameworks */,
 				A3592BED1C290B5B00EC94AC /* UIKit.framework in Frameworks */,
 				A3592BEB1C290B5500EC94AC /* Foundation.framework in Frameworks */,
@@ -346,7 +361,7 @@
 		A34546051C3CCB1C004281FE /* Singleton */ = {
 			isa = PBXGroup;
 			children = (
-				A3F316DD1C5358F000D11C10 /* LocationSingleton */,
+				A3F316DD1C5358F000D11C10 /* AMapShareManager */,
 				A34546091C3CCFA2004281FE /* RMDateShareManager.h */,
 				A345460A1C3CCFA2004281FE /* RMDateShareManager.m */,
 			);
@@ -374,6 +389,10 @@
 		A3592BF01C290B6600EC94AC /* Framework */ = {
 			isa = PBXGroup;
 			children = (
+				A3F316EA1C5365FA00D11C10 /* AMapSearchKit.framework */,
+				A3F316E81C53651800D11C10 /* libc++.tbd */,
+				A3F316E61C53647D00D11C10 /* CoreLocation.framework */,
+				A3F316E41C53646100D11C10 /* QuartzCore.framework */,
 				A3F316D71C50B92700D11C10 /* libstdc++.6.0.9.tbd */,
 				A3F316D51C50B91E00D11C10 /* libz.tbd */,
 				A3F316D31C50B91500D11C10 /* Security.framework */,
@@ -476,13 +495,15 @@
 			name = RMTextKit;
 			sourceTree = "<group>";
 		};
-		A3F316DD1C5358F000D11C10 /* LocationSingleton */ = {
+		A3F316DD1C5358F000D11C10 /* AMapShareManager */ = {
 			isa = PBXGroup;
 			children = (
 				A3F316E11C535B8F00D11C10 /* RMLocationShareManager.h */,
 				A3F316E21C535B8F00D11C10 /* RMLocationShareManager.m */,
+				A3F316EF1C536B0000D11C10 /* RMPOISearchRequest.h */,
+				A3F316F01C536B0000D11C10 /* RMPOISearchRequest.m */,
 			);
-			name = LocationSingleton;
+			name = AMapShareManager;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -630,6 +651,7 @@
 				A3F316C11C4F8FE200D11C10 /* UIImageView+Utils.m in Sources */,
 				A345460E1C3CE06E004281FE /* CALayer+Utils.m in Sources */,
 				A3CDAE1A1C302D990037F51C /* RMBaseModel.m in Sources */,
+				A3F316F11C536B0000D11C10 /* RMPOISearchRequest.m in Sources */,
 				00929CC11C11347400511DF5 /* ThirdViewController.m in Sources */,
 				A38E25D51C12ABB800A3DCEC /* RMTableViewDataSource.m in Sources */,
 				00495C191C06E5F80015DB12 /* BaseViewController.m in Sources */,
@@ -799,6 +821,7 @@
 				GCC_PREFIX_HEADER = "$(SRCROOT)/pushOrPop/pushOrPop.pch";
 				INFOPLIST_FILE = pushOrPop/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_BUNDLE_IDENTIFIER = rexma.pushOrPop;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = iphoneos;
@@ -820,6 +843,7 @@
 				GCC_PREFIX_HEADER = "$(SRCROOT)/pushOrPop/pushOrPop.pch";
 				INFOPLIST_FILE = pushOrPop/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_BUNDLE_IDENTIFIER = rexma.pushOrPop;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = iphoneos;

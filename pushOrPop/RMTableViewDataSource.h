@@ -24,11 +24,15 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
+@class AMapPOI;
+
 typedef void (^configureBlock)(id cell, id item);
 
 @interface RMTableViewDataSource : NSObject<UITableViewDataSource>
 
 @property (nonatomic, copy) configureBlock configureCellBlock;
+
+@property (nonatomic, copy, nullable) NSArray<AMapPOI *> *dataArray;
 
 - (instancetype)initWithDataArray:(NSArray *)dataArray;
 

@@ -8,10 +8,9 @@
 
 #import "RMTableViewDelegate.h"
 #import "SecondViewController.h"
+#import <AMapSearchKit/AMapSearchKit.h>
 
-@implementation RMTableViewDelegate{
-    NSArray *dataArr;
-}
+@implementation RMTableViewDelegate
 
 - (instancetype)init{
     self = [self initWithDataArray:@[]];
@@ -26,7 +25,7 @@
 - (instancetype)initWithDataArray:(NSArray *)dataArray{
     self = [super init];
     if (self) {
-        dataArr = dataArray != 0 ? dataArray : @[];
+        self.dataArray = dataArray != 0 ? dataArray : @[];
     }
     return self;
 }
@@ -37,9 +36,10 @@
         /**
          *  配置传递数据
          */
+        AMapPOI *poi = self.dataArray[indexPath.row];
         NSDictionary *obj = @{kDictionaryKeyClass: [SecondViewController class],
                               kDictionaryKeySelector: [NSValue valueWithPointer:@selector(setName:)],
-                              kDictionaryKeyObject: [NSString stringWithFormat:@"%ld",(long)[dataArr[indexPath.row] integerValue]],
+                              kDictionaryKeyObject: poi.name,
                               kDictionaryKeyAnimated: [NSNumber numberWithBool:YES]};
         self.actBlock(KNotificationPushAction, obj);
     }

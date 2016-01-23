@@ -10,9 +10,9 @@
 #import "RMBaseCell.h"
 #import <objc/runtime.h>
 
-@interface RMTableViewDataSource()
+#import <AMapSearchKit/AMapSearchKit.h>
 
-@property (readwrite, nonatomic, copy) NSMutableArray<NSArray *> *dataArray;
+@interface RMTableViewDataSource()
 
 @property (readwrite, nonatomic, strong, nonnull) Class cell;
 
@@ -59,9 +59,6 @@
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
-//    RMBaseCell * cell = [tableView dequeueReusableCellWithIdentifier:NSStringFromClass([RMBaseCell class]) forIndexPath:indexPath];
-//    [self configureCell:cell atIndexPath:indexPath];
-//    return cell;
     NSString *cellString = NSStringFromClass(self.cell);
     if ([cellString isEqualToString:@"UITableViewCell"]) {
         UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellString forIndexPath:indexPath];

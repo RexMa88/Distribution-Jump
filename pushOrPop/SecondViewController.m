@@ -29,10 +29,9 @@
 
 - (void)customUI{
     self.nameLabel = [UILabel new];
-    self.nameLabel.frame = CGRectMake(0, 80, 100, 20);
+    self.nameLabel.frame = CGRectMake(0, kNavigationAndStatusBarHeight, 100, 20);
     self.nameLabel.textColor = [UIColor blackColor];
     self.nameLabel.text = _name;
-    
     [self.view addSubview:self.nameLabel];
 }
 

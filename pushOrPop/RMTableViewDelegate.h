@@ -18,13 +18,17 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
+@class AMapPOI;
+
 typedef void(^actionBlock)(NSString *action, NSDictionary *obj);
 
 @interface RMTableViewDelegate : NSObject<UITableViewDelegate>
 
 @property (nonatomic, copy) actionBlock actBlock;
 
-- (instancetype)initWithDataArray:(NSArray *)dataArray NS_DESIGNATED_INITIALIZER;
+@property (nonatomic, copy, nullable) NSArray<AMapPOI *> *dataArray;
+
+- (instancetype)initWithDataArray:(nullable NSArray *)dataArray NS_DESIGNATED_INITIALIZER;
 
 @end
 
