@@ -10,9 +10,10 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
+@class AMapPOI;
 @interface SecondViewController : BaseViewController
 
-@property (nonatomic, copy) NSString *name;
+@property (nonatomic, strong) AMapPOI *poi;
 
 @end
 

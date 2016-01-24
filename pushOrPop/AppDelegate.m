@@ -41,7 +41,6 @@
         [MAMapServices sharedServices].apiKey = AMapAPIKey;
         [AMapLocationServices sharedServices].apiKey = AMapAPIKey;
         [AMapSearchServices sharedServices].apiKey = AMapAPIKey;
-        
     }
 }
 

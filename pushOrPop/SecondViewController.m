@@ -7,11 +7,16 @@
 //
 
 #import "SecondViewController.h"
-#import "RMBaseCell.h"
+#import <AMapSearchKit/AMapSearchKit.h>
+#import <MAMapKit/MAMapKit.h>
 
-@interface SecondViewController ()
+#define mapViewZoomLevel    16.1f
 
-@property (nonatomic, strong) UILabel *nameLabel;
+@interface SecondViewController ()<MAMapViewDelegate>
+
+//@property (nonatomic, strong) UILabel *nameLabel;
+
+@property (nonatomic, strong) MAMapView *mapView;
 
 @end
 
@@ -22,24 +27,61 @@
     // Do any additional setup after loading the view.
     self.view.backgroundColor = [UIColor orangeColor];
     
-    [self customUI];
+    [self configureMapView];
+}
+
+#pragma mark - life Cycle
+
+- (void)viewWillAppear:(BOOL)animated{
+    [super viewWillAppear:animated];
+}
+
+- (void)viewDidAppear:(BOOL)animated{
+    [super viewDidAppear:animated];
+}
+
+- (void)viewDidLayoutSubviews{
+    [super viewDidLayoutSubviews];
+    
+    [self.view addSubview:self.mapView];
+}
+
+- (void)viewWillDisappear:(BOOL)animated{
+    [super viewWillDisappear:animated];
+}
+
+- (void)viewDidDisappear:(BOOL)animated{
+    [super viewDidDisappear:animated];
 }
 
 #pragma mark - custom UI
 
-- (void)customUI{
-    self.nameLabel = [UILabel new];
-    self.nameLabel.frame = CGRectMake(0, kNavigationAndStatusBarHeight, 100, 20);
-    self.nameLabel.textColor = [UIColor blackColor];
-    self.nameLabel.text = _name;
-    [self.view addSubview:self.nameLabel];
+- (void)configureMapView{
+    self.mapView = [[MAMapView alloc] initWithFrame:kScreenBounds];
+    self.mapView.delegate = self;
+    self.mapView.showsUserLocation = YES;
+    self.mapView.showsCompass = YES;
+    self.mapView.pausesLocationUpdatesAutomatically = NO;
+    self.mapView.allowsBackgroundLocationUpdates = YES;
+    [self.mapView setUserTrackingMode:MAUserTrackingModeFollow animated:YES];
+    [self.mapView setZoomLevel:mapViewZoomLevel animated:YES];
+    
+    //在地图上添加目的地
+    MAPointAnnotation *destination = [[MAPointAnnotation alloc] init];
+    destination.coordinate = CLLocationCoordinate2DMake(_poi.location.latitude, _poi.location.longitude);
+    destination.title = _poi.name;
+    destination.subtitle = _poi.address;
+    [self.mapView addAnnotation:destination];
 }
 
 #pragma mark - setter
 
-- (void)setName:(NSString *)name{
-    _name = [name copy];
+- (void)setPoi:(AMapPOI *)poi{
+    _poi = poi;
 }
+
+#pragma mark - MAMapViewDelegate
+
 
 
 - (void)didReceiveMemoryWarning {

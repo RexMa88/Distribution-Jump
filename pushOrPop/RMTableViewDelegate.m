@@ -38,8 +38,8 @@
          */
         AMapPOI *poi = self.dataArray[indexPath.row];
         NSDictionary *obj = @{kDictionaryKeyClass: [SecondViewController class],
-                              kDictionaryKeySelector: [NSValue valueWithPointer:@selector(setName:)],
-                              kDictionaryKeyObject: poi.name,
+                              kDictionaryKeySelector: [NSValue valueWithPointer:@selector(setPoi:)],
+                              kDictionaryKeyObject: poi,
                               kDictionaryKeyAnimated: [NSNumber numberWithBool:YES]};
         self.actBlock(KNotificationPushAction, obj);
     }
