@@ -12,9 +12,9 @@
 
 #define mapViewZoomLevel    16.1f
 
-@interface SecondViewController ()<MAMapViewDelegate>
+@interface SecondViewController ()<MAMapViewDelegate, AMapSearchDelegate>
 
-//@property (nonatomic, strong) UILabel *nameLabel;
+@property (nonatomic, strong) AMapSearchAPI *search;
 
 @property (nonatomic, strong) MAMapView *mapView;
 
@@ -72,6 +72,16 @@
     destination.title = _poi.name;
     destination.subtitle = _poi.address;
     [self.mapView addAnnotation:destination];
+    
+    //设置路径
+    AMapWalkingRouteSearchRequest *walkRequest = [[AMapWalkingRouteSearchRequest alloc] init];
+    walkRequest.origin = [AMapGeoPoint locationWithLatitude:self.mapView.userLocation.location.coordinate.latitude longitude:self.mapView.userLocation.location.coordinate.longitude];
+    walkRequest.destination = [AMapGeoPoint locationWithLatitude:_poi.location.latitude longitude:_poi.location.longitude];
+    
+    //初始化检索
+    self.search = [[AMapSearchAPI alloc] init];
+    self.search.delegate = self;
+    [self.search AMapWalkingRouteSearch:walkRequest];
 }
 
 #pragma mark - setter
@@ -79,10 +89,6 @@
 - (void)setPoi:(AMapPOI *)poi{
     _poi = poi;
 }
-
-#pragma mark - MAMapViewDelegate
-
-
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
