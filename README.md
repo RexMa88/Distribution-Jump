@@ -5,4 +5,6 @@
 * 信号逻辑：Appdelegate
 * 信号宏：KNotificationAction,pch
 
+由于我本人比较喜欢喝咖啡，所以在这个简单的信号机制上添加了高德地图SDK，除了用于定位以外，还具备服务搜索功能，以后也会基于此添加更多的功能。
+
 That is a distribution jump mechanism based on Objective-C,The mechanism use Notification push or pop,and it can solve high coulping, and unified manage what you want push or pop.
