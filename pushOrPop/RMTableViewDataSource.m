@@ -7,7 +7,8 @@
 //
 
 #import "RMTableViewDataSource.h"
-#import "RMBaseCell.h"
+//#import "RMBaseCell.h"
+#import "RMPOITableViewCell.h"
 #import <objc/runtime.h>
 
 #import <AMapSearchKit/AMapSearchKit.h>
@@ -60,8 +61,8 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     NSString *cellString = NSStringFromClass(self.cell);
-    if ([cellString isEqualToString:@"UITableViewCell"]) {
-        UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellString forIndexPath:indexPath];
+    if ([cellString isEqualToString:@"RMPOITableViewCell"]) {
+        RMPOITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellString forIndexPath:indexPath];
         [self configureCell:cell atIndexPath:indexPath];
         return cell;
     }else return nil;

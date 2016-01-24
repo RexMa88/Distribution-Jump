@@ -8,6 +8,12 @@
 
 #import <UIKit/UIKit.h>
 
+NS_ASSUME_NONNULL_BEGIN
+
+@class AMapPOI;
+#define RMPOITableViewCellHeight 98.0f
+extern NSString *const RMPOITableViewCellIdentifier;
+
 @interface RMPOITableViewCell : UITableViewCell
 
 @property (weak, nonatomic) IBOutlet UILabel *nameLabel;
@@ -16,4 +22,10 @@
 
 @property (weak, nonatomic) IBOutlet UILabel *telLbael;
 
+@property (nonatomic, strong) AMapPOI *poi;
+
+- (void)setPoi:(AMapPOI * _Nonnull)poi;
+
 @end
+
+NS_ASSUME_NONNULL_END

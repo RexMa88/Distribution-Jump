@@ -7,7 +7,9 @@
 //
 
 #import "BaseTableViewController.h"
+
 #import "RMBaseCell.h"
+#import "RMPOITableViewCell.h"
 
 @interface BaseTableViewController ()
 
@@ -48,11 +50,12 @@
     //如果是一种cell
     self.tableView = [[UITableView alloc] initWithFrame:frame style:tableViewStyle];
     if (cellArray.count == 1) {
-        Class cellClass = cellArray.firstObject;
-        [self.tableView registerClass:cellClass forCellReuseIdentifier:NSStringFromClass(cellClass)];
+        NSString *cellStr = cellArray.firstObject;
+        //默认使用nib
+        [self.tableView registerNib:[UINib nibWithNibName:cellStr bundle:nil] forCellReuseIdentifier:cellStr];
     }else{
-        [cellArray enumerateObjectsUsingBlock:^(Class  _Nonnull cellClass, NSUInteger idx, BOOL * _Nonnull stop) {
-            [self.tableView registerClass:cellClass forCellReuseIdentifier:NSStringFromClass(cellClass)];
+        [cellArray enumerateObjectsUsingBlock:^(NSString   * _Nonnull cellStr, NSUInteger idx, BOOL * _Nonnull stop) {
+            [self.tableView registerNib:[UINib nibWithNibName:cellStr bundle:nil] forCellReuseIdentifier:cellStr];
         }];
     }
     return self.tableView;

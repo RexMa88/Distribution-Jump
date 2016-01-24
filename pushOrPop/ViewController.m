@@ -12,10 +12,7 @@
 #import "RMLocationShareManager.h"
 #import <AMapSearchKit/AMapSearchKit.h>
 #import "RMPOISearchRequest.h"
-
-static NSString * const secondVCString = @"SecondViewController";//跳转的第二个界面字段
-
-static NSString * const thirdVCString  = @"ThirdViewController";//跳转的第三个界面字段
+#import "RMPOITableViewCell.h"
 
 @interface ViewController ()<AMapLocationManagerDelegate, AMapSearchDelegate>
 
@@ -48,9 +45,9 @@ static NSString * const thirdVCString  = @"ThirdViewController";//跳转的第�
     [super viewDidLoad];
 //     Do any additional setup after loading the view, typically from a nib.
     self.view.backgroundColor = [UIColor whiteColor];
+    [self customUI];
     [self configureLocation];
     [self runLoopCalculateData];
-//    [self customUI];
 }
 
 #pragma mark - Location
@@ -61,6 +58,29 @@ static NSString * const thirdVCString  = @"ThirdViewController";//跳转的第�
     self.search.delegate = self;
     //定位单例
     [[RMLocationShareManager shareManager] setDelegate:self];
+}
+
+#pragma mark - life Cycle
+
+- (void)viewWillAppear:(BOOL)animated{
+    [super viewWillAppear:animated];
+}
+
+- (void)viewDidAppear:(BOOL)animated{
+    [super viewDidAppear:animated];
+}
+
+- (void)viewWillDisappear:(BOOL)animated{
+    [super viewWillDisappear:animated];
+}
+
+- (void)viewDidDisappear:(BOOL)animated{
+    [super viewDidDisappear:animated];
+}
+
+- (void)viewDidLayoutSubviews{
+    [super viewDidLayoutSubviews];
+    [self.view addSubview:self.tableView];
 }
 
 #pragma mark - Calculate Data by using RunLoop(Height,Data,Date....)
@@ -109,9 +129,9 @@ static NSString * const thirdVCString  = @"ThirdViewController";//跳转的第�
 - (void)onPOISearchDone:(AMapPOISearchBaseRequest *)request response:(AMapPOISearchResponse *)response{
     if (response.pois.count) {
         //The configuration of RMTableViewDataSource
-        self.dataSource = [[RMTableViewDataSource alloc] initWithDataArray:response.pois cell:[UITableViewCell class]];
-        self.dataSource.configureCellBlock = ^(UITableViewCell *cell, AMapPOI *poi){
-            cell.textLabel.text = [NSString stringWithFormat:@"%@",poi.name];
+        self.dataSource = [[RMTableViewDataSource alloc] initWithDataArray:response.pois cell:[RMPOITableViewCell class]];
+        self.dataSource.configureCellBlock = ^(RMPOITableViewCell *cell, AMapPOI *poi){
+            cell.poi = poi;
         };
         //The configuration of RMTableViewDelegate
         self.delegate = [[RMTableViewDelegate alloc] initWithDataArray:response.pois];
@@ -121,25 +141,45 @@ static NSString * const thirdVCString  = @"ThirdViewController";//跳转的第�
             NotificationPostNotify(action, strongSelf, obj);
         };
         
-        [self customUI];
+//        [self.tableView reloadData];
+        [self configureDelegateAndDataSource];
     }
 }
      
 #pragma mark - custom Method
 
 - (void)customUI{
-    self.tableView = [self tableViewWithFrame:CGRectMake(0, kNavigationAndStatusBarHeight, kWidth, kHeight - kNavigationAndStatusBarHeight) TableViewStyle:UITableViewStyleGrouped cellArray:@[NSClassFromString(@"UITableViewCell")]];
-    self.tableView.delegate = self.delegate;
-    self.tableView.dataSource = self.dataSource;
-    [self.view addSubview:self.tableView];
+    self.tableView = [self tableViewWithFrame:CGRectMake(0, 0, kWidth, kHeight) TableViewStyle:UITableViewStyleGrouped cellArray:@[@"RMPOITableViewCell"]];
+    self.tableView.rowHeight = RMPOITableViewCellHeight;
 }
 
+- (void)configureDelegateAndDataSource{
+    self.tableView.delegate = self.delegate;
+    self.tableView.dataSource = self.dataSource;
+    [self.tableView reloadData];
+}
 
 - (void)pushAction:(pushButton *)button{
     //跳转传输的数据
     NSString * pushVCStr = button.pushVCStr;
     NSDictionary * dict = @{kDictionaryKeyClass: pushVCStr};
     NotificationPostNotify(KNotificationPushAction, self, dict);
+}
+
+#pragma mark - runtime resolve solution
+/**
+ *  额...解耦竟然让VC没有了实例方法和类方法
+ */
++ (BOOL)resolveInstanceMethod:(SEL)sel{
+    NSString *instanceMethod = NSStringFromSelector(sel);
+    NSLog(@"The instanceMethod name is %@",instanceMethod);
+    return YES;
+}
+
++ (BOOL)resolveClassMethod:(SEL)sel{
+    NSString *classMethod = NSStringFromSelector(sel);
+    NSLog(@"The classMethod is %@",classMethod);
+    return YES;
 }
 
 #pragma mark - runtime objc_getAssociatedObject && objc_setAssociatedObject

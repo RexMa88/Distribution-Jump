@@ -55,6 +55,7 @@
 		A3F316F11C536B0000D11C10 /* RMPOISearchRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = A3F316F01C536B0000D11C10 /* RMPOISearchRequest.m */; };
 		A3F316F51C537B1100D11C10 /* RMPOITableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A3F316F31C537B1000D11C10 /* RMPOITableViewCell.m */; };
 		A3F316F61C537B1100D11C10 /* RMPOITableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A3F316F41C537B1000D11C10 /* RMPOITableViewCell.xib */; };
+		A3F316FB1C544D4500D11C10 /* RMPOIModel.m in Sources */ = {isa = PBXBuildFile; fileRef = A3F316FA1C544D4500D11C10 /* RMPOIModel.m */; };
 		A3FE6A061C140CF4004DF568 /* RMTableViewDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = A3FE6A051C140CF4004DF568 /* RMTableViewDelegate.m */; };
 /* End PBXBuildFile section */
 
@@ -160,6 +161,8 @@
 		A3F316F21C537B1000D11C10 /* RMPOITableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RMPOITableViewCell.h; sourceTree = "<group>"; };
 		A3F316F31C537B1000D11C10 /* RMPOITableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RMPOITableViewCell.m; sourceTree = "<group>"; };
 		A3F316F41C537B1000D11C10 /* RMPOITableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RMPOITableViewCell.xib; sourceTree = "<group>"; };
+		A3F316F91C544D4500D11C10 /* RMPOIModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RMPOIModel.h; sourceTree = "<group>"; };
+		A3F316FA1C544D4500D11C10 /* RMPOIModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RMPOIModel.m; sourceTree = "<group>"; };
 		A3FE6A041C140CF4004DF568 /* RMTableViewDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RMTableViewDelegate.h; sourceTree = "<group>"; };
 		A3FE6A051C140CF4004DF568 /* RMTableViewDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RMTableViewDelegate.m; sourceTree = "<group>"; };
 		A3FE6A071C140DEA004DF568 /* TableViewCellClassName.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TableViewCellClassName.h; sourceTree = "<group>"; };
@@ -385,6 +388,7 @@
 		A3592BE01C26E78E00EC94AC /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				A3F316F81C544D1200D11C10 /* POIModel */,
 				A3CDAE171C302D790037F51C /* BaseModel */,
 				A32D26151C32C1EE0019D4EF /* IModel.h */,
 			);
@@ -520,6 +524,15 @@
 				A3F316F41C537B1000D11C10 /* RMPOITableViewCell.xib */,
 			);
 			name = POICell;
+			sourceTree = "<group>";
+		};
+		A3F316F81C544D1200D11C10 /* POIModel */ = {
+			isa = PBXGroup;
+			children = (
+				A3F316F91C544D4500D11C10 /* RMPOIModel.h */,
+				A3F316FA1C544D4500D11C10 /* RMPOIModel.m */,
+			);
+			name = POIModel;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -688,6 +701,7 @@
 				00929CC61C11377C00511DF5 /* pushButton.m in Sources */,
 				A3CB87161C2B630E00576755 /* RMCellHeaderView+Utils.m in Sources */,
 				A32D26141C32C14D0019D4EF /* RMAsyncQueue.m in Sources */,
+				A3F316FB1C544D4500D11C10 /* RMPOIModel.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
