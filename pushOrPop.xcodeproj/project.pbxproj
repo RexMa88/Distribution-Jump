@@ -29,6 +29,11 @@
 		A3592BEB1C290B5500EC94AC /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A3592BEA1C290B5500EC94AC /* Foundation.framework */; };
 		A3592BED1C290B5B00EC94AC /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A3592BEC1C290B5B00EC94AC /* UIKit.framework */; };
 		A3592BEF1C290B6300EC94AC /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A3592BEE1C290B6300EC94AC /* CoreGraphics.framework */; };
+		A369565F1C55F0B400C60C20 /* FMDatabase.m in Sources */ = {isa = PBXBuildFile; fileRef = A36956551C55F0B400C60C20 /* FMDatabase.m */; };
+		A36956601C55F0B400C60C20 /* FMDatabaseAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = A36956571C55F0B400C60C20 /* FMDatabaseAdditions.m */; };
+		A36956611C55F0B400C60C20 /* FMDatabasePool.m in Sources */ = {isa = PBXBuildFile; fileRef = A36956591C55F0B400C60C20 /* FMDatabasePool.m */; };
+		A36956621C55F0B400C60C20 /* FMDatabaseQueue.m in Sources */ = {isa = PBXBuildFile; fileRef = A369565B1C55F0B400C60C20 /* FMDatabaseQueue.m */; };
+		A36956631C55F0B400C60C20 /* FMResultSet.m in Sources */ = {isa = PBXBuildFile; fileRef = A369565E1C55F0B400C60C20 /* FMResultSet.m */; };
 		A38E25CB1C128D6300A3DCEC /* BaseTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A38E25CA1C128D6300A3DCEC /* BaseTableViewController.m */; };
 		A38E25D21C12A8B900A3DCEC /* RMBaseCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A38E25D11C12A8B900A3DCEC /* RMBaseCell.m */; };
 		A38E25D51C12ABB800A3DCEC /* RMTableViewDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = A38E25D41C12ABB800A3DCEC /* RMTableViewDataSource.m */; };
@@ -55,7 +60,6 @@
 		A3F316F11C536B0000D11C10 /* RMPOISearchRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = A3F316F01C536B0000D11C10 /* RMPOISearchRequest.m */; };
 		A3F316F51C537B1100D11C10 /* RMPOITableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A3F316F31C537B1000D11C10 /* RMPOITableViewCell.m */; };
 		A3F316F61C537B1100D11C10 /* RMPOITableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A3F316F41C537B1000D11C10 /* RMPOITableViewCell.xib */; };
-		A3F316FB1C544D4500D11C10 /* RMPOIModel.m in Sources */ = {isa = PBXBuildFile; fileRef = A3F316FA1C544D4500D11C10 /* RMPOIModel.m */; };
 		A3FE6A061C140CF4004DF568 /* RMTableViewDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = A3FE6A051C140CF4004DF568 /* RMTableViewDelegate.m */; };
 /* End PBXBuildFile section */
 
@@ -122,6 +126,17 @@
 		A3592BEA1C290B5500EC94AC /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		A3592BEC1C290B5B00EC94AC /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		A3592BEE1C290B6300EC94AC /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		A36956541C55F0B400C60C20 /* FMDatabase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDatabase.h; sourceTree = "<group>"; };
+		A36956551C55F0B400C60C20 /* FMDatabase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMDatabase.m; sourceTree = "<group>"; };
+		A36956561C55F0B400C60C20 /* FMDatabaseAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDatabaseAdditions.h; sourceTree = "<group>"; };
+		A36956571C55F0B400C60C20 /* FMDatabaseAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMDatabaseAdditions.m; sourceTree = "<group>"; };
+		A36956581C55F0B400C60C20 /* FMDatabasePool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDatabasePool.h; sourceTree = "<group>"; };
+		A36956591C55F0B400C60C20 /* FMDatabasePool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMDatabasePool.m; sourceTree = "<group>"; };
+		A369565A1C55F0B400C60C20 /* FMDatabaseQueue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDatabaseQueue.h; sourceTree = "<group>"; };
+		A369565B1C55F0B400C60C20 /* FMDatabaseQueue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMDatabaseQueue.m; sourceTree = "<group>"; };
+		A369565C1C55F0B400C60C20 /* FMDB.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDB.h; sourceTree = "<group>"; };
+		A369565D1C55F0B400C60C20 /* FMResultSet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMResultSet.h; sourceTree = "<group>"; };
+		A369565E1C55F0B400C60C20 /* FMResultSet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMResultSet.m; sourceTree = "<group>"; };
 		A38E25C91C128D6300A3DCEC /* BaseTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseTableViewController.h; sourceTree = "<group>"; };
 		A38E25CA1C128D6300A3DCEC /* BaseTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseTableViewController.m; sourceTree = "<group>"; };
 		A38E25CC1C129B7200A3DCEC /* classInfo.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = classInfo.h; sourceTree = "<group>"; };
@@ -161,8 +176,6 @@
 		A3F316F21C537B1000D11C10 /* RMPOITableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RMPOITableViewCell.h; sourceTree = "<group>"; };
 		A3F316F31C537B1000D11C10 /* RMPOITableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RMPOITableViewCell.m; sourceTree = "<group>"; };
 		A3F316F41C537B1000D11C10 /* RMPOITableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RMPOITableViewCell.xib; sourceTree = "<group>"; };
-		A3F316F91C544D4500D11C10 /* RMPOIModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RMPOIModel.h; sourceTree = "<group>"; };
-		A3F316FA1C544D4500D11C10 /* RMPOIModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RMPOIModel.m; sourceTree = "<group>"; };
 		A3FE6A041C140CF4004DF568 /* RMTableViewDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RMTableViewDelegate.h; sourceTree = "<group>"; };
 		A3FE6A051C140CF4004DF568 /* RMTableViewDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RMTableViewDelegate.m; sourceTree = "<group>"; };
 		A3FE6A071C140DEA004DF568 /* TableViewCellClassName.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TableViewCellClassName.h; sourceTree = "<group>"; };
@@ -301,6 +314,7 @@
 		00FB6F061C04596800EE49F3 /* pushOrPop */ = {
 			isa = PBXGroup;
 			children = (
+				A36956521C55F04400C60C20 /* ThirdParty */,
 				A32D26111C32C1210019D4EF /* AsyncQueue */,
 				A3592BF01C290B6600EC94AC /* Framework */,
 				A3592BE01C26E78E00EC94AC /* Model */,
@@ -388,7 +402,6 @@
 		A3592BE01C26E78E00EC94AC /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				A3F316F81C544D1200D11C10 /* POIModel */,
 				A3CDAE171C302D790037F51C /* BaseModel */,
 				A32D26151C32C1EE0019D4EF /* IModel.h */,
 			);
@@ -416,6 +429,32 @@
 				A3592BEA1C290B5500EC94AC /* Foundation.framework */,
 			);
 			name = Framework;
+			sourceTree = "<group>";
+		};
+		A36956521C55F04400C60C20 /* ThirdParty */ = {
+			isa = PBXGroup;
+			children = (
+				A36956531C55F0A800C60C20 /* fmdb */,
+			);
+			name = ThirdParty;
+			sourceTree = "<group>";
+		};
+		A36956531C55F0A800C60C20 /* fmdb */ = {
+			isa = PBXGroup;
+			children = (
+				A36956541C55F0B400C60C20 /* FMDatabase.h */,
+				A36956551C55F0B400C60C20 /* FMDatabase.m */,
+				A36956561C55F0B400C60C20 /* FMDatabaseAdditions.h */,
+				A36956571C55F0B400C60C20 /* FMDatabaseAdditions.m */,
+				A36956581C55F0B400C60C20 /* FMDatabasePool.h */,
+				A36956591C55F0B400C60C20 /* FMDatabasePool.m */,
+				A369565A1C55F0B400C60C20 /* FMDatabaseQueue.h */,
+				A369565B1C55F0B400C60C20 /* FMDatabaseQueue.m */,
+				A369565C1C55F0B400C60C20 /* FMDB.h */,
+				A369565D1C55F0B400C60C20 /* FMResultSet.h */,
+				A369565E1C55F0B400C60C20 /* FMResultSet.m */,
+			);
+			name = fmdb;
 			sourceTree = "<group>";
 		};
 		A38E25CD1C12A82A00A3DCEC /* View */ = {
@@ -524,15 +563,6 @@
 				A3F316F41C537B1000D11C10 /* RMPOITableViewCell.xib */,
 			);
 			name = POICell;
-			sourceTree = "<group>";
-		};
-		A3F316F81C544D1200D11C10 /* POIModel */ = {
-			isa = PBXGroup;
-			children = (
-				A3F316F91C544D4500D11C10 /* RMPOIModel.h */,
-				A3F316FA1C544D4500D11C10 /* RMPOIModel.m */,
-			);
-			name = POIModel;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -677,9 +707,12 @@
 				A3592BE91C28FBA600EC94AC /* UIView+Utils.m in Sources */,
 				00495C1E1C070DD90015DB12 /* SecondViewController.m in Sources */,
 				A345469D1C420B5B004281FE /* UIViewController+MethodSwizzle.m in Sources */,
+				A369565F1C55F0B400C60C20 /* FMDatabase.m in Sources */,
 				A3F316F51C537B1100D11C10 /* RMPOITableViewCell.m in Sources */,
 				00FB6F0F1C04596800EE49F3 /* ViewController.m in Sources */,
+				A36956631C55F0B400C60C20 /* FMResultSet.m in Sources */,
 				A3F316C11C4F8FE200D11C10 /* UIImageView+Utils.m in Sources */,
+				A36956611C55F0B400C60C20 /* FMDatabasePool.m in Sources */,
 				A345460E1C3CE06E004281FE /* CALayer+Utils.m in Sources */,
 				A3CDAE1A1C302D990037F51C /* RMBaseModel.m in Sources */,
 				A3F316F11C536B0000D11C10 /* RMPOISearchRequest.m in Sources */,
@@ -694,14 +727,15 @@
 				A38E25CB1C128D6300A3DCEC /* BaseTableViewController.m in Sources */,
 				A3CB87121C2B60E400576755 /* RMCellHeaderView.m in Sources */,
 				A38E25D21C12A8B900A3DCEC /* RMBaseCell.m in Sources */,
+				A36956601C55F0B400C60C20 /* FMDatabaseAdditions.m in Sources */,
 				A3CDAE1E1C302EEF0037F51C /* NSDictionary+NullReplace.m in Sources */,
 				A3F316E31C535B8F00D11C10 /* RMLocationShareManager.m in Sources */,
 				A3592BDF1C26E77D00EC94AC /* NSDictionary+Utils.m in Sources */,
 				A3F316DC1C50CA9700D11C10 /* RMTextAttribute.m in Sources */,
+				A36956621C55F0B400C60C20 /* FMDatabaseQueue.m in Sources */,
 				00929CC61C11377C00511DF5 /* pushButton.m in Sources */,
 				A3CB87161C2B630E00576755 /* RMCellHeaderView+Utils.m in Sources */,
 				A32D26141C32C14D0019D4EF /* RMAsyncQueue.m in Sources */,
-				A3F316FB1C544D4500D11C10 /* RMPOIModel.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
