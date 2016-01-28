@@ -14,6 +14,8 @@
 #import "RMPOISearchRequest.h"
 #import "RMPOITableViewCell.h"
 #import "FMDB.h"
+//
+#import "RMCoffeeListDataBase.h"
 
 @interface ViewController ()<AMapLocationManagerDelegate, AMapSearchDelegate>
 

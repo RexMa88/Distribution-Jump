@@ -10,30 +10,38 @@
 
 @implementation RMCoffeeListDataBase
 
-+ (instancetype)shareManager{
-    static RMCoffeeListDataBase *_shareManager = nil;
-    static dispatch_once_t onceToken;
-    dispatch_once(&onceToken, ^{
-        _shareManager = [[RMCoffeeListDataBase alloc] init];
-    });
+- (BOOL)executeDataBase:(NSString *)operation
+                   name:(NSString *)name
+                   data:(NSDictionary *)dict{
     
-    return _shareManager;
-}
-
-- (instancetype)init{
-    self = [super init];
+    NSString *operationStr = [self filterOperation:operation];
     
-    if (self) {
-        
+    //获取data的keys和values
+    NSArray *allKeys = [dict allKeys];
+    NSArray *allValues = [dict allValues];
+    
+    NSMutableString *sql = [[NSMutableString alloc] init];
+    [sql appendString:operationStr];
+    
+    if ([operationStr isEqualToString:@"SELECT"]) {
+        [allKeys enumerateObjectsUsingBlock:^(NSString * _Nonnull key, NSUInteger idx, BOOL * _Nonnull stop) {
+            [sql appendFormat:@" %@,",key];
+        }];
+        [sql replaceCharactersInRange:NSMakeRange(sql.length - 1, 1) withString:@" "];
+        [sql appendFormat:@"FROM %@", name];
     }
     
-    return self;
+    
+    
+    return YES;
 }
 
-- (NSString *)databasePath{
-    NSString *doc = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) lastObject];
-    NSString *path = [doc stringByAppendingPathComponent:@"coffee.sqlite"];
-    return path;
+//过滤Operation操作
+- (NSString *)filterOperation:(NSString *)operation{
+    if ([operation hasPrefix:@"SELECT"] || [operation hasPrefix:@"select"]) return @"SELECT";
+    if ([operation hasPrefix:@"INSERT"] || [operation hasPrefix:@"insert"]) return @"INSERT INTO";
+    if ([operation hasPrefix:@"DELETE"] || [operation hasPrefix:@"delete"]) return @"DELETE";
+    else return nil;
 }
 
 @end
