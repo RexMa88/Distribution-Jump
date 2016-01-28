@@ -20,6 +20,20 @@
     return _shareManager;
 }
 
+- (instancetype)init{
+    self = [super init];
+    
+    if (self) {
+        
+    }
+    
+    return self;
+}
 
+- (NSString *)databasePath{
+    NSString *doc = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) lastObject];
+    NSString *path = [doc stringByAppendingPathComponent:@"coffee.sqlite"];
+    return path;
+}
 
 @end

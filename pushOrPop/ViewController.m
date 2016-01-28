@@ -128,36 +128,29 @@
 #pragma mark - AMapSearchDelegate
 
 - (void)onPOISearchDone:(AMapPOISearchBaseRequest *)request response:(AMapPOISearchResponse *)response{
+    FMDatabase *database = [FMDatabase databaseWithPath:[self dataBasePath:@"coffee.sqlite"]];
+    if (![database open]) return;
     if (response.pois.count) {
         //The configuration of RMTableViewDataSource
-        //Create dataBase to save data
-        FMDatabase *database = [FMDatabase databaseWithPath:[self dataBasePath]];
         //The Configuration of database
-        if (![database open]) return;
-        else{
-            //create table
-            NSString *createTableSql = @"CREATE TABLE IF NOT EXISTS CoffeeList (uid integer primary key, name text NOT NULL, address text, tel text)";
-            BOOL result = [database executeUpdate:createTableSql];
-            if (result) {
-                NSLog(@"创建成功");
-                FMDatabaseQueue *queue = [FMDatabaseQueue databaseQueueWithPath:[self dataBasePath]];
-                
-                [queue inTransaction:^(FMDatabase *db, BOOL *rollback) {
-                    [response.pois enumerateObjectsUsingBlock:^(AMapPOI   * _Nonnull poi, NSUInteger idx, BOOL * _Nonnull stop) {
-                        NSString *insertSql = @"INSERT INTO CoffeeList (uid, name, address, tel) VALUES (?, ?, ?, ?)";
-                        NSNumberFormatter *numberFormatter = [[NSNumberFormatter alloc] init];
-                        [numberFormatter setNumberStyle:NSNumberFormatterDecimalStyle];
-                        NSNumber *uid = [numberFormatter numberFromString:poi.uid];
-                        BOOL insertResult = [db executeUpdate:insertSql, uid, poi.name, poi.address, poi.tel];
-                        if (!insertResult) {
-                            *rollback = YES;
-                            return ;
-                        }
-                    }];
+        //create table
+        NSString *createTableSql = @"CREATE TABLE IF NOT EXISTS CoffeeList (uid integer primary key, name text NOT NULL, address text, tel text)";
+        BOOL result = [database executeUpdate:createTableSql];
+        if (result) {
+            NSLog(@"创建成功");
+            FMDatabaseQueue *queue = [FMDatabaseQueue databaseQueueWithPath:[self dataBasePath:@"coffee.sqlite"]];
+            
+            [queue inTransaction:^(FMDatabase *db, BOOL *rollback) {
+                [response.pois enumerateObjectsUsingBlock:^(AMapPOI   * _Nonnull poi, NSUInteger idx, BOOL * _Nonnull stop) {
+                    NSString *insertSql = @"INSERT INTO CoffeeList (name, address, tel) VALUES (?, ?, ?)";
+                    BOOL insertResult = [db executeUpdate:insertSql,poi.name, poi.address, poi.tel];
+                    if (!insertResult) {
+                        NSLog(@"插入错误");
+                        *rollback = YES;
+                        return ;
+                    }
                 }];
-            }else{
-                NSLog(@"创建失败");
-            }
+            }];
         }
         self.dataSource = [[RMTableViewDataSource alloc] initWithDataArray:response.pois cell:[RMPOITableViewCell class]];
         self.dataSource.configureCellBlock = ^(RMPOITableViewCell *cell, AMapPOI *poi){
@@ -170,22 +163,55 @@
             __strong typeof(weakSelf) strongSelf = weakSelf;
             NotificationPostNotify(action, strongSelf, obj);
         };
-        
-//        [self.tableView reloadData];
-        [self configureDelegateAndDataSource];
     }
-}
-     
-#pragma mark - custom Method
-/**
- *  dataBasePath
- */
-- (NSString *)dataBasePath{
-    NSString *doc = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) lastObject];
-    NSString *path = [doc stringByAppendingPathComponent:@"coffee.sqlite"];
-    return path;
+    //关闭数据库
+    [database close];
+
+    [self configureDelegateAndDataSource];
 }
 
+- (void)AMapSearchRequest:(id)request didFailWithError:(NSError *)error{
+    FMDatabase *database = [FMDatabase databaseWithPath:[self dataBasePath:@"coffee.sqlite"]];
+    if (![database open]) return;
+    //无网络状态时，取缓存
+    NSMutableArray *poiArray = [NSMutableArray array];
+    NSString *selectSql = @"SELECT * FROM CoffeeList";
+    FMResultSet *result = [database executeQuery:selectSql];
+    NSLog(@"The result is %@",result);
+    while ([result next]) {
+        //取名称
+        NSString *name = [result stringForColumn:@"name"];
+        //取地址
+        NSString *addr = [result stringForColumn:@"address"];
+        //取联系方式
+        NSString *tel = [result stringForColumn:@"tel"];
+        //AMapPOI
+        AMapPOI *poi = [[AMapPOI alloc] init];
+        poi.name = [name copy];
+        poi.address = [addr copy];
+        poi.tel = [tel copy];
+        //放入数组
+        [poiArray addObject:poi];
+    }
+    
+    self.dataSource = [[RMTableViewDataSource alloc] initWithDataArray:poiArray cell:[RMPOITableViewCell class]];
+    self.dataSource.configureCellBlock = ^(RMPOITableViewCell *cell, AMapPOI *poi){
+        cell.poi = poi;
+    };
+    //The configuration of RMTableViewDelegate
+    self.delegate = [[RMTableViewDelegate alloc] initWithDataArray:poiArray];
+    __weak typeof(self)weakSelf = self;
+    self.delegate.actBlock = ^(NSString *action, NSDictionary *obj){
+        __strong typeof(weakSelf) strongSelf = weakSelf;
+        NotificationPostNotify(action, strongSelf, obj);
+    };
+    
+    [self configureDelegateAndDataSource];
+    
+    [database close];
+}
+
+#pragma mark - custom Method
 - (void)customUI{
     self.tableView = [self tableViewWithFrame:CGRectMake(0, 0, kWidth, kHeight) TableViewStyle:UITableViewStyleGrouped cellArray:@[@"RMPOITableViewCell"]];
     self.tableView.rowHeight = RMPOITableViewCellHeight;
@@ -195,6 +221,15 @@
     self.tableView.delegate = self.delegate;
     self.tableView.dataSource = self.dataSource;
     [self.tableView reloadData];
+}
+
+/**
+ *  dataBasePath
+ */
+- (NSString *)dataBasePath:(NSString *)dataBase{
+    NSString *doc = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) lastObject];
+    NSString *path = [doc stringByAppendingPathComponent:dataBase];
+    return path;
 }
 
 - (void)pushAction:(pushButton *)button{
