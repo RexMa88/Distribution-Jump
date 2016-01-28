@@ -34,6 +34,7 @@
 		A36956611C55F0B400C60C20 /* FMDatabasePool.m in Sources */ = {isa = PBXBuildFile; fileRef = A36956591C55F0B400C60C20 /* FMDatabasePool.m */; };
 		A36956621C55F0B400C60C20 /* FMDatabaseQueue.m in Sources */ = {isa = PBXBuildFile; fileRef = A369565B1C55F0B400C60C20 /* FMDatabaseQueue.m */; };
 		A36956631C55F0B400C60C20 /* FMResultSet.m in Sources */ = {isa = PBXBuildFile; fileRef = A369565E1C55F0B400C60C20 /* FMResultSet.m */; };
+		A369566A1C59BBF000C60C20 /* RMCoffeeListDataBase.m in Sources */ = {isa = PBXBuildFile; fileRef = A36956691C59BBF000C60C20 /* RMCoffeeListDataBase.m */; };
 		A38E25CB1C128D6300A3DCEC /* BaseTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A38E25CA1C128D6300A3DCEC /* BaseTableViewController.m */; };
 		A38E25D21C12A8B900A3DCEC /* RMBaseCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A38E25D11C12A8B900A3DCEC /* RMBaseCell.m */; };
 		A38E25D51C12ABB800A3DCEC /* RMTableViewDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = A38E25D41C12ABB800A3DCEC /* RMTableViewDataSource.m */; };
@@ -137,6 +138,8 @@
 		A369565C1C55F0B400C60C20 /* FMDB.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDB.h; sourceTree = "<group>"; };
 		A369565D1C55F0B400C60C20 /* FMResultSet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMResultSet.h; sourceTree = "<group>"; };
 		A369565E1C55F0B400C60C20 /* FMResultSet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMResultSet.m; sourceTree = "<group>"; };
+		A36956681C59BBF000C60C20 /* RMCoffeeListDataBase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RMCoffeeListDataBase.h; sourceTree = "<group>"; };
+		A36956691C59BBF000C60C20 /* RMCoffeeListDataBase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RMCoffeeListDataBase.m; sourceTree = "<group>"; };
 		A38E25C91C128D6300A3DCEC /* BaseTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseTableViewController.h; sourceTree = "<group>"; };
 		A38E25CA1C128D6300A3DCEC /* BaseTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseTableViewController.m; sourceTree = "<group>"; };
 		A38E25CC1C129B7200A3DCEC /* classInfo.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = classInfo.h; sourceTree = "<group>"; };
@@ -314,6 +317,7 @@
 		00FB6F061C04596800EE49F3 /* pushOrPop */ = {
 			isa = PBXGroup;
 			children = (
+				A36956671C59BBBD00C60C20 /* DataBase */,
 				A36956521C55F04400C60C20 /* ThirdParty */,
 				A32D26111C32C1210019D4EF /* AsyncQueue */,
 				A3592BF01C290B6600EC94AC /* Framework */,
@@ -455,6 +459,15 @@
 				A369565E1C55F0B400C60C20 /* FMResultSet.m */,
 			);
 			name = fmdb;
+			sourceTree = "<group>";
+		};
+		A36956671C59BBBD00C60C20 /* DataBase */ = {
+			isa = PBXGroup;
+			children = (
+				A36956681C59BBF000C60C20 /* RMCoffeeListDataBase.h */,
+				A36956691C59BBF000C60C20 /* RMCoffeeListDataBase.m */,
+			);
+			name = DataBase;
 			sourceTree = "<group>";
 		};
 		A38E25CD1C12A82A00A3DCEC /* View */ = {
@@ -714,6 +727,7 @@
 				A3F316C11C4F8FE200D11C10 /* UIImageView+Utils.m in Sources */,
 				A36956611C55F0B400C60C20 /* FMDatabasePool.m in Sources */,
 				A345460E1C3CE06E004281FE /* CALayer+Utils.m in Sources */,
+				A369566A1C59BBF000C60C20 /* RMCoffeeListDataBase.m in Sources */,
 				A3CDAE1A1C302D990037F51C /* RMBaseModel.m in Sources */,
 				A3F316F11C536B0000D11C10 /* RMPOISearchRequest.m in Sources */,
 				00929CC11C11347400511DF5 /* ThirdViewController.m in Sources */,
