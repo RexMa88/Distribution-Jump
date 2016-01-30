@@ -17,10 +17,19 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface RMCoffeeListDataBase : FMDatabase
 
-//操作数据库封装，name格式：db或sqlite
-- (BOOL)executeDataBase:(NSString *)operation
-                   name:(NSString *)name
-                   data:(NSDictionary *)dict;
+/**
+ *  数据库操作的封装
+ *
+ *  @param operation SELECT、INSERT、DELETE...
+ *  @param name      The name of TABLE 表名
+ *  @param dict      The key of database you wanna search 你想要查询或者插入的键值
+ *
+ *  @return 操作数据库是否成功
+ */
+
+- (BOOL)executeOperation:(NSString *)operation
+                    name:(NSString *)name
+                    data:(NSDictionary *)dict;
 
 @end
 

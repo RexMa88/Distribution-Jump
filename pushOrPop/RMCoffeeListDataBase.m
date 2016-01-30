@@ -8,11 +8,12 @@
 
 #import "RMCoffeeListDataBase.h"
 
+
 @implementation RMCoffeeListDataBase
 
-- (BOOL)executeDataBase:(NSString *)operation
-                   name:(NSString *)name
-                   data:(NSDictionary *)dict{
+- (BOOL)executeOperation:(NSString *)operation
+                    name:(NSString *)name
+                    data:(NSDictionary *)dict{
     
     NSString *operationStr = [self filterOperation:operation];
     
@@ -31,16 +32,17 @@
         [sql appendFormat:@"FROM %@", name];
     }
     
-    
+    NSLog(@"sql is %@",sql);
     
     return YES;
 }
 
 //过滤Operation操作
 - (NSString *)filterOperation:(NSString *)operation{
-    if ([operation hasPrefix:@"SELECT"] || [operation hasPrefix:@"select"]) return @"SELECT";
-    if ([operation hasPrefix:@"INSERT"] || [operation hasPrefix:@"insert"]) return @"INSERT INTO";
-    if ([operation hasPrefix:@"DELETE"] || [operation hasPrefix:@"delete"]) return @"DELETE";
+    NSString *oper = [operation substringToIndex:6];
+    if ([[oper uppercaseString] isEqualToString:@"SELECT"]) return @"SELECT";
+    if ([[operation uppercaseString] isEqualToString:@"INSERT"]) return @"INSERT INTO";
+    if ([[operation uppercaseString] isEqualToString:@"DELETE"]) return @"DELETE";
     else return nil;
 }
 
