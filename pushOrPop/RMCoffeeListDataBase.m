@@ -8,6 +8,7 @@
 
 #import "RMCoffeeListDataBase.h"
 #import "FMDB.h"
+#import <objc/runtime.h>
 
 @implementation RMCoffeeListDataBase
 
@@ -38,9 +39,9 @@
 //过滤Operation操作
 - (NSString *)filterOperation:(NSString *)operation{
     NSString *oper = [operation substringToIndex:6];
-    if ([[oper uppercaseString] isEqualToString:@"SELECT"]) return @"SELECT";
+    if ([[oper uppercaseString] isEqualToString:SELECT]) return SELECT;
     if ([[operation uppercaseString] isEqualToString:@"INSERT"]) return @"INSERT INTO";
-    if ([[operation uppercaseString] isEqualToString:@"DELETE"]) return @"DELETE";
+    if ([[operation uppercaseString] isEqualToString:DELETE]) return DELETE;
     else return nil;
 }
 
@@ -117,6 +118,13 @@
                 dict:(NSDictionary *)dict{
     
     [self open];
+    
+    if ([operation isEqualToString:SELECT]) {
+        FMResultSet *result = [self executeQuery:sql];
+        while ([result next]) {
+            
+        }
+    }
     
     return YES;
 }

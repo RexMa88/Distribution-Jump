@@ -13,6 +13,10 @@
 
 #import "FMDatabase.h"
 
+#define SELECT          @"SELECT"
+#define INSERT          @"INSERT INTO"
+#define DELETE          @"DELETE"
+
 NS_ASSUME_NONNULL_BEGIN
 
 @interface RMCoffeeListDataBase : FMDatabase
