@@ -20,7 +20,7 @@ NS_ASSUME_NONNULL_BEGIN
 /**
  *  数据库操作的封装
  *
- *  @param operation SELECT、INSERT、DELETE...
+ *  @param operation SELECT、INSERT、DELETE
  *  @param name      The name of TABLE 表名
  *  @param dict      The key of database you wanna search 你想要查询或者插入的键值
  *

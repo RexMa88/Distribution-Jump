@@ -133,7 +133,7 @@
     //设置对象1
     SEL selector = [self selector:[[notification userInfo] objectForKey:kDictionaryKeySelector]];
     id object = [[notification userInfo] objectForKey:kDictionaryKeyObject];
-    BOOL backgroundRunning = [[notification userInfo] objectForKey:kDictionaryKeySelectorBackground];
+//    BOOL backgroundRunning = [[notification userInfo] objectForKey:kDictionaryKeySelectorBackground];
     /**
      *  According to the type of object class
      */
@@ -157,6 +157,7 @@
     }else if ([object isKindOfClass:[NSArray class]]){
         viewController.dataArray = (NSArray *)object;
     }
+    
 #pragma clang diagnostic ignored "-Warc-perfomSelector-leaks"
     if (anotherSelector) {
         [viewController performSelector:anotherSelector withObject:anotherObject];
