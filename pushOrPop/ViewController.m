@@ -52,10 +52,10 @@
     [self configureLocation];
     [self runLoopCalculateData];
     //对FMDB的再封装
-    RMCoffeeListDataBase *dataBase = [[RMCoffeeListDataBase alloc] initWithPath:[self dataBasePath:@"coffee.sqlite"]];
-    BOOL isSuccess = [dataBase executeOperation:@"insert"
-                                         name:@"coffee"
-                                         data:@{@"name":@""}];
+//    RMCoffeeListDataBase *dataBase = [[RMCoffeeListDataBase alloc] initWithPath:[self dataBasePath:@"coffee.sqlite"]];
+//    BOOL isSuccess = [dataBase executeOperation:@"insert"
+//                                         name:@"coffee"
+//                                         data:@{@"name":@""}];
 //    NSLog(@"Success is %@",isSuccess);
 }
 

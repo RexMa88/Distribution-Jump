@@ -19,6 +19,7 @@
 		00FB6F171C04596800EE49F3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 00FB6F151C04596800EE49F3 /* LaunchScreen.storyboard */; };
 		00FB6F221C04596800EE49F3 /* pushOrPopTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 00FB6F211C04596800EE49F3 /* pushOrPopTests.m */; };
 		00FB6F2D1C04596800EE49F3 /* pushOrPopUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 00FB6F2C1C04596800EE49F3 /* pushOrPopUITests.m */; };
+		9B1705C61C5EF32E002FFD0C /* RMProxy.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B1705C51C5EF32E002FFD0C /* RMProxy.m */; };
 		A32D26141C32C14D0019D4EF /* RMAsyncQueue.m in Sources */ = {isa = PBXBuildFile; fileRef = A32D26131C32C14D0019D4EF /* RMAsyncQueue.m */; };
 		A345460B1C3CCFA2004281FE /* RMDateShareManager.m in Sources */ = {isa = PBXBuildFile; fileRef = A345460A1C3CCFA2004281FE /* RMDateShareManager.m */; };
 		A345460E1C3CE06E004281FE /* CALayer+Utils.m in Sources */ = {isa = PBXBuildFile; fileRef = A345460D1C3CE06E004281FE /* CALayer+Utils.m */; };
@@ -109,6 +110,8 @@
 		00FB6F2E1C04596800EE49F3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		00FB6F3B1C045B9200EE49F3 /* pushOrPop.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = pushOrPop.pch; sourceTree = "<group>"; };
 		00FB6F3C1C045C7200EE49F3 /* KNotificationAction.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KNotificationAction.h; sourceTree = "<group>"; };
+		9B1705C41C5EF32E002FFD0C /* RMProxy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RMProxy.h; sourceTree = "<group>"; };
+		9B1705C51C5EF32E002FFD0C /* RMProxy.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RMProxy.m; sourceTree = "<group>"; };
 		A32D26121C32C14D0019D4EF /* RMAsyncQueue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RMAsyncQueue.h; sourceTree = "<group>"; };
 		A32D26131C32C14D0019D4EF /* RMAsyncQueue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RMAsyncQueue.m; sourceTree = "<group>"; };
 		A32D26151C32C1EE0019D4EF /* IModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IModel.h; sourceTree = "<group>"; };
@@ -375,6 +378,15 @@
 			name = common;
 			sourceTree = "<group>";
 		};
+		9B1705C31C5EF318002FFD0C /* RMProxy */ = {
+			isa = PBXGroup;
+			children = (
+				9B1705C41C5EF32E002FFD0C /* RMProxy.h */,
+				9B1705C51C5EF32E002FFD0C /* RMProxy.m */,
+			);
+			name = RMProxy;
+			sourceTree = "<group>";
+		};
 		A32D26111C32C1210019D4EF /* AsyncQueue */ = {
 			isa = PBXGroup;
 			children = (
@@ -526,6 +538,7 @@
 		A3CDAE1B1C302EB90037F51C /* Cocoa+Utils */ = {
 			isa = PBXGroup;
 			children = (
+				9B1705C31C5EF318002FFD0C /* RMProxy */,
 				A345469E1C428D23004281FE /* UITableViewCell + Utils */,
 				A345469B1C420B5B004281FE /* UIViewController+MethodSwizzle.h */,
 				A345469C1C420B5B004281FE /* UIViewController+MethodSwizzle.m */,
@@ -728,6 +741,7 @@
 				A36956611C55F0B400C60C20 /* FMDatabasePool.m in Sources */,
 				A345460E1C3CE06E004281FE /* CALayer+Utils.m in Sources */,
 				A369566A1C59BBF000C60C20 /* RMCoffeeListDataBase.m in Sources */,
+				9B1705C61C5EF32E002FFD0C /* RMProxy.m in Sources */,
 				A3CDAE1A1C302D990037F51C /* RMBaseModel.m in Sources */,
 				A3F316F11C536B0000D11C10 /* RMPOISearchRequest.m in Sources */,
 				00929CC11C11347400511DF5 /* ThirdViewController.m in Sources */,

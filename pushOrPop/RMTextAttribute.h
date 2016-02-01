@@ -28,3 +28,4 @@
 + (instancetype)shadowWithNSShadow:(NSShadow *)nsShadow;//将NSShadow转换成RMTextShadow
 - (NSShadow *)nsShadow;
 @end
+
