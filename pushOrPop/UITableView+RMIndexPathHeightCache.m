@@ -49,6 +49,35 @@ typedef NSMutableArray<NSMutableArray<NSNumber *> *> RMIndexPathHeightsBySection
     return ![number isEqualToNumber:@-1];
 }
 
+- (void)cacheHeight:(CGFloat)height byIndexPath:(NSIndexPath *)indexPath{
+    self.automaticallyInvalidateEnabled = YES;
+    [self buildCachesAtIndexPathsIfNeeded:@[indexPath]];
+    [self heightsBySectionForCurrentOrientation][indexPath.section][indexPath.row] = @(height);
+}
+
+- (CGFloat)heightForIndexPath:(NSIndexPath *)indexPath{
+    [self buildCachesAtIndexPathsIfNeeded:@[indexPath]];
+    NSNumber *number = [self heightsBySectionForCurrentOrientation][indexPath.section][indexPath.row];
+#if CGFLOAT_IS_DOUBLE
+    return number.doubleValue;
+#else
+    return number.floatValue;
+#endif
+}
+
+- (void)invalidateHeightAtIndexPath:(NSIndexPath *)indexPath{
+    [self buildCachesAtIndexPathsIfNeeded:@[indexPath]];
+    [self enumerateAllOrientationsUsingBlock:^(RMIndexPathHeightsBySection *heightBySection) {
+        heightBySection[indexPath.section][indexPath.row] = @-1;
+    }];
+}
+
+- (void)invalidateAllHeightCache {
+    [self enumerateAllOrientationsUsingBlock:^(RMIndexPathHeightsBySection *heightsBySection) {
+        [heightsBySection removeAllObjects];
+    }];
+}
+
 - (void)buildCachesAtIndexPathsIfNeeded:(NSArray *)indexPaths{
     [indexPaths enumerateObjectsUsingBlock:^(NSIndexPath *indexPath, NSUInteger idx, BOOL * _Nonnull stop) {
         [self buildSectionsIfNeeded:indexPath.section];
@@ -77,12 +106,9 @@ typedef NSMutableArray<NSMutableArray<NSNumber *> *> RMIndexPathHeightsBySection
     }];
 }
 
-
-
 @end
 
 @implementation UITableView (RMIndexPathHeightCache)
-
 
 
 @end
