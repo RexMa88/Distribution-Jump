@@ -8,7 +8,23 @@
 
 #import "UITableView+RMTempLayout.h"
 
+@implementation IndexPathHeightCache
+
+
+@end
+
 @implementation UITableView (RMTempLayout)
 
+//- (BOOL)existIndexPathHeightCache:(NSIndexPath *)indexPath;
+//- (void)cacheHeight:(CGFloat)height atIndexPath:(NSIndexPath *)indexPath;
+//- (CGFloat)heightForIndexPath:(NSIndexPath *)indexPath;
+
+//- (CGFloat)cellHeightWithIdentifier:(NSString *)identifier
+//                   cacheByIndexPath:(NSIndexPath *)indexPath
+//                      configuration:(void (^)(id))configuration{
+//    
+//    
+//    
+//}
 
 @end

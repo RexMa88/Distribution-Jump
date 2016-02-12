@@ -7,8 +7,11 @@
 //
 
 #import "ThirdViewController.h"
+#import "RMTableView.h"
 
 @interface ThirdViewController ()
+
+@property (nonatomic, strong) RMTableView *tableView;//TableView
 
 @end
 

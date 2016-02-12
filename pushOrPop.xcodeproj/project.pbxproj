@@ -21,6 +21,7 @@
 		00FB6F2D1C04596800EE49F3 /* pushOrPopUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 00FB6F2C1C04596800EE49F3 /* pushOrPopUITests.m */; };
 		9B1705C61C5EF32E002FFD0C /* RMProxy.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B1705C51C5EF32E002FFD0C /* RMProxy.m */; };
 		9B1705CF1C605A57002FFD0C /* RMTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B1705CE1C605A57002FFD0C /* RMTableView.m */; };
+		9B7A31131C6DADE6007D6B54 /* ReactiveCocoa in Resources */ = {isa = PBXBuildFile; fileRef = 9B7A31121C6DADE6007D6B54 /* ReactiveCocoa */; };
 		A32D26141C32C14D0019D4EF /* RMAsyncQueue.m in Sources */ = {isa = PBXBuildFile; fileRef = A32D26131C32C14D0019D4EF /* RMAsyncQueue.m */; };
 		A345460B1C3CCFA2004281FE /* RMDateShareManager.m in Sources */ = {isa = PBXBuildFile; fileRef = A345460A1C3CCFA2004281FE /* RMDateShareManager.m */; };
 		A345460E1C3CE06E004281FE /* CALayer+Utils.m in Sources */ = {isa = PBXBuildFile; fileRef = A345460D1C3CE06E004281FE /* CALayer+Utils.m */; };
@@ -115,6 +116,7 @@
 		9B1705C51C5EF32E002FFD0C /* RMProxy.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RMProxy.m; sourceTree = "<group>"; };
 		9B1705CD1C605A57002FFD0C /* RMTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RMTableView.h; sourceTree = "<group>"; };
 		9B1705CE1C605A57002FFD0C /* RMTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RMTableView.m; sourceTree = "<group>"; };
+		9B7A31121C6DADE6007D6B54 /* ReactiveCocoa */ = {isa = PBXFileReference; lastKnownFileType = folder; name = ReactiveCocoa; path = ThirdParty/ReactiveCocoa; sourceTree = "<group>"; };
 		A32D26121C32C14D0019D4EF /* RMAsyncQueue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RMAsyncQueue.h; sourceTree = "<group>"; };
 		A32D26131C32C14D0019D4EF /* RMAsyncQueue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RMAsyncQueue.m; sourceTree = "<group>"; };
 		A32D26151C32C1EE0019D4EF /* IModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IModel.h; sourceTree = "<group>"; };
@@ -409,13 +411,13 @@
 			name = Singleton;
 			sourceTree = "<group>";
 		};
-		A345469E1C428D23004281FE /* UITableViewCell + Utils */ = {
+		A345469E1C428D23004281FE /* UITableView + Utils */ = {
 			isa = PBXGroup;
 			children = (
 				A34546A21C428EFE004281FE /* UITableView+RMTempLayout.h */,
 				A34546A31C428EFE004281FE /* UITableView+RMTempLayout.m */,
 			);
-			name = "UITableViewCell + Utils";
+			name = "UITableView + Utils";
 			sourceTree = "<group>";
 		};
 		A3592BE01C26E78E00EC94AC /* Model */ = {
@@ -453,6 +455,7 @@
 		A36956521C55F04400C60C20 /* ThirdParty */ = {
 			isa = PBXGroup;
 			children = (
+				9B7A31121C6DADE6007D6B54 /* ReactiveCocoa */,
 				A36956531C55F0A800C60C20 /* fmdb */,
 			);
 			name = ThirdParty;
@@ -544,7 +547,7 @@
 			isa = PBXGroup;
 			children = (
 				9B1705C31C5EF318002FFD0C /* RMProxy */,
-				A345469E1C428D23004281FE /* UITableViewCell + Utils */,
+				A345469E1C428D23004281FE /* UITableView + Utils */,
 				A345469B1C420B5B004281FE /* UIViewController+MethodSwizzle.h */,
 				A345469C1C420B5B004281FE /* UIViewController+MethodSwizzle.m */,
 				A3592BDD1C26E77C00EC94AC /* NSDictionary+Utils.h */,
@@ -707,6 +710,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				00FB6F171C04596800EE49F3 /* LaunchScreen.storyboard in Resources */,
+				9B7A31131C6DADE6007D6B54 /* ReactiveCocoa in Resources */,
 				00FB6F141C04596800EE49F3 /* Assets.xcassets in Resources */,
 				A3F316F61C537B1100D11C10 /* RMPOITableViewCell.xib in Resources */,
 				A3F316CC1C50B8B100D11C10 /* AMap.bundle in Resources */,
