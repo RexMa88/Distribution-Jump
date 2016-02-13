@@ -7,14 +7,16 @@
 //
 
 #import "AppDelegate.h"
-#import "BaseViewController.h"
+#import "BaseTableViewController.h"
+//tabBarControllerType
 #import "ViewController.h"
+#import "RMWeatherViewController.h"
 //AMapKit
 #import <MAMapKit/MAMapKit.h>
 #import <AMapLocationKit/AMapLocationKit.h>
 #import <AMapSearchKit/AMapSearchKit.h>
 
-@interface AppDelegate ()
+@interface AppDelegate ()<UITabBarControllerDelegate>
 
 @end
 
@@ -48,9 +50,44 @@
 - (void)initializeControllers{
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen]bounds]];
     
-    ViewController * viewController = [[ViewController alloc] init];
+    //界面类型,通过Key-Value进行格式扩展
+    /**
+     *  Key   : 参考Define.h中的控制器宏TabControllerType
+     *  Value : class -- 对应的控制器类
+     *          image -- 对应的图片
+     *          selectedImage -- 对应的选择图片
+     */
+    NSDictionary *controllerDic = @{[NSNumber numberWithUnsignedInteger:TabControllerTypeCoffee] :
+  @{@"class" : [ViewController class],
+    @"image" : @"coffee_image",
+    @"selectImage" : @"coffee_selected_image"},
+                                    [NSNumber numberWithUnsignedInteger:TabControllerTypeWeather] :
+  @{@"class" : [RMWeatherViewController class],
+    @"image" : @"weather_image",
+    @"selectImage": @"weather_image_selected"}};
     
-    UINavigationController * navController = [[UINavigationController alloc] initWithRootViewController:viewController];
+    NSMutableArray *array = [NSMutableArray array];
+    for (NSUInteger i = 0; i < controllerDic.count; i++) {
+        [array addObject:[controllerDic objectForKey:[NSNumber numberWithUnsignedInteger:i]]];
+    }
+    
+    NSMutableArray *navArray = [NSMutableArray array];
+    for (NSDictionary *dict in array) {
+        BaseTableViewController *viewController = [[[[dict objectForKey:@"class"] class] alloc] init];
+        UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:viewController];
+        [nav.tabBarItem setImage:[UIImage imageNamed:[dict objectForKey:@"image"]]];
+        [nav.tabBarItem setSelectedImage:[UIImage imageNamed:[dict objectForKey:@"selectImage"]]];
+//        [nav.tabBarItem setImageInsets:UIEdgeInsetsMake(-2, 0, -2, 0)];
+        [navArray addObject:nav];
+    }
+    
+    UITabBarController *tabBarVC = [[UITabBarController alloc] init];
+    tabBarVC.delegate = self;
+    [tabBarVC setViewControllers:navArray];
+    
+//    ViewController * viewController = [[ViewController alloc] init];
+    
+    UINavigationController * navController = [[UINavigationController alloc] initWithRootViewController:tabBarVC];
     
     self.window.rootViewController = navController;
     self.currentNav = navController;

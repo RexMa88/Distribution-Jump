@@ -15,5 +15,4 @@
 @interface RMWeatherViewController : BaseTableViewController
 
 
-
 @end
