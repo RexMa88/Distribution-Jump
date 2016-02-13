@@ -41,6 +41,7 @@
 		9B1B73541C6F1B620022C65B /* AFURLRequestSerialization.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B1B734C1C6F1B620022C65B /* AFURLRequestSerialization.m */; };
 		9B1B73551C6F1B620022C65B /* AFURLResponseSerialization.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B1B734E1C6F1B620022C65B /* AFURLResponseSerialization.m */; };
 		9B1B73561C6F1B620022C65B /* AFURLSessionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B1B73501C6F1B620022C65B /* AFURLSessionManager.m */; };
+		9B1B794F1C6FF0420022C65B /* RMClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B1B794E1C6FF0420022C65B /* RMClient.m */; };
 		9B7A31161C6DAFB2007D6B54 /* UITableView+RMIndexPathHeightCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B7A31151C6DAFB2007D6B54 /* UITableView+RMIndexPathHeightCache.m */; };
 		A32D26141C32C14D0019D4EF /* RMAsyncQueue.m in Sources */ = {isa = PBXBuildFile; fileRef = A32D26131C32C14D0019D4EF /* RMAsyncQueue.m */; };
 		A345460B1C3CCFA2004281FE /* RMDateShareManager.m in Sources */ = {isa = PBXBuildFile; fileRef = A345460A1C3CCFA2004281FE /* RMDateShareManager.m */; };
@@ -179,6 +180,8 @@
 		9B1B734E1C6F1B620022C65B /* AFURLResponseSerialization.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFURLResponseSerialization.m; sourceTree = "<group>"; };
 		9B1B734F1C6F1B620022C65B /* AFURLSessionManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFURLSessionManager.h; sourceTree = "<group>"; };
 		9B1B73501C6F1B620022C65B /* AFURLSessionManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFURLSessionManager.m; sourceTree = "<group>"; };
+		9B1B794D1C6FF0420022C65B /* RMClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RMClient.h; sourceTree = "<group>"; };
+		9B1B794E1C6FF0420022C65B /* RMClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RMClient.m; sourceTree = "<group>"; };
 		9B7A31141C6DAFB2007D6B54 /* UITableView+RMIndexPathHeightCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITableView+RMIndexPathHeightCache.h"; sourceTree = "<group>"; };
 		9B7A31151C6DAFB2007D6B54 /* UITableView+RMIndexPathHeightCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITableView+RMIndexPathHeightCache.m"; sourceTree = "<group>"; };
 		A32D26121C32C14D0019D4EF /* RMAsyncQueue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RMAsyncQueue.h; sourceTree = "<group>"; };
@@ -487,6 +490,8 @@
 			children = (
 				9B1B6DEF1C6F13EB0022C65B /* RMWeatherRequest.h */,
 				9B1B6DF01C6F13EB0022C65B /* RMWeatherRequest.m */,
+				9B1B794D1C6FF0420022C65B /* RMClient.h */,
+				9B1B794E1C6FF0420022C65B /* RMClient.m */,
 			);
 			name = Request;
 			sourceTree = "<group>";
@@ -824,7 +829,7 @@
 				TargetAttributes = {
 					00FB6F031C04596800EE49F3 = {
 						CreatedOnToolsVersion = 7.0.1;
-						DevelopmentTeam = ZRU9NS7944;
+						DevelopmentTeam = RHW7F4J9C8;
 						SystemCapabilities = {
 							com.apple.BackgroundModes = {
 								enabled = 1;
@@ -969,6 +974,7 @@
 				00929CC11C11347400511DF5 /* ThirdViewController.m in Sources */,
 				A38E25D51C12ABB800A3DCEC /* RMTableViewDataSource.m in Sources */,
 				00495C191C06E5F80015DB12 /* BaseViewController.m in Sources */,
+				9B1B794F1C6FF0420022C65B /* RMClient.m in Sources */,
 				A345460B1C3CCFA2004281FE /* RMDateShareManager.m in Sources */,
 				9B1B73421C6F1B4B0022C65B /* ViewController+MASAdditions.m in Sources */,
 				00FB6F0C1C04596800EE49F3 /* AppDelegate.m in Sources */,
@@ -1139,6 +1145,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/pushOrPop",
@@ -1152,6 +1159,7 @@
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_BUNDLE_IDENTIFIER = rexma.pushOrPop;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				SDKROOT = iphoneos;
 			};
 			name = Debug;
@@ -1162,6 +1170,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/pushOrPop",
@@ -1175,6 +1184,7 @@
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_BUNDLE_IDENTIFIER = rexma.pushOrPop;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				SDKROOT = iphoneos;
 			};
 			name = Release;
