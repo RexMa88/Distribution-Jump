@@ -7,7 +7,10 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "ReactiveCocoa.h"
 
 @interface RMWeatherRequest : NSObject
+
+
 
 @end
