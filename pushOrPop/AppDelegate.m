@@ -60,11 +60,13 @@
     NSDictionary *controllerDic = @{[NSNumber numberWithUnsignedInteger:TabControllerTypeCoffee] :
   @{@"class" : [ViewController class],
     @"image" : @"coffee_image",
-    @"selectImage" : @"coffee_selected_image"},
+    @"selectImage" : @"coffee_selected_image",
+    @"title" : @"咖啡"},
                                     [NSNumber numberWithUnsignedInteger:TabControllerTypeWeather] :
   @{@"class" : [RMWeatherViewController class],
     @"image" : @"weather_image",
-    @"selectImage": @"weather_image_selected"}};
+    @"selectImage": @"weather_image_selected",
+    @"title" : @"天气"}};
     
     NSMutableArray *array = [NSMutableArray array];
     for (NSUInteger i = 0; i < controllerDic.count; i++) {
@@ -77,6 +79,7 @@
         UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:viewController];
         [nav.tabBarItem setImage:[UIImage imageNamed:[dict objectForKey:@"image"]]];
         [nav.tabBarItem setSelectedImage:[UIImage imageNamed:[dict objectForKey:@"selectImage"]]];
+        [nav.tabBarItem setTitle:[dict objectForKey:@"title"]];
 //        [nav.tabBarItem setImageInsets:UIEdgeInsetsMake(-2, 0, -2, 0)];
         [navArray addObject:nav];
     }
