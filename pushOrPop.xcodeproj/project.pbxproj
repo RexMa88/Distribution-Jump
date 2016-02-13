@@ -22,6 +22,7 @@
 		9B1705C61C5EF32E002FFD0C /* RMProxy.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B1705C51C5EF32E002FFD0C /* RMProxy.m */; };
 		9B1705CF1C605A57002FFD0C /* RMTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B1705CE1C605A57002FFD0C /* RMTableView.m */; };
 		9B1B6DEB1C6EBD240022C65B /* RMWeatherViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B1B6DEA1C6EBD240022C65B /* RMWeatherViewController.m */; };
+		9B1B6DED1C6EC1810022C65B /* Masonry in Resources */ = {isa = PBXBuildFile; fileRef = 9B1B6DEC1C6EC1810022C65B /* Masonry */; };
 		9B7A31131C6DADE6007D6B54 /* ReactiveCocoa in Resources */ = {isa = PBXBuildFile; fileRef = 9B7A31121C6DADE6007D6B54 /* ReactiveCocoa */; };
 		9B7A31161C6DAFB2007D6B54 /* UITableView+RMIndexPathHeightCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B7A31151C6DAFB2007D6B54 /* UITableView+RMIndexPathHeightCache.m */; };
 		A32D26141C32C14D0019D4EF /* RMAsyncQueue.m in Sources */ = {isa = PBXBuildFile; fileRef = A32D26131C32C14D0019D4EF /* RMAsyncQueue.m */; };
@@ -119,6 +120,7 @@
 		9B1705CE1C605A57002FFD0C /* RMTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RMTableView.m; sourceTree = "<group>"; };
 		9B1B6DE91C6EBD240022C65B /* RMWeatherViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RMWeatherViewController.h; sourceTree = "<group>"; };
 		9B1B6DEA1C6EBD240022C65B /* RMWeatherViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RMWeatherViewController.m; sourceTree = "<group>"; };
+		9B1B6DEC1C6EC1810022C65B /* Masonry */ = {isa = PBXFileReference; lastKnownFileType = folder; name = Masonry; path = ThirdParty/Masonry; sourceTree = "<group>"; };
 		9B7A31121C6DADE6007D6B54 /* ReactiveCocoa */ = {isa = PBXFileReference; lastKnownFileType = folder; name = ReactiveCocoa; path = ThirdParty/ReactiveCocoa; sourceTree = "<group>"; };
 		9B7A31141C6DAFB2007D6B54 /* UITableView+RMIndexPathHeightCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITableView+RMIndexPathHeightCache.h"; sourceTree = "<group>"; };
 		9B7A31151C6DAFB2007D6B54 /* UITableView+RMIndexPathHeightCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITableView+RMIndexPathHeightCache.m"; sourceTree = "<group>"; };
@@ -468,6 +470,7 @@
 		A36956521C55F04400C60C20 /* ThirdParty */ = {
 			isa = PBXGroup;
 			children = (
+				9B1B6DEC1C6EC1810022C65B /* Masonry */,
 				9B7A31121C6DADE6007D6B54 /* ReactiveCocoa */,
 				A36956531C55F0A800C60C20 /* fmdb */,
 			);
@@ -725,6 +728,7 @@
 				00FB6F171C04596800EE49F3 /* LaunchScreen.storyboard in Resources */,
 				9B7A31131C6DADE6007D6B54 /* ReactiveCocoa in Resources */,
 				00FB6F141C04596800EE49F3 /* Assets.xcassets in Resources */,
+				9B1B6DED1C6EC1810022C65B /* Masonry in Resources */,
 				A3F316F61C537B1100D11C10 /* RMPOITableViewCell.xib in Resources */,
 				A3F316CC1C50B8B100D11C10 /* AMap.bundle in Resources */,
 				00FB6F121C04596800EE49F3 /* Main.storyboard in Resources */,
