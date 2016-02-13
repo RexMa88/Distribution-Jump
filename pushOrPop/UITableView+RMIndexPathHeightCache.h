@@ -24,7 +24,7 @@
 
 @interface UITableView (RMIndexPathHeightCache)
 
-@property (nonatomic, strong, readonly) RMIndexPathHeightCache *fd_indexPathHeightCache;
+@property (nonatomic, strong, readonly) RMIndexPathHeightCache *rm_indexPathHeightCache;
 
 @end
 

@@ -21,6 +21,7 @@
 		00FB6F2D1C04596800EE49F3 /* pushOrPopUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 00FB6F2C1C04596800EE49F3 /* pushOrPopUITests.m */; };
 		9B1705C61C5EF32E002FFD0C /* RMProxy.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B1705C51C5EF32E002FFD0C /* RMProxy.m */; };
 		9B1705CF1C605A57002FFD0C /* RMTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B1705CE1C605A57002FFD0C /* RMTableView.m */; };
+		9B1B6DEB1C6EBD240022C65B /* RMWeatherViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B1B6DEA1C6EBD240022C65B /* RMWeatherViewController.m */; };
 		9B7A31131C6DADE6007D6B54 /* ReactiveCocoa in Resources */ = {isa = PBXBuildFile; fileRef = 9B7A31121C6DADE6007D6B54 /* ReactiveCocoa */; };
 		9B7A31161C6DAFB2007D6B54 /* UITableView+RMIndexPathHeightCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B7A31151C6DAFB2007D6B54 /* UITableView+RMIndexPathHeightCache.m */; };
 		A32D26141C32C14D0019D4EF /* RMAsyncQueue.m in Sources */ = {isa = PBXBuildFile; fileRef = A32D26131C32C14D0019D4EF /* RMAsyncQueue.m */; };
@@ -116,6 +117,8 @@
 		9B1705C51C5EF32E002FFD0C /* RMProxy.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RMProxy.m; sourceTree = "<group>"; };
 		9B1705CD1C605A57002FFD0C /* RMTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RMTableView.h; sourceTree = "<group>"; };
 		9B1705CE1C605A57002FFD0C /* RMTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RMTableView.m; sourceTree = "<group>"; };
+		9B1B6DE91C6EBD240022C65B /* RMWeatherViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RMWeatherViewController.h; sourceTree = "<group>"; };
+		9B1B6DEA1C6EBD240022C65B /* RMWeatherViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RMWeatherViewController.m; sourceTree = "<group>"; };
 		9B7A31121C6DADE6007D6B54 /* ReactiveCocoa */ = {isa = PBXFileReference; lastKnownFileType = folder; name = ReactiveCocoa; path = ThirdParty/ReactiveCocoa; sourceTree = "<group>"; };
 		9B7A31141C6DAFB2007D6B54 /* UITableView+RMIndexPathHeightCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITableView+RMIndexPathHeightCache.h"; sourceTree = "<group>"; };
 		9B7A31151C6DAFB2007D6B54 /* UITableView+RMIndexPathHeightCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITableView+RMIndexPathHeightCache.m"; sourceTree = "<group>"; };
@@ -235,6 +238,7 @@
 		00495C151C06E5B60015DB12 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				9B1B6DE81C6EBCF90022C65B /* WeatherVC */,
 				00929CBE1C11342A00511DF5 /* ThirdVC */,
 				00495C1B1C070DC40015DB12 /* SecondVC */,
 				00495C1A1C070D9C0015DB12 /* FirstVC */,
@@ -390,6 +394,15 @@
 				9B1705C51C5EF32E002FFD0C /* RMProxy.m */,
 			);
 			name = RMProxy;
+			sourceTree = "<group>";
+		};
+		9B1B6DE81C6EBCF90022C65B /* WeatherVC */ = {
+			isa = PBXGroup;
+			children = (
+				9B1B6DE91C6EBD240022C65B /* RMWeatherViewController.h */,
+				9B1B6DEA1C6EBD240022C65B /* RMWeatherViewController.m */,
+			);
+			name = WeatherVC;
 			sourceTree = "<group>";
 		};
 		A32D26111C32C1210019D4EF /* AsyncQueue */ = {
@@ -761,6 +774,7 @@
 				A345460B1C3CCFA2004281FE /* RMDateShareManager.m in Sources */,
 				00FB6F0C1C04596800EE49F3 /* AppDelegate.m in Sources */,
 				A3FE6A061C140CF4004DF568 /* RMTableViewDelegate.m in Sources */,
+				9B1B6DEB1C6EBD240022C65B /* RMWeatherViewController.m in Sources */,
 				00FB6F091C04596800EE49F3 /* main.m in Sources */,
 				A38E25CB1C128D6300A3DCEC /* BaseTableViewController.m in Sources */,
 				A3CB87121C2B60E400576755 /* RMCellHeaderView.m in Sources */,

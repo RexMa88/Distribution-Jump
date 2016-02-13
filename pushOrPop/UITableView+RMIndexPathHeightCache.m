@@ -110,5 +110,61 @@ typedef NSMutableArray<NSMutableArray<NSNumber *> *> RMIndexPathHeightsBySection
 
 @implementation UITableView (RMIndexPathHeightCache)
 
+- (RMIndexPathHeightCache *)rm_indexPathHeightCache{
+    RMIndexPathHeightCache *cache = objc_getAssociatedObject(self, _cmd);
+    if (!cache) {
+        [self methodSignatureForSelector:nil];
+        cache = [RMIndexPathHeightCache new];
+        objc_setAssociatedObject(self, _cmd, cache, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+    }
+    return cache;
+}
+
+@end
+
+static void __RM_TEMPLATE_LAYOUT_CELL_PRIMARY_CALL_IF_CRASH_NOT_OUR_BUG__(void(^callout)(void)) {
+    callout();
+}
+#define RMPrimaryCall(...) do {__RM_TEMPLATE_LAYOUT_CELL_PRIMARY_CALL_IF_CRASH_NOT_OUR_BUG__(^{__VA_ARGS__});} while(0)
+
+@implementation UITableView (RMIndexPathHeightCacheInvalidation)
+
+- (void)rm_reloadDataWithoutInvalidateIndexPathHeightCache{
+    RMPrimaryCall([self rm_reloadData];);
+}
+
+//Method Swizzling
++ (void)load{
+    SEL selectors[] = {
+    @selector(reloadData),
+    @selector(insertSections:withRowAnimation:),
+    @selector(deleteSections:withRowAnimation:),
+    @selector(reloadSections:withRowAnimation:),
+    @selector(moveSection:toSection:),
+    @selector(insertRowsAtIndexPaths:withRowAnimation:),
+    @selector(deleteRowsAtIndexPaths:withRowAnimation:),
+    @selector(reloadRowsAtIndexPaths:withRowAnimation:),
+    @selector(moveRowAtIndexPath:toIndexPath:)
+    };
+    
+    for (NSUInteger index = 0; index < sizeof(selectors) / sizeof(SEL); ++index) {
+        SEL originSelector = selectors[index];
+        SEL swizzleSelector = NSSelectorFromString([@"rm_" stringByAppendingString:NSStringFromSelector(originSelector)]);
+        Method originMethod = class_getInstanceMethod(self, originSelector);
+        Method swizzleMethod = class_getInstanceMethod(self, swizzleSelector);
+        method_exchangeImplementations(originMethod, swizzleMethod);
+    }
+}
+
+- (void)rm_reloadData{
+    if (self.rm_indexPathHeightCache.automaticallyInvalidateEnabled) {
+        [self.rm_indexPathHeightCache enumerateAllOrientationsUsingBlock:^(RMIndexPathHeightsBySection *heightBySection) {
+            [heightBySection removeAllObjects];
+        }];
+    }
+    RMPrimaryCall([self rm_reloadData];);
+}
+
+
 
 @end
