@@ -128,9 +128,10 @@
 //    NSLog(@"The Location is %f, %f", location.coordinate.latitude, location.coordinate.longitude);
     //使用单例模式，虽然会全局占用内存，但比每次调用该代理重复创建要高效
     [[RMLocationShareManager shareManager] stopUpdatingLocation];
-    [self.search AMapPOIAroundSearch:[[RMPOISearchRequest shareManager] initWithLocation:location
-                                               keywords:@"咖啡"
-                                                  types:@"餐饮服务"]];
+    [self.search AMapPOIAroundSearch:[[RMPOISearchRequest shareManager]
+                                      initWithLocation:location
+                                              keywords:@"咖啡"
+                                                 types:@"餐饮服务"]];
 }
 
 #pragma mark - AMapSearchDelegate
@@ -161,10 +162,11 @@
             }];
         }
         self.dataSource = [[RMTableViewDataSource alloc] initWithDataArray:response.pois cell:[RMPOITableViewCell class]];
+        //The Configuration of RMTableViewDataSource
         self.dataSource.configureCellBlock = ^(RMPOITableViewCell *cell, AMapPOI *poi){
             cell.poi = poi;
         };
-        //The configuration of RMTableViewDelegate
+        //The Configuration of RMTableViewDelegate
         self.delegate = [[RMTableViewDelegate alloc] initWithDataArray:response.pois];
         __weak typeof(self)weakSelf = self;
         self.delegate.actBlock = ^(NSString *action, NSDictionary *obj){
@@ -203,10 +205,11 @@
     }
     
     self.dataSource = [[RMTableViewDataSource alloc] initWithDataArray:poiArray cell:[RMPOITableViewCell class]];
+    //The Configuration of RMTableViewDataSource
     self.dataSource.configureCellBlock = ^(RMPOITableViewCell *cell, AMapPOI *poi){
         cell.poi = poi;
     };
-    //The configuration of RMTableViewDelegate
+    //The Configuration of RMTableViewDelegate
     self.delegate = [[RMTableViewDelegate alloc] initWithDataArray:poiArray];
     __weak typeof(self)weakSelf = self;
     self.delegate.actBlock = ^(NSString *action, NSDictionary *obj){
@@ -248,9 +251,7 @@
 }
 
 #pragma mark - runtime resolve solution
-/**
- *  额...解耦竟然让VC没有了实例方法和类方法
- */
+
 + (BOOL)resolveInstanceMethod:(SEL)sel{
     NSString *instanceMethod = NSStringFromSelector(sel);
     NSLog(@"The instanceMethod name is %@",instanceMethod);

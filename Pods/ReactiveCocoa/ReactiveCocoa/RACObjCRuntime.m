@@ -9,11 +9,9 @@
 #import "RACObjCRuntime.h"
 #import <objc/runtime.h>
 
-
-
-//#if __has_feature(objc_arc)
-//#error "This file must be compiled without ARC."
-//#endif
+#if __has_feature(objc_arc)
+#error "This file must be compiled without ARC."
+#endif
 
 @implementation RACObjCRuntime
 

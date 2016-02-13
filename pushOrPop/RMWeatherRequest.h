@@ -7,10 +7,18 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "ReactiveCocoa.h"
+#import <ReactiveCocoa/ReactiveCocoa.h>
 
+/**
+ *  天气网络请求--使用了ReactiveCocoa函数式响应式编程框架
+ *  RACSignal信号
+ */
+//@class RMLocationShareManager;
 @interface RMWeatherRequest : NSObject
 
++ (instancetype)shareManager;
 
+- (RACSignal *)fetchDataFromURL:(NSURL *)url;
+//- (RACSignal *)fetchLocalWeatherFromURL:(NSURL *)url
 
 @end
