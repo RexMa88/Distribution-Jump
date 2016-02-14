@@ -18,7 +18,5 @@
 
 + (instancetype)shareManager;
 
-- (RACSignal *)fetchDataFromURL:(NSURL *)url;
-//- (RACSignal *)fetchLocalWeatherFromURL:(NSURL *)url
 
 @end

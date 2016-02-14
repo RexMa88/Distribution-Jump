@@ -8,9 +8,11 @@
 
 #import <Foundation/Foundation.h>
 #import <ReactiveCocoa.h>
+@import CoreLocation;
 
 @interface RMClient : NSObject
 
 - (RACSignal *)fetchDataFromURL:(NSURL *)url;
+- (RACSignal *)fetchLocalWeatherForLocation:(CLLocationCoordinate2D)coordinate;
 
 @end

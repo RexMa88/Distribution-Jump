@@ -18,6 +18,8 @@ typedef NS_ENUM(NSUInteger, TabControllerType) {
 
 //高德地图APIKey
 #define AMapAPIKey                                  @"d1bda35e7fc6d5c2db2c47732d5eaf66"
+//OpenWeatherAPI
+#define OpenWeatherAPIKey      @"73ec249c9ff6c666bad9cc9ebfb3f8dc"
 //跳转界面参数
 #define kDictionaryKeyAnimated                      @"animated"
 #define kDictionaryKeyClass                         @"class"
