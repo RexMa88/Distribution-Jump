@@ -10,6 +10,10 @@
 #import <ReactiveCocoa.h>
 @import CoreLocation;
 
+/**
+ *  RACSignal : 创建信号.
+ */
+
 @interface RMClient : NSObject
 
 - (RACSignal *)fetchDataFromURL:(NSURL *)url;

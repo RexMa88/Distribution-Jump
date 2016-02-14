@@ -43,6 +43,7 @@
 		9B1B73561C6F1B620022C65B /* AFURLSessionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B1B73501C6F1B620022C65B /* AFURLSessionManager.m */; };
 		9B1B794F1C6FF0420022C65B /* RMClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B1B794E1C6FF0420022C65B /* RMClient.m */; };
 		9B1B79531C70132B0022C65B /* libReactiveCocoa.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9B1B79521C70132B0022C65B /* libReactiveCocoa.a */; };
+		9B1B79571C7015AA0022C65B /* RMWeatherModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B1B79561C7015AA0022C65B /* RMWeatherModel.m */; };
 		9B7A31161C6DAFB2007D6B54 /* UITableView+RMIndexPathHeightCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B7A31151C6DAFB2007D6B54 /* UITableView+RMIndexPathHeightCache.m */; };
 		A32D26141C32C14D0019D4EF /* RMAsyncQueue.m in Sources */ = {isa = PBXBuildFile; fileRef = A32D26131C32C14D0019D4EF /* RMAsyncQueue.m */; };
 		A345460B1C3CCFA2004281FE /* RMDateShareManager.m in Sources */ = {isa = PBXBuildFile; fileRef = A345460A1C3CCFA2004281FE /* RMDateShareManager.m */; };
@@ -184,6 +185,8 @@
 		9B1B794D1C6FF0420022C65B /* RMClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RMClient.h; sourceTree = "<group>"; };
 		9B1B794E1C6FF0420022C65B /* RMClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RMClient.m; sourceTree = "<group>"; };
 		9B1B79521C70132B0022C65B /* libReactiveCocoa.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libReactiveCocoa.a; path = "Pods/../build/Debug-iphoneos/libReactiveCocoa.a"; sourceTree = "<group>"; };
+		9B1B79551C7015AA0022C65B /* RMWeatherModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RMWeatherModel.h; sourceTree = "<group>"; };
+		9B1B79561C7015AA0022C65B /* RMWeatherModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RMWeatherModel.m; sourceTree = "<group>"; };
 		9B7A31141C6DAFB2007D6B54 /* UITableView+RMIndexPathHeightCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITableView+RMIndexPathHeightCache.h"; sourceTree = "<group>"; };
 		9B7A31151C6DAFB2007D6B54 /* UITableView+RMIndexPathHeightCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITableView+RMIndexPathHeightCache.m"; sourceTree = "<group>"; };
 		A32D26121C32C14D0019D4EF /* RMAsyncQueue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RMAsyncQueue.h; sourceTree = "<group>"; };
@@ -553,6 +556,15 @@
 			path = AFNetworking;
 			sourceTree = "<group>";
 		};
+		9B1B79541C7015140022C65B /* WeatherModel */ = {
+			isa = PBXGroup;
+			children = (
+				9B1B79551C7015AA0022C65B /* RMWeatherModel.h */,
+				9B1B79561C7015AA0022C65B /* RMWeatherModel.m */,
+			);
+			name = WeatherModel;
+			sourceTree = "<group>";
+		};
 		A32D26111C32C1210019D4EF /* AsyncQueue */ = {
 			isa = PBXGroup;
 			children = (
@@ -584,6 +596,7 @@
 		A3592BE01C26E78E00EC94AC /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				9B1B79541C7015140022C65B /* WeatherModel */,
 				A3CDAE171C302D790037F51C /* BaseModel */,
 				A32D26151C32C1EE0019D4EF /* IModel.h */,
 			);
@@ -958,6 +971,7 @@
 				00495C1E1C070DD90015DB12 /* SecondViewController.m in Sources */,
 				9B1B733D1C6F1B4B0022C65B /* MASViewAttribute.m in Sources */,
 				9B1B733E1C6F1B4B0022C65B /* MASViewConstraint.m in Sources */,
+				9B1B79571C7015AA0022C65B /* RMWeatherModel.m in Sources */,
 				A345469D1C420B5B004281FE /* UIViewController+MethodSwizzle.m in Sources */,
 				A369565F1C55F0B400C60C20 /* FMDatabase.m in Sources */,
 				A3F316F51C537B1100D11C10 /* RMPOITableViewCell.m in Sources */,

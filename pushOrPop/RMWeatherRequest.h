@@ -14,9 +14,14 @@
  *  RACSignal信号
  */
 //@class RMLocationShareManager;
+@class RMWeatherModel;
 @interface RMWeatherRequest : NSObject
+
+@property (readonly, nonatomic, strong) CLLocation *currentLocation;
+@property (readonly, nonatomic, strong) RMWeatherModel *weatherModel;
 
 + (instancetype)shareManager;
 
+- (void)findCurrentLocation;
 
 @end

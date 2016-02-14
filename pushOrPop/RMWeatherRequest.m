@@ -8,10 +8,14 @@
 
 #import "RMWeatherRequest.h"
 #import "RMClient.h"
+#import "RMLocationShareManager.h"
+#import "RMWeatherModel.h"
 
-@interface RMWeatherRequest ()
+@interface RMWeatherRequest ()<AMapLocationManagerDelegate>
 
-@property (nonatomic, strong) NSURLSession *session;
+@property (readwrite, nonatomic, strong) CLLocation *currentLocation;
+@property (readwrite, nonatomic, strong) RMWeatherModel *weatherModel;
+@property (nonatomic, strong) RMClient *client;
 
 @end
 
@@ -30,11 +34,38 @@
 - (instancetype)init{
     self = [super init];
     if (self) {
-        
+        _client = [[RMClient alloc] init];
+        [[RMLocationShareManager shareManager] setDelegate:self];
+        //RACObserver
+        [[[[RACObserve(self, currentLocation)
+         ignore:nil]
+         flattenMap:^(CLLocation *newLocation) {
+             return [RACSignal merge:@[[self updateCurrentLocation]]];
+         }] deliverOn:RACScheduler.mainThreadScheduler]
+         subscribeError:^(NSError *error) {
+             NSLog(@"The error is %@",error);
+         }];
     }
     return self;
 }
 
+#pragma mark - AMapLocationManagerDelegate
 
+- (void)amapLocationManager:(AMapLocationManager *)manager didUpdateLocation:(CLLocation *)location{
+    self.currentLocation = location;
+    [[RMLocationShareManager shareManager] stopUpdatingLocation];
+}
+
+- (void)findCurrentLocation{
+    [[RMLocationShareManager shareManager] startUpdatingLocation];
+}
+
+#pragma mark - Custom Method
+
+- (RACSignal *)updateCurrentLocation{
+    return [[self.client fetchLocalWeatherForLocation:self.currentLocation.coordinate] doNext:^(RMWeatherModel *weatherModel) {
+        self.weatherModel = weatherModel;
+    }];
+}
 
 @end

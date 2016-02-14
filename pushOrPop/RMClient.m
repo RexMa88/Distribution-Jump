@@ -7,7 +7,9 @@
 //
 
 #import "RMClient.h"
+#import "RMWeatherModel.h"
 
+//116.403438,39.92445
 #define localWeatherAPI     @"http://api.openweathermap.org/data/2.5/weather?"
 
 @interface RMClient ()
@@ -56,13 +58,14 @@
     }];
 }
 
-//- (RACSignal *)fetchLocalWeatherForLocation:(CLLocationCoordinate2D)coordinate{
-//    NSString *apiStr = [localWeatherAPI stringByAppendingFormat:@"lat=%@&lon=%@&appid=%@",@(coordinate.latitude),@(coordinate.longitude),OpenWeatherAPIKey];
-//    NSLog(@"The api is %@",apiStr);
-//    NSURL *api = [NSURL URLWithString:apiStr];
-//    return [[self fetchJSONFromURL:api] map:^(NSDictionary *json) {
-//        
-//    }];
-//}
+- (RACSignal *)fetchLocalWeatherForLocation:(CLLocationCoordinate2D)coordinate{
+    NSString *apiStr = [localWeatherAPI stringByAppendingFormat:@"lat=%@&lon=%@&appid=%@",@(coordinate.latitude),@(coordinate.longitude),OpenWeatherAPIKey];
+    NSLog(@"The api is %@",apiStr);
+    NSURL *api = [NSURL URLWithString:apiStr];
+    return [[self fetchJSONFromURL:api] map:^(NSDictionary *json) {
+        RMWeatherModel *weatherModel = [[RMWeatherModel alloc] initWithDic:json];
+        return weatherModel;
+    }];
+}
 
 @end
