@@ -42,6 +42,7 @@
 		9B1B73551C6F1B620022C65B /* AFURLResponseSerialization.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B1B734E1C6F1B620022C65B /* AFURLResponseSerialization.m */; };
 		9B1B73561C6F1B620022C65B /* AFURLSessionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B1B73501C6F1B620022C65B /* AFURLSessionManager.m */; };
 		9B1B794F1C6FF0420022C65B /* RMClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B1B794E1C6FF0420022C65B /* RMClient.m */; };
+		9B1B79531C70132B0022C65B /* libReactiveCocoa.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9B1B79521C70132B0022C65B /* libReactiveCocoa.a */; };
 		9B7A31161C6DAFB2007D6B54 /* UITableView+RMIndexPathHeightCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B7A31151C6DAFB2007D6B54 /* UITableView+RMIndexPathHeightCache.m */; };
 		A32D26141C32C14D0019D4EF /* RMAsyncQueue.m in Sources */ = {isa = PBXBuildFile; fileRef = A32D26131C32C14D0019D4EF /* RMAsyncQueue.m */; };
 		A345460B1C3CCFA2004281FE /* RMDateShareManager.m in Sources */ = {isa = PBXBuildFile; fileRef = A345460A1C3CCFA2004281FE /* RMDateShareManager.m */; };
@@ -182,6 +183,7 @@
 		9B1B73501C6F1B620022C65B /* AFURLSessionManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFURLSessionManager.m; sourceTree = "<group>"; };
 		9B1B794D1C6FF0420022C65B /* RMClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RMClient.h; sourceTree = "<group>"; };
 		9B1B794E1C6FF0420022C65B /* RMClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RMClient.m; sourceTree = "<group>"; };
+		9B1B79521C70132B0022C65B /* libReactiveCocoa.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libReactiveCocoa.a; path = "Pods/../build/Debug-iphoneos/libReactiveCocoa.a"; sourceTree = "<group>"; };
 		9B7A31141C6DAFB2007D6B54 /* UITableView+RMIndexPathHeightCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITableView+RMIndexPathHeightCache.h"; sourceTree = "<group>"; };
 		9B7A31151C6DAFB2007D6B54 /* UITableView+RMIndexPathHeightCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITableView+RMIndexPathHeightCache.m"; sourceTree = "<group>"; };
 		A32D26121C32C14D0019D4EF /* RMAsyncQueue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RMAsyncQueue.h; sourceTree = "<group>"; };
@@ -262,6 +264,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A3592BEB1C290B5500EC94AC /* Foundation.framework in Frameworks */,
+				9B1B79531C70132B0022C65B /* libReactiveCocoa.a in Frameworks */,
 				A3F316D41C50B91500D11C10 /* Security.framework in Frameworks */,
 				A3F316E91C53651800D11C10 /* libc++.tbd in Frameworks */,
 				A3F316D61C50B91E00D11C10 /* libz.tbd in Frameworks */,
@@ -276,7 +280,6 @@
 				A3F316EB1C5365FA00D11C10 /* AMapSearchKit.framework in Frameworks */,
 				A3592BEF1C290B6300EC94AC /* CoreGraphics.framework in Frameworks */,
 				A3592BED1C290B5B00EC94AC /* UIKit.framework in Frameworks */,
-				A3592BEB1C290B5500EC94AC /* Foundation.framework in Frameworks */,
 				9B082787E964ABACED916E5F /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -462,6 +465,7 @@
 		8899A35A0D6F8075102A1AA8 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				9B1B79521C70132B0022C65B /* libReactiveCocoa.a */,
 				DB1DC4013B896AF3D15CE30C /* libPods.a */,
 			);
 			name = Frameworks;
@@ -1156,6 +1160,10 @@
 				GCC_PREFIX_HEADER = "$(SRCROOT)/pushOrPop/pushOrPop.pch";
 				INFOPLIST_FILE = pushOrPop/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/build/Debug-iphoneos",
+				);
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_BUNDLE_IDENTIFIER = rexma.pushOrPop;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -1181,6 +1189,10 @@
 				GCC_PREFIX_HEADER = "$(SRCROOT)/pushOrPop/pushOrPop.pch";
 				INFOPLIST_FILE = pushOrPop/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/build/Debug-iphoneos",
+				);
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_BUNDLE_IDENTIFIER = rexma.pushOrPop;
 				PRODUCT_NAME = "$(TARGET_NAME)";
