@@ -7,6 +7,9 @@
 //
 
 #import "RMWeatherViewController.h"
+#import "RMWeatherRequest.h"
+#import <ReactiveCocoa.h>
+#import "RMWeatherModel.h"
 
 @interface RMWeatherViewController ()
 
@@ -18,6 +21,14 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     self.view.backgroundColor = [UIColor whiteColor];
+    
+    //RACObserver
+    [[RACObserve([RMWeatherRequest shareManager], weatherModel) deliverOn:RACScheduler.mainThreadScheduler]
+     subscribeNext:^(RMWeatherModel *weatherModel) {
+         NSLog(@"The model is %@",weatherModel);
+     }];
+    
+    [[RMWeatherRequest shareManager] findCurrentLocation];
 }
 
 - (void)didReceiveMemoryWarning {

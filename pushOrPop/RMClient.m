@@ -59,7 +59,8 @@
 }
 
 - (RACSignal *)fetchLocalWeatherForLocation:(CLLocationCoordinate2D)coordinate{
-    NSString *apiStr = [localWeatherAPI stringByAppendingFormat:@"lat=%@&lon=%@&appid=%@",@(coordinate.latitude),@(coordinate.longitude),OpenWeatherAPIKey];
+//    NSString *apiStr = [localWeatherAPI stringByAppendingFormat:@"lat=%@&lon=%@&appid=%@",@(coordinate.latitude),@(coordinate.longitude),OpenWeatherAPIKey];
+    NSString *apiStr = [localWeatherAPI stringByAppendingFormat:@"lat=116.403438&lon=39.92445&appid=%@",OpenWeatherAPIKey];
     NSLog(@"The api is %@",apiStr);
     NSURL *api = [NSURL URLWithString:apiStr];
     return [[self fetchJSONFromURL:api] map:^(NSDictionary *json) {

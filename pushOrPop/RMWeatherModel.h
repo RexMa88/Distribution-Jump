@@ -10,25 +10,25 @@
 
 @interface RMCoordinateModel : RMBaseModel
 
-@property (nonatomic, assign) NSInteger *lon;
-@property (nonatomic, assign) NSInteger *lat;
+@property (nonatomic, assign) NSInteger lon;
+@property (nonatomic, assign) NSInteger lat;
 
 @end
 
 @interface RMWindStatusModel : RMBaseModel
 
-@property (nonatomic, assign) NSInteger *speed;
-@property (nonatomic, assign) NSInteger *deg;
+@property (nonatomic, assign) NSInteger speed;
+@property (nonatomic, assign) NSInteger deg;
 
 @end
 
 @interface RMWeatherStatusModel : RMBaseModel
 
-@property (nonatomic, assign) NSInteger *temp;
-@property (nonatomic, assign) NSInteger *pressure;
-@property (nonatomic, assign) NSInteger *humidity;
-@property (nonatomic, assign) NSInteger *temp_max;
-@property (nonatomic, assign) NSInteger *temp_min;
+@property (nonatomic, assign) NSInteger temp;
+@property (nonatomic, assign) NSInteger pressure;
+@property (nonatomic, assign) NSInteger humidity;
+@property (nonatomic, assign) NSInteger temp_max;
+@property (nonatomic, assign) NSInteger temp_min;
 
 @end
 
