@@ -7,4 +7,10 @@
 
 由于我本人比较喜欢喝咖啡，所以在这个简单的信号机制上添加了高德地图SDK，除了用于定位以外，还具备服务搜索功能，以后也会基于此添加更多的功能。
 
+
+**UPDATE**
+
+* 添加了无网络状态时的数据缓存，主要针对无网络状态。
+* 由于天气成为了我出门的障碍，便对之前看起来很弱鸡的Project进行了重构，添加了天气预报，并且使用了ReactiveCocoa，真正的函数式，响应式编程。
+
 That is a distribution jump mechanism based on Objective-C,The mechanism use Notification push or pop,and it can solve high coulping, and unified manage what you want push or pop.
