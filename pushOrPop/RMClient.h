@@ -16,7 +16,8 @@
 
 @interface RMClient : NSObject
 
-- (RACSignal *)fetchDataFromURL:(NSURL *)url;
+- (RACSignal *)fetchJSONFromURL:(NSURL *)url;
 - (RACSignal *)fetchLocalWeatherForLocation:(CLLocationCoordinate2D)coordinate;
+- (RACSignal *)fetchLocalHistoricalWeatherForLocation:(CLLocationCoordinate2D)coordinate;
 
 @end

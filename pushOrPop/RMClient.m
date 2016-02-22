@@ -12,6 +12,8 @@
 //116.403438,39.92445
 #define localWeatherAPI     @"http://api.openweathermap.org/data/2.5/weather?"
 
+#define localHistoricalWeatherAPI @"http://api.openweathermap.org/data/2.5/forecast/daily?"
+
 @interface RMClient ()
 
 @property (nonatomic, strong) NSURLSession *session;
@@ -68,5 +70,14 @@
         return weatherModel;
     }];
 }
+
+//- (RACSignal *)fetchLocalHistoricalWeatherForLocation:2(CLLocationCoordinate2D)coordinate{
+//    NSString *apiStr = [localHistoricalWeatherAPI stringByAppendingFormat:@"lat=%@&lon=%@&appid=%@",@(coordinate.latitude),@(coordinate.longitude),OpenWeatherAPIKey];
+//    NSLog(@"The api is %@",apiStr);
+//    NSURL *api = [NSURL URLWithString:apiStr];
+//    return [[self fetchJSONFromURL:api] map:^(NSDictionary *json) {
+//        
+//    }]
+//}
 
 @end

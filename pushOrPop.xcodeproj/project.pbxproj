@@ -44,6 +44,7 @@
 		9B1B794F1C6FF0420022C65B /* RMClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B1B794E1C6FF0420022C65B /* RMClient.m */; };
 		9B1B79531C70132B0022C65B /* libReactiveCocoa.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9B1B79521C70132B0022C65B /* libReactiveCocoa.a */; };
 		9B1B79571C7015AA0022C65B /* RMWeatherModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B1B79561C7015AA0022C65B /* RMWeatherModel.m */; };
+		9B4B232D1C7AA65300BA3628 /* RMHistoricalWeatherRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B4B232C1C7AA65300BA3628 /* RMHistoricalWeatherRequest.m */; };
 		9B7A31161C6DAFB2007D6B54 /* UITableView+RMIndexPathHeightCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B7A31151C6DAFB2007D6B54 /* UITableView+RMIndexPathHeightCache.m */; };
 		A32D26141C32C14D0019D4EF /* RMAsyncQueue.m in Sources */ = {isa = PBXBuildFile; fileRef = A32D26131C32C14D0019D4EF /* RMAsyncQueue.m */; };
 		A345460B1C3CCFA2004281FE /* RMDateShareManager.m in Sources */ = {isa = PBXBuildFile; fileRef = A345460A1C3CCFA2004281FE /* RMDateShareManager.m */; };
@@ -187,6 +188,8 @@
 		9B1B79521C70132B0022C65B /* libReactiveCocoa.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libReactiveCocoa.a; path = "Pods/../build/Debug-iphoneos/libReactiveCocoa.a"; sourceTree = "<group>"; };
 		9B1B79551C7015AA0022C65B /* RMWeatherModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RMWeatherModel.h; sourceTree = "<group>"; };
 		9B1B79561C7015AA0022C65B /* RMWeatherModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RMWeatherModel.m; sourceTree = "<group>"; };
+		9B4B232B1C7AA65300BA3628 /* RMHistoricalWeatherRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RMHistoricalWeatherRequest.h; sourceTree = "<group>"; };
+		9B4B232C1C7AA65300BA3628 /* RMHistoricalWeatherRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RMHistoricalWeatherRequest.m; sourceTree = "<group>"; };
 		9B7A31141C6DAFB2007D6B54 /* UITableView+RMIndexPathHeightCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITableView+RMIndexPathHeightCache.h"; sourceTree = "<group>"; };
 		9B7A31151C6DAFB2007D6B54 /* UITableView+RMIndexPathHeightCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITableView+RMIndexPathHeightCache.m"; sourceTree = "<group>"; };
 		A32D26121C32C14D0019D4EF /* RMAsyncQueue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RMAsyncQueue.h; sourceTree = "<group>"; };
@@ -495,6 +498,7 @@
 		9B1B6DEE1C6F13D40022C65B /* Request */ = {
 			isa = PBXGroup;
 			children = (
+				9B4B23271C79C2CA00BA3628 /* HistoricalWeatherRequest */,
 				9B1B6DEF1C6F13EB0022C65B /* RMWeatherRequest.h */,
 				9B1B6DF01C6F13EB0022C65B /* RMWeatherRequest.m */,
 				9B1B794D1C6FF0420022C65B /* RMClient.h */,
@@ -563,6 +567,15 @@
 				9B1B79561C7015AA0022C65B /* RMWeatherModel.m */,
 			);
 			name = WeatherModel;
+			sourceTree = "<group>";
+		};
+		9B4B23271C79C2CA00BA3628 /* HistoricalWeatherRequest */ = {
+			isa = PBXGroup;
+			children = (
+				9B4B232B1C7AA65300BA3628 /* RMHistoricalWeatherRequest.h */,
+				9B4B232C1C7AA65300BA3628 /* RMHistoricalWeatherRequest.m */,
+			);
+			name = HistoricalWeatherRequest;
 			sourceTree = "<group>";
 		};
 		A32D26111C32C1210019D4EF /* AsyncQueue */ = {
@@ -1007,6 +1020,7 @@
 				A3CB87121C2B60E400576755 /* RMCellHeaderView.m in Sources */,
 				9B1B73411C6F1B4B0022C65B /* View+MASAdditions.m in Sources */,
 				9B1B73401C6F1B4B0022C65B /* NSLayoutConstraint+MASDebugAdditions.m in Sources */,
+				9B4B232D1C7AA65300BA3628 /* RMHistoricalWeatherRequest.m in Sources */,
 				A38E25D21C12A8B900A3DCEC /* RMBaseCell.m in Sources */,
 				A36956601C55F0B400C60C20 /* FMDatabaseAdditions.m in Sources */,
 				A3CDAE1E1C302EEF0037F51C /* NSDictionary+NullReplace.m in Sources */,

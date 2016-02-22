@@ -8,6 +8,7 @@
 
 #import "RMBaseModel.h"
 
+//坐标Model
 @interface RMCoordinateModel : RMBaseModel
 
 @property (nonatomic, assign) NSInteger lon;
